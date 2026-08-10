@@ -432,7 +432,7 @@ def contribution_matrix(daily, x=42, y=305, cols=53, rows=7, cell=9, gap=3):
     return "".join(out)
 
 
-def generate_stats_svg(user, repositories, contributions):
+def generate_stats_svg(user, repositories, daily, total_contributions):
     """
     Generate a larger, readable dashboard card.
 
@@ -457,20 +457,20 @@ def generate_stats_svg(user, repositories, contributions):
         1 for repo in repositories if repo.get("private")
     )
 
-    total_activity = sum(contributions.values())
+    total_activity = total_contributions
 
     # Recent 30-day telemetry.
     today = datetime.now(timezone.utc).date()
     recent_days = [today - timedelta(days=i) for i in range(29, -1, -1)]
     recent_values = [
-        contributions.get(str(day), 0)
+        daily.get(str(day), 0)
         for day in recent_days
     ]
     recent_total = sum(recent_values)
     recent_peak = max(recent_values, default=1)
 
     # Keep the matrix visually dense but readable.
-    matrix = activity_grid_large(contributions, WIDTH=900)
+    matrix = activity_grid_large(daily, WIDTH=900)
 
     # Build the 30-day mini graph.
     graph_x = 48
@@ -675,7 +675,7 @@ def stat_card_large(x, y, width, height, title, value,
 """
 
 
-def activity_grid_large(contributions, WIDTH=900):
+def activity_grid_large(daily, WIDTH=900):
     """
     Larger, clean 52-column x 7-row contribution matrix.
     Fits beneath the 2x2 stats without colliding with the activity graph.
@@ -689,7 +689,7 @@ def activity_grid_large(contributions, WIDTH=900):
     total_days = 371
     columns = 53
 
-    max_activity = max(contributions.values(), default=1)
+    max_activity = max(daily.values(), default=1)
 
     colors = [
         "#0B1117",
@@ -710,7 +710,7 @@ def activity_grid_large(contributions, WIDTH=900):
 
     for day_index in range(total_days):
         date = start + timedelta(days=day_index)
-        count = contributions.get(str(date), 0)
+        count = daily.get(str(date), 0)
 
         if count <= 0:
             level = 0
