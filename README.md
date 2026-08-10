@@ -4,18 +4,10 @@
 
 ### `AI ENGINEERING` · `COMPUTER SCIENCE` · `SOFTWARE DEVELOPMENT`
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&duration=2800&pause=900&color=8B5CF6&center=true&vCenter=true&width=700&lines=Building+AI-powered+applications;LLMs+%7C+RAG+%7C+Agents+%7C+APIs;Learning+%E2%86%92+Building+%E2%86%92+Shipping" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&duration=2800&pause=900&color=8B5CF6&center=true&vCenter=true&width=720&lines=AI-powered+applications;LLMs+%7C+RAG+%7C+Agents+%7C+APIs;Building+%7C+Learning+%7C+Shipping" />
 
 <br>
 
-<a href="https://github.com/yeabsiragebre">
-<img src="https://img.shields.io/badge/GITHUB-181717?style=for-the-badge&logo=github"/>
-</a>
-&nbsp;
-<a href="https://github.com/yeabsiragebre?tab=repositories">
-<img src="https://img.shields.io/badge/REPOSITORIES-8B5CF6?style=for-the-badge&logo=github"/>
-</a>
-&nbsp;
 <img src="https://komarev.com/ghpvc/?username=yeabsiragebre&style=for-the-badge&color=8B5CF6&label=PROFILE+VIEWS"/>
 
 </div>
@@ -24,13 +16,25 @@
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=yeabsiragebre&show_icons=true&include_all_commits=true&count_private=true&rank_icon=github&theme=tokyonight&hide_border=true" height="180"/>
+## `GITHUB`
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yeabsiragebre&layout=donut-vertical&langs_count=8&theme=tokyonight&hide_border=true" height="180"/>
+<br>
+
+<a href="https://github.com/yeabsiragebre">
+
+<img src="https://github-readme-stats.vercel.app/api?username=yeabsiragebre&show_icons=true&include_all_commits=true&count_private=false&rank_icon=github&theme=tokyonight&hide_border=true&cache_seconds=1800" height="180" alt="GitHub Statistics"/>
+
+</a>
+
+<a href="https://github.com/yeabsiragebre">
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yeabsiragebre&layout=donut-vertical&langs_count=8&theme=tokyonight&hide_border=true&cache_seconds=1800" height="180" alt="Most Used Languages"/>
+
+</a>
 
 <br><br>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=yeabsiragebre&theme=tokyonight&hide_border=true" width="70%"/>
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=yeabsiragebre&theme=tokyonight&hide_border=true&date_format=M%20j%5B%2C%20Y%5D" width="70%" alt="GitHub Streak"/>
 
 </div>
 
@@ -38,7 +42,7 @@
 
 <div align="center">
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=yeabsiragebre&bg_color=0D1117&color=8B5CF6&line=8B5CF6&point=FFFFFF&area=true&hide_border=true&custom_title=Contribution%20Activity" width="95%"/>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=yeabsiragebre&bg_color=0D1117&color=8B5CF6&line=8B5CF6&point=FFFFFF&area=true&hide_border=true&custom_title=Contribution%20Activity" width="95%" alt="Contribution Activity"/>
 
 </div>
 
@@ -58,23 +62,47 @@
 
 <div align="center">
 
+## `METRICS`
+
+<br>
+
+<img src="./metrics.svg" width="95%" alt="GitHub Metrics"/>
+
+</div>
+
+<br>
+
+<div align="center">
+
+## `CODING ACTIVITY`
+
+<br>
+
+<img src="https://github-readme-stats.vercel.app/api/wakatime?username=yeabsiragebre&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" width="70%" alt="Coding Activity"/>
+
+</div>
+
+<br>
+
+<div align="center">
+
 ## `TECHNOLOGY`
 
 <br>
 
-<img src="https://skillicons.dev/icons?i=python,java,cpp,javascript,typescript&perline=5"/>
+<img src="https://skillicons.dev/icons?i=python,java,cpp,javascript,typescript&perline=5" alt="Languages"/>
 
 <br><br>
 
-<img src="https://skillicons.dev/icons?i=fastapi,nodejs,react,nextjs&perline=4"/>
+<img src="https://skillicons.dev/icons?i=fastapi,nodejs,react,nextjs&perline=4" alt="Frameworks"/>
 
 <br><br>
 
-<img src="https://skillicons.dev/icons?i=pytorch,tensorflow,postgres,mongodb,redis&perline=5"/>
+<img src="https://skillicons.dev/icons?i=pytorch,tensorflow,postgres,mongodb,redis&perline=5" alt="AI and Databases"/>
 
 <br><br>
 
-<img src="https://skillicons.dev/icons?i=git,github,linux,docker,vscode&perline=5"/>
+<img src="https://skillicons.dev/icons?i=git,github,linux,docker,vscode&perline=5" alt="Developer Tools"/>
 
 </div>
 
@@ -95,8 +123,9 @@
 <br><br>
 
 <img src="https://img.shields.io/badge/LLM%20APPLICATIONS-111827?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/AI%20INTEGRATION-111827?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/VECTOR%20SEARCH-111827?style=for-the-badge"/>
 <img src="https://img.shields.io/badge/AI%20SYSTEMS-111827?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/API%20INTEGRATION-111827?style=for-the-badge"/>
 
 </div>
 
@@ -110,16 +139,33 @@
 
 <a href="https://github.com/yeabsiragebre/Cram">
 
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=yeabsiragebre&repo=Cram&theme=tokyonight&hide_border=true"/>
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=yeabsiragebre&repo=Cram&theme=tokyonight&hide_border=true" alt="Cram Repository"/>
 
 </a>
 
 <br><br>
 
-<img src="https://img.shields.io/badge/AI%20STUDY%20PLATFORM-8B5CF6?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/RAG-111827?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/LLM-111827?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/EXAM%20GENERATION-111827?style=for-the-badge"/>
+<img src="./assets/cram-architecture.svg" width="90%" alt="Cram Architecture"/>
+
+</div>
+
+<br>
+
+<div align="center">
+
+## `PROJECTS`
+
+<br>
+
+<a href="https://github.com/yeabsiragebre?tab=repositories">
+<img src="https://img.shields.io/badge/ALL%20REPOSITORIES-181717?style=for-the-badge&logo=github"/>
+</a>
+
+ 
+
+<a href="https://github.com/yeabsiragebre?tab=stars">
+<img src="https://img.shields.io/badge/STARRED%20PROJECTS-8B5CF6?style=for-the-badge&logo=github"/>
+</a>
 
 </div>
 
@@ -147,7 +193,7 @@
 
 <br>
 
-<img src="https://skillicons.dev/icons?i=python,git,github,vscode,linux,docker"/>
+<img src="https://skillicons.dev/icons?i=python,git,github,vscode,linux,docker" alt="Developer Environment"/>
 
 </div>
 
@@ -155,20 +201,14 @@
 
 <div align="center">
 
-## `PROFILE`
+<img src="https://img.shields.io/github/followers/yeabsiragebre?style=for-the-badge&logo=github&label=FOLLOWERS"/>
+<img src="https://img.shields.io/github/stars/yeabsiragebre?style=for-the-badge&logo=github&label=STARS"/>
+<img src="https://img.shields.io/github/commit-activity/y/yeabsiragebre?style=for-the-badge&logo=github&label=ACTIVITY"/>
 
-<br>
+<br><br>
 
 <a href="https://github.com/yeabsiragebre?tab=repositories">
-<img src="https://img.shields.io/badge/VIEW%20REPOSITORIES-181717?style=for-the-badge&logo=github"/>
-</a>
-
-<a href="https://github.com/yeabsiragebre?tab=stars">
-<img src="https://img.shields.io/badge/VIEW%20STARS-181717?style=for-the-badge&logo=github"/>
-</a>
-
-<a href="https://github.com/yeabsiragebre?tab=followers">
-<img src="https://img.shields.io/badge/FOLLOW-8B5CF6?style=for-the-badge&logo=github"/>
+<img src="https://img.shields.io/badge/EXPLORE%20GITHUB-181717?style=for-the-badge&logo=github"/>
 </a>
 
 </div>
