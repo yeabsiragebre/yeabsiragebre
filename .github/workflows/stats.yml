@@ -9,27 +9,27 @@ permissions:
   contents: write
 
 jobs:
-  generate:
+  generate-stats:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Install dependencies
-        run: pip install requests
-
-      - name: Generate futuristic SVGs
+      - name: Generate futuristic statistics
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/generate_stats.py
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          python scripts/generate_stats.py
 
-      - name: Commit updated SVGs
+      - name: Commit generated statistics
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -37,9 +37,12 @@ jobs:
           git add profile/stats.svg profile/top-langs.svg
 
           if git diff --cached --quiet; then
-            echo "No changes detected."
+            echo "No statistics changes detected."
             exit 0
           fi
 
-          git commit -m "Update futuristic GitHub stats"
-          git push
+          git commit -m "Update futuristic GitHub statistics"
+
+          git pull --rebase origin main
+
+          git push origin main
