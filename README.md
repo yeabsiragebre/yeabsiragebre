@@ -20,9 +20,9 @@
 
 <br>
 
-<img src="./profile/stats.svg" width="49%" alt="GitHub Statistics"/>
+<img src="https://github-readme-stats.vercel.app/api?username=yeabsiragebre&show_icons=true&include_all_commits=true&theme=tokyonight&hide_border=true&rank_icon=github" width="49%" alt="GitHub Statistics"/>
 
-<img src="./profile/top-langs.svg" width="49%" alt="Most Used Languages"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yeabsiragebre&layout=donut&langs_count=8&theme=tokyonight&hide_border=true" width="49%" alt="Most Used Languages"/>
 
 <br><br>
 
@@ -30,7 +30,7 @@
 
 <br><br>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=yeabsiragebre&bg_color=0D1117&color=8B5CF6&line=8B5CF6&point=FFFFFF&area=true&hide_border=true&custom_title=Contribution%20Activity" width="95%" alt="Contribution Activity"/>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=yeabsiragebre&theme=tokyo-night&hide_border=true" width="95%" alt="Contribution Activity"/>
 
 <br><br>
 
@@ -111,7 +111,7 @@
 
 <a href="https://github.com/yeabsiragebre/Cram">
 
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=yeabsiragebre&repo=Cram&theme=tokyonight&hide_border=true" alt="Cram"/>
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=yeabsiragebre&repo=Cram&theme=tokyonight&hide_border=true" alt="Cram Repository"/>
 
 </a>
 
@@ -121,10 +121,6 @@
 <img src="https://img.shields.io/badge/RAG-111827?style=for-the-badge"/>
 <img src="https://img.shields.io/badge/LLMs-111827?style=for-the-badge"/>
 <img src="https://img.shields.io/badge/EXAM%20GENERATION-111827?style=for-the-badge"/>
-
-<br><br>
-
-<img src="./assets/cram-architecture.svg" width="90%" alt="Cram Architecture"/>
 
 </div>
 
@@ -137,17 +133,13 @@
 <br>
 
 <a href="https://github.com/yeabsiragebre?tab=repositories">
-
 <img src="https://img.shields.io/badge/VIEW%20ALL%20REPOSITORIES-181717?style=for-the-badge&logo=github"/>
-
 </a>
 
  
 
 <a href="https://github.com/yeabsiragebre?tab=stars">
-
 <img src="https://img.shields.io/badge/STARRED%20PROJECTS-8B5CF6?style=for-the-badge&logo=github"/>
-
 </a>
 
 </div>
@@ -187,6 +179,12 @@
 <img src="https://img.shields.io/github/followers/yeabsiragebre?style=for-the-badge&logo=github&label=FOLLOWERS"/>
 <img src="https://img.shields.io/github/stars/yeabsiragebre?style=for-the-badge&logo=github&label=STARS"/>
 <img src="https://img.shields.io/github/commit-activity/y/yeabsiragebre?style=for-the-badge&logo=github&label=ACTIVITY"/>
+
+<br><br>
+
+<a href="https://github.com/yeabsiragebre">
+<img src="https://img.shields.io/badge/GITHUB-181717?style=for-the-badge&logo=github"/>
+</a>
 
 </div>
 
