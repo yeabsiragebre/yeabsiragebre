@@ -1,248 +1,246 @@
+<div align="center">
+
 # `Y E A B S I R A`
 
-### `COMPUTER SCIENCE` · `AI ENGINEERING` · `SOFTWARE DEVELOPMENT`
+### `AI ENGINEERING` · `COMPUTER SCIENCE` · `SOFTWARE`
 
----
+<br>
 
-## `GITHUB OVERVIEW`
-
-<div align="center">
-
-<img src="https://github-stats-extended.vercel.app/api?username=yeabsiragebre&show_icons=true&include_all_commits=true&count_private=true&theme=tokyonight&hide_border=true" width="49%"/>
-
-<img src="https://github-stats-extended.vercel.app/api/top-langs/?username=yeabsiragebre&layout=donut&theme=tokyonight&hide_border=true&langs_count=8" width="49%"/>
-
-</div>
-
----
-
-## `DEVELOPMENT ACTIVITY`
-
-<div align="center">
-
-<img src="https://streak-stats.demolab.com/?user=yeabsiragebre&theme=tokyonight&hide_border=true&background=0D1117" width="75%"/>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=19&duration=3000&pause=1000&color=7C3AED&center=true&vCenter=true&width=650&lines=Building+AI-powered+applications;Engineering+software+systems;Learning+%7C+Building+%7C+Iterating" />
 
 <br><br>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=yeabsiragebre&theme=tokyo-night&hide_border=true&area=true&custom_title=Contribution%20Activity" width="100%"/>
+<img src="https://komarev.com/ghpvc/?username=yeabsiragebre&style=for-the-badge&color=7C3AED&label=PROFILE+VIEWS"/>
+
+</div>
+
+<br>
+
+<div align="center">
+
+```text
+╭──────────────────────────────────────────────────────────────╮
+│                                                              │
+│   YEABSIRA                                                    │
+│                                                              │
+│   COMPUTER SCIENCE      →      AI ENGINEERING                │
+│                                                              │
+│   BUILDING SYSTEMS      →      SOLVING PROBLEMS              │
+│                                                              │
+╰──────────────────────────────────────────────────────────────╯
+```
 
 </div>
 
 ---
 
-## `CONTRIBUTION SNAKE`
+<div align="center">
+
+## `GITHUB`
+
+<img src="./profile/stats.svg" width="49%"/>
+
+<img src="./profile/top-langs.svg" width="49%"/>
+
+<br><br>
+
+<img src="./profile/streak.svg" width="75%"/>
+
+</div>
+
+---
 
 <div align="center">
+
+## `ACTIVITY`
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=yeabsiragebre&bg_color=0D1117&color=8B5CF6&line=7C3AED&point=FFFFFF&area=true&hide_border=true&custom_title=DEVELOPMENT%20ACTIVITY" width="100%"/>
+
+</div>
+
+---
+
+<div align="center">
+
+## `CONTRIBUTIONS`
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./github-contribution-grid-snake-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./github-contribution-grid-snake.svg">
-  <img src="./github-contribution-grid-snake.svg" width="100%" alt="GitHub contribution snake">
+  <img src="./github-contribution-grid-snake.svg" width="100%" alt="Contribution Snake"/>
 </picture>
 
 </div>
 
 ---
 
-## `GITHUB TROPHIES`
-
 <div align="center">
 
-<img src="https://github-profile-trophy.vercel.app/?username=yeabsiragebre&theme=tokyonight&no-frame=true&no-bg=true&margin-w=6&row=2&column=6" width="100%"/>
+## `ACHIEVEMENTS`
+
+<img src="https://github-profile-trophy.vercel.app/?username=yeabsiragebre&theme=matrix&no-frame=true&no-bg=true&margin-w=6&row=2&column=6" width="100%"/>
 
 </div>
 
 ---
 
-## `TECHNOLOGY MATRIX`
-
 <div align="center">
 
-### `LANGUAGES`
+## `TECH STACK`
 
-<img src="https://skillicons.dev/icons?i=python,java,cpp,javascript,typescript,html,css,sql,bash&perline=9"/>
+<br>
 
-<br><br>
-
-### `FRAMEWORKS · DATABASES · INFRASTRUCTURE`
-
-<img src="https://skillicons.dev/icons?i=fastapi,nodejs,react,nextjs,pytorch,tensorflow,postgres,mongodb,redis&perline=9"/>
+<img src="https://skillicons.dev/icons?i=python,java,cpp,javascript,typescript,html,css,sql&perline=8"/>
 
 <br><br>
 
-### `TOOLS`
+<img src="https://skillicons.dev/icons?i=fastapi,nodejs,react,nextjs,pytorch,tensorflow&perline=6"/>
 
-<img src="https://skillicons.dev/icons?i=git,github,vscode,linux,docker,vercel&perline=8"/>
+<br><br>
+
+<img src="https://skillicons.dev/icons?i=postgres,mongodb,redis,git,github,docker,linux,vscode&perline=8"/>
 
 </div>
 
 ---
 
-<table>
-<tr>
+<div align="center">
 
-<td width="50%" align="center">
+## `AI`
 
-## `AI ENGINEERING`
+`LLMs` · `RAG` · `EMBEDDINGS` · `AI AGENTS` · `TOOL CALLING`
 
-`LLMs`
+<br>
 
-`RAG`
+## `ENGINEERING`
 
-`EMBEDDINGS`
+`BACKEND` · `APIs` · `DATABASES` · `SYSTEM DESIGN` · `DEPLOYMENT`
 
-`AI AGENTS`
+<br>
 
-`TOOL CALLING`
+## `COMPUTING`
 
-`LLM APIs`
+`DATA STRUCTURES` · `ALGORITHMS` · `COMPLEXITY` · `PROBLEM SOLVING`
 
-</td>
-
-<td width="50%" align="center">
-
-## `SOFTWARE ENGINEERING`
-
-`BACKEND`
-
-`REST APIs`
-
-`DATABASES`
-
-`SYSTEM DESIGN`
-
-`ARCHITECTURE`
-
-`DEPLOYMENT`
-
-</td>
-
-</tr>
-</table>
+</div>
 
 ---
+
+<div align="center">
+
+## `CRAM`
+
+```text
+                         ┌─────────────┐
+                         │   DOCUMENT  │
+                         └──────┬──────┘
+                                ↓
+                         ┌─────────────┐
+                         │  INGESTION  │
+                         └──────┬──────┘
+                                ↓
+                         ┌─────────────┐
+                         │  CHUNKING   │
+                         └──────┬──────┘
+                                ↓
+                         ┌─────────────┐
+                         │ EMBEDDINGS  │
+                         └──────┬──────┘
+                                ↓
+                         ┌─────────────┐
+                         │VECTOR SEARCH│
+                         └──────┬──────┘
+                                ↓
+                         ┌─────────────┐
+                         │     LLM     │
+                         └──────┬──────┘
+                                ↓
+                         ┌─────────────┐
+                         │ EXAM ENGINE │
+                         └─────────────┘
+```
+
+</div>
+
+---
+
+<div align="center">
 
 ## `CURRENT FOCUS`
 
-<div align="center">
-
-<img src="https://img.shields.io/badge/AI%20ENGINEERING-7C3AED?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/LLM%20APPLICATIONS-7C3AED?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/RAG-7C3AED?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/BACKEND-7C3AED?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/DATA%20STRUCTURES-7C3AED?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/ALGORITHMS-7C3AED?style=for-the-badge"/>
+```text
+AI APPLICATIONS
+       ↓
+LLM INTEGRATION
+       ↓
+RAG
+       ↓
+BACKEND SYSTEMS
+       ↓
+ALGORITHMS
+       ↓
+SYSTEM DESIGN
+```
 
 </div>
 
 ---
 
-## `PROJECT ARCHITECTURE`
-
-<table>
-<tr>
-
-<td width="50%" valign="top">
-
-### `CRAM`
-
-```text
-DOCUMENT
-   ↓
-INGESTION
-   ↓
-CHUNKING
-   ↓
-EMBEDDING
-   ↓
-VECTOR SEARCH
-   ↓
-LLM
-   ↓
-INTERACTIVE EXAM
-```
-
-</td>
-
-<td width="50%" valign="top">
-
-### `AI APPLICATION`
-
-```text
-USER
- ↓
-FRONTEND
- ↓
-API
- ↓
-AI ENGINE
- ├─ LLM
- ├─ TOOLS
- ├─ DATABASE
- └─ VECTOR STORE
- ↓
-RESPONSE
-```
-
-</td>
-
-</tr>
-</table>
-
----
-
-## `BUILDING`
-
 <div align="center">
-
-<a href="https://github.com/yeabsiragebre">
-<img src="https://img.shields.io/badge/AI%20APPLICATIONS-7C3AED?style=for-the-badge&logo=github"/>
-</a>
-
-<a href="https://github.com/yeabsiragebre?tab=repositories">
-<img src="https://img.shields.io/badge/ALGORITHMS%20%26%20DSA-7C3AED?style=for-the-badge&logo=github"/>
-</a>
-
-</div>
-
----
-
-## `2026 DEVELOPMENT TARGETS`
-
-|      🧠 DSA     | 🤖 AI |  ⚙️ SYSTEMS  |     🚀 BUILD    | 🌎 OPEN SOURCE |
-| :-------------: | :---: | :----------: | :-------------: | :------------: |
-|    Algorithms   |  LLMs | Architecture | Production Apps |  Contributions |
-| Data Structures |  RAG  |    Backend   |    Deployment   |  Collaboration |
-
----
 
 ## `DEVELOPER ENVIRONMENT`
 
-<div align="center">
-
-<img src="https://skillicons.dev/icons?i=python,git,github,vscode,linux,docker"/>
+<img src="https://skillicons.dev/icons?i=python,vscode,git,github,linux,docker"/>
 
 <br><br>
 
-`PYTHON` · `GIT` · `GITHUB` · `VS CODE` · `LINUX` · `DOCKER`
+`PYTHON` · `VS CODE` · `GIT` · `GITHUB` · `LINUX` · `DOCKER`
 
 </div>
 
 ---
-
-## `PROFILE SIGNAL`
 
 <div align="center">
 
-<img src="https://img.shields.io/github/commit-activity/y/yeabsiragebre?style=for-the-badge&logo=github&label=YEARLY%20COMMITS"/>
+## `2026`
 
-<img src="https://img.shields.io/github/last-commit/yeabsiragebre/yeabsiragebre?style=for-the-badge&logo=github&label=LAST%20COMMIT"/>
-
-<img src="https://img.shields.io/github/repos/yeabsiragebre?style=for-the-badge&logo=github&label=PUBLIC%20REPOS"/>
+```text
+          DSA
+           │
+           ▼
+     ┌───────────┐
+     │   BUILD   │
+     └─────┬─────┘
+           │
+           ▼
+     AI ENGINEERING
+           │
+           ▼
+     ┌───────────┐
+     │   SHIP    │
+     └─────┬─────┘
+           │
+           ▼
+      OPEN SOURCE
+```
 
 </div>
 
 ---
+
+<div align="center">
+
+## `SIGNAL`
+
+<img src="https://img.shields.io/github/followers/yeabsiragebre?style=for-the-badge&logo=github&label=FOLLOWERS"/>
+
+<img src="https://img.shields.io/github/stars/yeabsiragebre?style=for-the-badge&logo=github&label=STARS"/>
+
+<img src="https://img.shields.io/github/commit-activity/y/yeabsiragebre?style=for-the-badge&logo=github&label=ACTIVITY"/>
+
+</div>
+
+<br>
 
 <div align="center">
 
