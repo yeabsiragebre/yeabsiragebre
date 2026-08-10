@@ -163,53 +163,6 @@ def get_languages(repositories):
     return dict(totals)
 
 
-def get_contribution_calendar():
-    """Return real contribution-day counts from GitHub's contribution calendar."""
-    end = datetime.now(timezone.utc).date()
-    start = end - timedelta(days=364)
-
-    query = """
-    query($login: String!, $from: DateTime!, $to: DateTime!) {
-      user(login: $login) {
-        contributionsCollection(from: $from, to: $to) {
-          contributionCalendar {
-            totalContributions
-            weeks {
-              contributionDays {
-                date
-                contributionCount
-                contributionLevel
-              }
-            }
-          }
-        }
-      }
-    }
-    """
-
-    data = github_graphql(
-        query,
-        {
-            "login": USERNAME,
-            "from": f"{start.isoformat()}T00:00:00Z",
-            "to": f"{end.isoformat()}T23:59:59Z",
-        },
-    )
-
-    daily = {}
-    total = 0
-
-    try:
-        calendar = data["user"]["contributionsCollection"]["contributionCalendar"]
-        total = calendar.get("totalContributions", 0)
-        for week in calendar.get("weeks", []):
-            for day in week.get("contributionDays", []):
-                daily[day["date"]] = day.get("contributionCount", 0)
-    except (TypeError, KeyError):
-        print("[WARN] Contribution calendar unavailable.")
-        return {}, 0
-
-    return daily, total
 
 
 # ============================================================
@@ -444,47 +397,57 @@ def contribution_matrix(daily, x=42, y=305, cols=53, rows=7, cell=9, gap=3):
     return "".join(out)
 
 
-def generate_stats_svg(user, repositories, daily, total_contributions):
+def generate_stats_svg(user, repositories, daily=None, total_contributions=0):
     WIDTH = 900
     HEIGHT = 620
 
     public_repositories = user.get("public_repos", 0)
     followers = user.get("followers", 0)
     following = user.get("following", 0)
-
     stars = sum(repo.get("stargazers_count", 0) for repo in repositories)
     forks = sum(repo.get("forks_count", 0) for repo in repositories)
     private_repositories = sum(1 for repo in repositories if repo.get("private"))
+    open_issues = sum(repo.get("open_issues_count", 0) for repo in repositories)
+    watched = sum(repo.get("watchers_count", 0) for repo in repositories)
 
-    today = datetime.now(timezone.utc).date()
-    recent_days = [today - timedelta(days=i) for i in range(29, -1, -1)]
-    recent_values = [daily.get(str(day), 0) for day in recent_days]
-    recent_total = sum(recent_values)
-    recent_peak = max(recent_values, default=1)
+    # A live-looking status derived from the current GitHub snapshot.
+    activity_state = "LIVE SNAPSHOT"
+    total_repos = public_repositories + private_repositories
 
-    if recent_total >= 50:
-        activity_state = "HIGH ACTIVITY"
-    elif recent_total >= 15:
-        activity_state = "ACTIVE"
-    elif recent_total > 0:
-        activity_state = "LOW ACTIVITY"
-    else:
-        activity_state = "STANDBY"
+    cards = [
+        (42, 118, 396, 112, "REPOSITORIES", public_repositories,
+         f"{private_repositories} PRIVATE", CYAN, 0),
+        (462, 118, 396, 112, "FOLLOWERS", followers,
+         f"{following} FOLLOWING", CYAN_2, 1),
+        (42, 246, 396, 112, "STARS", stars,
+         "TOTAL PROJECT STARS", VIOLET, 2),
+        (462, 246, 396, 112, "FORKS", forks,
+         f"{open_issues} OPEN ISSUES", LIME, 3),
+    ]
 
-    matrix = activity_grid_large(daily, WIDTH=WIDTH)
-
-    graph_x, graph_y, graph_w, graph_h = 48, 526, 804, 38
-    graph_points = []
-    for i, value in enumerate(recent_values):
-        x = graph_x + (i / max(1, len(recent_values)-1)) * graph_w
-        y = graph_y + graph_h - (value / max(1, recent_peak)) * graph_h
-        graph_points.append(f"{x:.1f},{y:.1f}")
-    graph_polyline = " ".join(graph_points)
+    def advanced_tile(x, y, w, h, label, value, sub, accent, index):
+        # Larger typography and richer visual hierarchy.
+        return f"""
+        <g>
+          <rect x="{x}" y="{y}" width="{w}" height="{h}" rx="14"
+                fill="{PANEL}" stroke="#1B252C" stroke-width="1"/>
+          <rect x="{x}" y="{y}" width="3" height="{h}" rx="2" fill="{accent}"/>
+          <circle class="pulse" cx="{x+w-25}" cy="{y+25}" r="4"
+                  fill="{accent}" filter="url(#glow)"
+                  style="animation-delay:{index*.25}s"/>
+          {text(x+22, y+31, label, 10, MUTED, 700, spacing=1.6)}
+          {text(x+22, y+73, f"{value:,}", 31, WHITE, 700)}
+          {text(x+22, y+98, sub, 9, DIM, 700, spacing=.8)}
+          <rect x="{x+w-112}" y="{y+h-14}" width="86" height="2" rx="1"
+                fill="{accent}" opacity=".25"/>
+          <rect x="{x+w-112}" y="{y+h-14}" width="{max(12, min(86, 12 + (int(value) % 75)))}"
+                height="2" rx="1" fill="{accent}" opacity=".85"/>
+        </g>
+        """
 
     svg = f"""
 <svg xmlns="http://www.w3.org/2000/svg"
      width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}">
-
   {defs()}
 
   <defs>
@@ -499,84 +462,65 @@ def generate_stats_svg(user, repositories, daily, total_contributions):
     <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#microgrid)"/>
     <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#scan)"/>
 
-    <circle cx="65" cy="75" r="130" fill="{CYAN}" opacity=".025"
-            filter="url(#softGlow)"/>
-    <circle cx="835" cy="540" r="150" fill="{VIOLET}" opacity=".018"
-            filter="url(#softGlow)"/>
+    <circle class="float" cx="70" cy="80" r="130" fill="{CYAN}"
+            opacity=".025" filter="url(#softGlow)"/>
+    <circle class="float" cx="840" cy="520" r="150" fill="{VIOLET}"
+            opacity=".018" filter="url(#softGlow)"/>
 
     <rect x="1" y="1" width="898" height="618" rx="20"
           fill="none" stroke="#273139" stroke-opacity=".9"/>
-
     {corner_brackets(WIDTH, HEIGHT)}
 
     <rect x="42" y="27" width="816" height="2"
           fill="url(#accentLine)" filter="url(#glow)"/>
 
-    {text(42, 62, "YEABSIRA", 20, WHITE, 700, spacing=1.2)}
-    {text(42, 83, "GITHUB // LIVE TELEMETRY", 8, MUTED, 700, spacing=1.2)}
+    {text(42, 66, "YEABSIRA", 25, WHITE, 700, spacing=1.3)}
+    {text(42, 91, "GITHUB // LIVE TELEMETRY", 11, MUTED, 700, spacing=1.5)}
 
-    <circle class="pulse" cx="782" cy="53" r="4"
+    <circle class="pulse" cx="775" cy="54" r="5"
             fill="{CYAN}" filter="url(#glow)"/>
-    {text(852, 56, "SYSTEM ONLINE", 8, CYAN, 700, "end", spacing=1.1)}
-    {text(852, 75, activity_state, 7, DIM, 700, "end", spacing=1)}
+    {text(852, 58, "SYSTEM ONLINE", 11, CYAN, 700, "end", spacing=1.2)}
+    {text(852, 80, activity_state, 9, DIM, 700, "end", spacing=1.1)}
 
-    <!-- HEADLINE METRICS -->
-    {stat_tile(42, 102, 198, 88, "REPOSITORIES",
-               public_repositories, "PUBLIC PROJECTS", CYAN, 0)}
-    {stat_tile(252, 102, 198, 88, "FOLLOWERS",
-               followers, "NETWORK", CYAN_2, 1)}
-    {stat_tile(462, 102, 198, 88, "STARS",
-               stars, "PROJECT IMPACT", VIOLET, 2)}
-    {stat_tile(672, 102, 186, 88, "FORKS",
-               forks, "COLLABORATION", CYAN, 3)}
+    <!-- 2 x 2 primary statistics -->
+    {"".join(advanced_tile(*card) for card in cards)}
 
-    <!-- DATA STRIP -->
-    <rect x="42" y="204" width="816" height="48" rx="8"
+    <!-- Secondary telemetry, still part of the same unified card -->
+    <rect x="42" y="382" width="816" height="168" rx="14"
           fill="#070A0D" stroke="#172026"/>
 
-    {text(58, 224, "PRIVATE", 7, DIM, 700, spacing=1)}
-    {text(58, 241, private_repositories, 12, WHITE, 700)}
+    {text(62, 413, "REPOSITORY TELEMETRY", 11, WHITE, 700, spacing=1.4)}
+    {text(838, 413, "LIVE SNAPSHOT", 9, CYAN, 700, "end", spacing=1.1)}
 
-    {text(220, 224, "FOLLOWING", 7, DIM, 700, spacing=1)}
-    {text(220, 241, following, 12, WHITE, 700)}
+    {text(62, 449, "PUBLIC PROJECTS", 9, DIM, 700, spacing=1.0)}
+    {text(62, 477, public_repositories, 21, WHITE, 700)}
 
-    {text(390, 224, "365D CONTRIBUTIONS", 7, DIM, 700, spacing=1)}
-    {text(390, 241, f"{total_contributions:,}", 12, WHITE, 700)}
+    {text(245, 449, "PRIVATE PROJECTS", 9, DIM, 700, spacing=1.0)}
+    {text(245, 477, private_repositories, 21, WHITE, 700)}
 
-    {text(650, 224, "30D EVENTS", 7, DIM, 700, spacing=1)}
-    {text(650, 241, f"{recent_total:,}", 12, CYAN, 700)}
+    {text(428, 449, "WATCHERS", 9, DIM, 700, spacing=1.0)}
+    {text(428, 477, watched, 21, WHITE, 700)}
 
-    {text(842, 241, "LIVE", 7, CYAN, 700, "end", spacing=1)}
+    {text(611, 449, "OPEN ISSUES", 9, DIM, 700, spacing=1.0)}
+    {text(611, 477, open_issues, 21, WHITE, 700)}
 
-    <!-- CONTRIBUTION MATRIX -->
-    {text(42, 280, "CONTRIBUTION MATRIX", 8, WHITE, 700, spacing=1.3)}
-    {text(858, 280, "LAST 365 DAYS", 7, DIM, 700, "end", spacing=1.1)}
-
-    {matrix}
-
-    <!-- ACTIVITY TELEMETRY -->
-    {text(42, 489, "30-DAY ACTIVITY", 8, MUTED, 700, spacing=1.2)}
-    {text(858, 489, f"PEAK {recent_peak}", 7, DIM, 700, "end", spacing=1)}
-
-    <line x1="48" y1="564" x2="852" y2="564"
+    <line x1="62" y1="506" x2="838" y2="506"
           stroke="#182127" stroke-width="1"/>
 
-    <polyline points="{graph_polyline}" fill="none"
-              stroke="url(#bar)" stroke-width="2.3"
-              stroke-linecap="round" stroke-linejoin="round"
-              filter="url(#glow)"/>
+    {text(62, 532, "DATA SOURCE", 8, DIM, 700, spacing=1.1)}
+    {text(165, 532, "GITHUB REST API", 9, WHITE, 700, spacing=.8)}
+    {text(365, 532, "AUTH", 8, DIM, 700, spacing=1.1)}
+    {text(414, 532, "GH_TOKEN", 9, WHITE, 700, spacing=.8)}
+    {text(575, 532, "REPOS", 8, DIM, 700, spacing=1.1)}
+    {text(625, 532, total_repos, 9, WHITE, 700)}
 
-    <circle cx="852" cy="{graph_y + graph_h - (recent_values[-1] / max(1, recent_peak)) * graph_h}"
-            r="3" fill="{CYAN}" filter="url(#glow)"/>
-
-    {text(42, 600, "BUILDING INTELLIGENT SYSTEMS", 7, DIM, 700, spacing=1)}
-    {text(858, 600, "LIVE GITHUB DATA", 7, DIM, 700, "end", spacing=1)}
-
+    <!-- Footer replaces the removed notes -->
+    {text(42, 586, "REAL-TIME GITHUB PROFILE INTELLIGENCE", 10, WHITE, 700, spacing=1.0)}
+    {text(858, 586, "ONLINE", 10, CYAN, 700, "end", spacing=1.1)}
   </g>
 </svg>
 """
     return svg
-
 
 def stat_card_large(x, y, width, height, title, value, subtitle, accent):
     # Compatibility helper retained for the existing renderer structure.
@@ -665,8 +609,8 @@ def generate_languages_svg(languages):
     ]
 
     rows = []
-    y = 132
-    row_height = 48
+    y = 140
+    row_height = 50
     bar_x = 245
     bar_width = 575
 
@@ -676,15 +620,15 @@ def generate_languages_svg(languages):
 
         rows.append(f"""
         <g>
-          {text(48, y + 13, language.upper(), 10, WHITE, 700, spacing=.7)}
-          {text(48, y + 31, format_bytes(amount), 7, DIM, 700)}
+          {text(48, y + 15, language.upper(), 12, WHITE, 700, spacing=.8)}
+          {text(48, y + 36, format_bytes(amount), 9, DIM, 700)}
 
           <rect x="{bar_x}" y="{y+2}" width="{bar_width}" height="8"
                 rx="4" fill="#11171B"/>
           <rect x="{bar_x}" y="{y+2}" width="{fill_width}" height="8"
                 rx="4" fill="{color}" filter="url(#glow)"/>
 
-          {text(850, y + 9, f"{percentage:.1f}%", 9, color, 700, "end")}
+          {text(850, y + 12, f"{percentage:.1f}%", 11, color, 700, "end")}
 
           <line x1="48" y1="{y+41}" x2="850" y2="{y+41}"
                 stroke="#141C21" stroke-width="1"/>
@@ -731,26 +675,26 @@ def generate_languages_svg(languages):
     <rect x="42" y="27" width="816" height="2"
           fill="url(#accentLine)" filter="url(#glow)"/>
 
-    {text(42, 62, "LANGUAGE MATRIX", 20, WHITE, 700, spacing=1.1)}
-    {text(42, 83, "CODEBASE // BYTE DISTRIBUTION", 8, MUTED, 700, spacing=1.2)}
+    {text(42, 62, "LANGUAGE MATRIX", 25, WHITE, 700, spacing=1.2)}
+    {text(42, 91, "CODEBASE // BYTE DISTRIBUTION", 11, MUTED, 700, spacing=1.5)}
 
     <circle class="pulse" cx="782" cy="53" r="4"
             fill="{CYAN}" filter="url(#glow)"/>
     {text(852, 56, "SYSTEM ONLINE", 8, CYAN, 700, "end", spacing=1.1)}
     {text(852, 75, "LANGUAGE ANALYSIS", 7, DIM, 700, "end", spacing=1)}
 
-    {text(48, 108, f"{len(language_data)} PRIMARY LANGUAGES", 7,
+    {text(48, 116, f"{len(language_data)} PRIMARY LANGUAGES", 9,
            MUTED, 700, spacing=1.2)}
-    {text(850, 108, f"{len(languages)} TOTAL DETECTED", 7,
+    {text(850, 116, f"{len(languages)} TOTAL DETECTED", 9,
            DIM, 700, "end", spacing=1)}
 
     {"".join(rows)}
 
     <rect x="42" y="570" width="816" height="1" fill="#182127"/>
 
-    {text(42, 594, "SHARE BASED ON GITHUB BYTE DISTRIBUTION",
-           7, DIM, 700, spacing=.7)}
-    {text(858, 594, "LIVE REPOSITORY DATA", 7, DIM, 700, "end", spacing=1)}
+    {text(42, 596, "LANGUAGE DISTRIBUTION // SAME LIVE GITHUB DATA LAYER",
+           10, WHITE, 700, spacing=.8)}
+    {text(858, 596, "ONLINE", 10, CYAN, 700, "end", spacing=1.1)}
 
   </g>
 </svg>
@@ -789,7 +733,7 @@ def generate_combined_svg(user, repositories, daily, total_contributions, langua
 
     WIDTH = 900
     CARD_HEIGHT = 620
-    GAP = 24
+    GAP = 14
     HEIGHT = CARD_HEIGHT * 2 + GAP
 
     return f"""<svg xmlns="http://www.w3.org/2000/svg"
@@ -839,9 +783,9 @@ def main():
     languages = get_languages(repositories)
     print(f"[OK] Languages discovered: {len(languages)}")
 
-    print("[4/5] Loading contribution calendar...")
-    daily, total_contributions = get_contribution_calendar()
-    print(f"[OK] Contribution total: {total_contributions:,}")
+    print("[4/5] Preparing live telemetry...")
+    daily, total_contributions = {}, 0
+    print("[OK] Contribution charts disabled by design.")
 
     print("[5/5] Rendering Blackout HUD...")
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
