@@ -1,3 +1,4 @@
+```yaml
 name: Generate Futuristic GitHub Stats
 
 on:
@@ -17,6 +18,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -30,7 +32,7 @@ jobs:
 
       - name: Generate futuristic SVGs
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           python scripts/generate_stats.py
 
@@ -51,3 +53,4 @@ jobs:
           git pull --rebase origin main
 
           git push origin main
+```
