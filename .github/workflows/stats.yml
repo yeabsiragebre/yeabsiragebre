@@ -1,73 +1,75 @@
 name: Update GitHub Stats
 
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: "0 0 * * *"
+workflow_dispatch:
+schedule:
+- cron: "0 0 * * *"
 
 permissions:
-  contents: write
+contents: write
 
 jobs:
-  stats:
-    runs-on: ubuntu-latest
+stats:
+runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+```
+steps:
+  - name: Checkout repository
+    uses: actions/checkout@v4
+    with:
+      fetch-depth: 0
 
-      - name: Generate GitHub Statistics
-        uses: stats-organization/github-readme-stats-action@v2
-        with:
-          card: stats
-          options: >-
-            username=yeabsiragebre&
-            show_icons=true&
-            include_all_commits=true&
-            count_private=true&
-            theme=radical&
-            hide_border=true&
-            rank_icon=github&
-            card_width=495&
-            text_bold=true&
-            line_height=28
-          path: profile/stats.svg
-          token: ${{ secrets.GH_TOKEN }}
-          fail_on_error: true
+  - name: Generate GitHub Statistics
+    uses: stats-organization/github-readme-stats-action@v2
+    with:
+      card: stats
+      options: >-
+        username=yeabsiragebre&
+        show_icons=true&
+        include_all_commits=true&
+        count_private=true&
+        theme=radical&
+        hide_border=true&
+        rank_icon=github&
+        card_width=500&
+        text_bold=true&
+        line_height=30
+      path: profile/stats.svg
+      token: ${{ secrets.GH_TOKEN }}
+      fail_on_error: true
 
-      - name: Generate Most Used Languages
-        uses: stats-organization/github-readme-stats-action@v2
-        with:
-          card: top-langs
-          options: >-
-            username=yeabsiragebre&
-            layout=donut&
-            langs_count=8&
-            count_private=true&
-            hide_border=true&
-            theme=radical&
-            card_width=495&
-            text_bold=true
-          path: profile/top-langs.svg
-          token: ${{ secrets.GH_TOKEN }}
-          fail_on_error: true
+  - name: Generate Most Used Languages
+    uses: stats-organization/github-readme-stats-action@v2
+    with:
+      card: top-langs
+      options: >-
+        username=yeabsiragebre&
+        layout=donut&
+        langs_count=8&
+        count_private=true&
+        hide_border=true&
+        theme=radical&
+        card_width=500&
+        text_bold=true
+      path: profile/top-langs.svg
+      token: ${{ secrets.GH_TOKEN }}
+      fail_on_error: true
 
-      - name: Commit statistics
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+  - name: Commit statistics
+    run: |
+      git config user.name "github-actions[bot]"
+      git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add profile/stats.svg profile/top-langs.svg
+      git add profile/stats.svg profile/top-langs.svg
 
-          if git diff --cached --quiet; then
-            echo "No statistics changes detected."
-            exit 0
-          fi
+      if git diff --cached --quiet; then
+        echo "No statistics changes detected."
+        exit 0
+      fi
 
-          git commit -m "Update GitHub statistics"
+      git commit -m "Update GitHub statistics"
 
-          git pull --rebase origin main
+      git pull --rebase origin main
 
-          git push origin main
+      git push origin main
+```
