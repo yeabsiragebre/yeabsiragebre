@@ -286,6 +286,30 @@ def defs(seed=0):
       from {{ transform:translateX(-14px); }}
       to {{ transform:translateX(14px); }}
     }}
+    .hudPulse {{ animation:hudPulse 3.2s ease-in-out infinite; }}
+    .hudSweep {{ animation:hudSweep 6s linear infinite; }}
+    .hudRotate {{ transform-origin:450px 310px; animation:hudRotate 24s linear infinite; }}
+    .hudFlicker {{ animation:hudFlicker 4.5s ease-in-out infinite; }}
+    @keyframes hudPulse {{
+      0%,100% {{ opacity:.25; }}
+      50% {{ opacity:.85; }}
+    }}
+    @keyframes hudSweep {{
+      from {{ transform:translateX(-180px); opacity:0; }}
+      12% {{ opacity:.7; }}
+      50% {{ opacity:.35; }}
+      88% {{ opacity:.7; }}
+      to {{ transform:translateX(1180px); opacity:0; }}
+    }}
+    @keyframes hudRotate {{
+      from {{ transform:rotate(0deg); }}
+      to {{ transform:rotate(360deg); }}
+    }}
+    @keyframes hudFlicker {{
+      0%,96%,100% {{ opacity:1; }}
+      97% {{ opacity:.55; }}
+      98% {{ opacity:.9; }}
+    }}
   </style>
 </defs>
 """
@@ -435,13 +459,16 @@ def generate_stats_svg(user, repositories, daily=None, total_contributions=0):
           <circle class="pulse" cx="{x+w-25}" cy="{y+25}" r="4"
                   fill="{accent}" filter="url(#glow)"
                   style="animation-delay:{index*.25}s"/>
-          {text(x+22, y+31, label, 13, MUTED, 700, spacing=1.6)}
-          {text(x+22, y+73, f"{value:,}", 38, WHITE, 700)}
-          {text(x+22, y+98, sub, 12, DIM, 700, spacing=.8)}
-          <rect x="{x+w-112}" y="{y+h-14}" width="86" height="2" rx="1"
-                fill="{accent}" opacity=".25"/>
-          <rect x="{x+w-112}" y="{y+h-14}" width="{max(12, min(86, 12 + (int(value) % 75)))}"
-                height="2" rx="1" fill="{accent}" opacity=".85"/>
+          {text(x+22, y+31, label, 14, MUTED, 700, spacing=1.6)}
+          {text(x+22, y+73, f"{value:,}", 42, WHITE, 800)}
+          {text(x+22, y+98, sub, 13, DIM, 700, spacing=.8)}
+          <rect x="{x+w-132}" y="{y+h-15}" width="106" height="3" rx="1.5"
+                fill="{accent}" opacity=".10"/>
+          <rect class="hudSweep" x="{x+w-132}" y="{y+h-15}" width="106" height="3"
+                rx="1.5" fill="{accent}" opacity=".80"
+                style="animation-delay:{index*.45}s"/>
+          <circle class="hudPulse" cx="{x+w-20}" cy="{y+h-15}" r="3"
+                  fill="{accent}" style="animation-delay:{index*.35}s"/>
         </g>
         """
 
@@ -475,44 +502,46 @@ def generate_stats_svg(user, repositories, daily=None, total_contributions=0):
           fill="url(#accentLine)" filter="url(#glow)"/>
 
     <circle class="pulse" cx="52" cy="60" r="6" fill="{CYAN}" filter="url(#glow)"/>{text(68, 66, "SYSTEM ONLINE", 25, WHITE, 700, spacing=1.3)}
-    {text(68, 91, "LIVE GITHUB DATA", 11, MUTED, 700, spacing=1.5)}
+    {text(42, 96, "LIVE GITHUB DATA // PROFILE TELEMETRY", 12, MUTED, 700, spacing=1.6)}
 
 
     <!-- 2 x 2 primary statistics -->
     {"".join(advanced_tile(*card) for card in cards)}
 
-    <!-- Secondary telemetry, still part of the same unified card -->
+    <!-- Secondary telemetry: integrated into the same HUD surface -->
     <rect x="42" y="382" width="816" height="168" rx="14"
           fill="#070A0D" stroke="#172026"/>
 
-    {text(62, 413, "REPOSITORY TELEMETRY", 14, WHITE, 700, spacing=1.4)}
-    {text(838, 413, "LIVE SNAPSHOT", 12, CYAN, 700, "end", spacing=1.1)}
+    {text(62, 414, "LIVE REPOSITORY TELEMETRY", 14, WHITE, 800, spacing=1.5)}
+    {text(838, 414, "SYNCED", 12, CYAN, 700, "end", spacing=1.2)}
 
-    {text(62, 449, "PUBLIC PROJECTS", 12, DIM, 700, spacing=1.0)}
-    {text(62, 477, public_repositories, 21, WHITE, 700)}
+    {text(62, 450, "PUBLIC", 11, DIM, 700, spacing=1.1)}
+    {text(62, 481, public_repositories, 25, WHITE, 800)}
 
-    {text(245, 449, "PRIVATE PROJECTS", 12, DIM, 700, spacing=1.0)}
-    {text(245, 477, private_repositories, 21, WHITE, 700)}
+    {text(205, 450, "PRIVATE", 11, DIM, 700, spacing=1.1)}
+    {text(205, 481, private_repositories, 25, WHITE, 800)}
 
-    {text(428, 449, "WATCHERS", 12, DIM, 700, spacing=1.0)}
-    {text(428, 477, watched, 21, WHITE, 700)}
+    {text(348, 450, "WATCHERS", 11, DIM, 700, spacing=1.1)}
+    {text(348, 481, watched, 25, WHITE, 800)}
 
-    {text(611, 449, "OPEN ISSUES", 12, DIM, 700, spacing=1.0)}
-    {text(611, 477, open_issues, 21, WHITE, 700)}
+    {text(491, 450, "OPEN ISSUES", 11, DIM, 700, spacing=1.1)}
+    {text(491, 481, open_issues, 25, WHITE, 800)}
 
-    <line x1="62" y1="506" x2="838" y2="506"
+    {text(650, 450, "PROJECTS", 11, DIM, 700, spacing=1.1)}
+    {text(650, 481, total_repos, 25, CYAN, 800)}
+
+    <line x1="62" y1="507" x2="838" y2="507"
           stroke="#182127" stroke-width="1"/>
 
-    {text(62, 532, "DATA SOURCE", 11, DIM, 700, spacing=1.1)}
-    {text(165, 532, "GITHUB REST API", 11, WHITE, 700, spacing=.8)}
-    {text(365, 532, "AUTH", 11, DIM, 700, spacing=1.1)}
-    {text(414, 532, "GH_TOKEN", 11, WHITE, 700, spacing=.8)}
-    {text(575, 532, "REPOS", 11, DIM, 700, spacing=1.1)}
-    {text(625, 532, total_repos, 9, WHITE, 700)}
-
+    {text(62, 532, "SOURCE", 10, DIM, 700, spacing=1.1)}
+    {text(115, 532, "GITHUB REST API", 11, WHITE, 700)}
+    {text(310, 532, "AUTHENTICATED", 10, DIM, 700, spacing=1.0)}
+    {text(425, 532, "GH_TOKEN", 11, WHITE, 700)}
+    {text(575, 532, "STATUS", 10, DIM, 700, spacing=1.0)}
+    {text(630, 532, "LIVE", 11, CYAN, 800)}
     <!-- Footer replaces the removed notes -->
-    {text(42, 586, "REAL-TIME GITHUB PROFILE INTELLIGENCE", 12, WHITE, 700, spacing=1.0)}
-    {text(858, 586, "ONLINE", 12, CYAN, 700, "end", spacing=1.1)}
+    {text(42, 586, "GITHUB PROFILE INTELLIGENCE // LIVE DATA LAYER", 13, WHITE, 800, spacing=1.1)}
+    {text(858, 586, "ONLINE", 13, CYAN, 800, "end", spacing=1.2)}
   </g>
 </svg>
 """
@@ -619,10 +648,13 @@ def generate_languages_svg(languages):
           {text(48, y + 15, language.upper(), 15, WHITE, 700, spacing=.8)}
           {text(48, y + 36, format_bytes(amount), 11, DIM, 700)}
 
-          <rect x="{bar_x}" y="{y+2}" width="{bar_width}" height="8"
-                rx="4" fill="#11171B"/>
-          <rect x="{bar_x}" y="{y+2}" width="{fill_width}" height="8"
-                rx="4" fill="{color}" filter="url(#glow)"/>
+          <rect x="{bar_x}" y="{y+1}" width="{bar_width}" height="12"
+                rx="6" fill="#11171B"/>
+          <rect x="{bar_x}" y="{y+1}" width="{fill_width}" height="12"
+                rx="6" fill="{color}" filter="url(#glow)"/>
+          <rect class="hudSweep" x="{bar_x}" y="{y+1}" width="{fill_width}" height="12"
+                rx="6" fill="{color}" opacity=".28"
+                style="animation-delay:{index*.3}s"/>
 
           {text(850, y + 12, f"{percentage:.1f}%", 13, color, 700, "end")}
 
@@ -658,6 +690,16 @@ def generate_languages_svg(languages):
     <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#microgrid)"/>
     <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#scan)"/>
 
+    <g class="hudRotate" opacity=".11">
+      <circle cx="450" cy="620" r="340" fill="none"
+              stroke="{CYAN}" stroke-width="1"/>
+      <circle cx="450" cy="620" r="300" fill="none"
+              stroke="{VIOLET}" stroke-width="1"/>
+    </g>
+
+    <rect class="hudSweep" x="-180" y="0" width="180" height="{HEIGHT}"
+          fill="url(#accentLine)" opacity=".035"/>
+
     <circle cx="820" cy="80" r="130" fill="{VIOLET}"
             opacity=".018" filter="url(#softGlow)"/>
     <circle cx="70" cy="550" r="120" fill="{CYAN}"
@@ -671,8 +713,8 @@ def generate_languages_svg(languages):
     <rect x="42" y="27" width="816" height="2"
           fill="url(#accentLine)" filter="url(#glow)"/>
 
-    {text(42, 62, "LANGUAGE MATRIX", 25, WHITE, 700, spacing=1.2)}
-    {text(42, 91, "CODEBASE // BYTE DISTRIBUTION", 11, MUTED, 700, spacing=1.5)}
+    {text(42, 67, "LANGUAGE MATRIX", 28, WHITE, 800, spacing=1.4)}
+    {text(42, 96, "CODEBASE // BYTE DISTRIBUTION // LIVE REPOSITORY ANALYSIS", 12, MUTED, 700, spacing=1.6)}
 
     <circle class="pulse" cx="782" cy="53" r="4"
             fill="{CYAN}" filter="url(#glow)"/>
@@ -729,7 +771,7 @@ def generate_combined_svg(user, repositories, daily, total_contributions, langua
 
     WIDTH = 900
     CARD_HEIGHT = 620
-    GAP = 14
+    GAP = 4
     HEIGHT = CARD_HEIGHT * 2 + GAP
 
     return f"""<svg xmlns="http://www.w3.org/2000/svg"
@@ -762,6 +804,16 @@ def generate_combined_svg(user, repositories, daily, total_contributions, langua
     <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#bg)"/>
     <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#microgrid)"/>
     <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#scan)"/>
+
+    <g class="hudRotate" opacity=".11">
+      <circle cx="450" cy="620" r="340" fill="none"
+              stroke="{CYAN}" stroke-width="1"/>
+      <circle cx="450" cy="620" r="300" fill="none"
+              stroke="{VIOLET}" stroke-width="1"/>
+    </g>
+
+    <rect class="hudSweep" x="-180" y="0" width="180" height="{HEIGHT}"
+          fill="url(#accentLine)" opacity=".035"/>
 
     <!-- Both sections share one continuous visual surface. -->
     <g transform="translate(0,0)">
@@ -837,3 +889,7 @@ def main():
     print("  DATA:   LIVE GITHUB REST + GRAPHQL")
     print("  AUTH:   GH_TOKEN")
     print("=" * 68)
+
+
+if __name__ == "__main__":
+    main()
