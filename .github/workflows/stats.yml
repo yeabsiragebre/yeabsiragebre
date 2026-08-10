@@ -46,8 +46,8 @@ jobs:
             layout=donut&
             langs_count=8&
             count_private=true&
-            hide_border=true&
             theme=radical&
+            hide_border=true&
             card_width=500&
             text_bold=true
           path: profile/top-langs.svg
