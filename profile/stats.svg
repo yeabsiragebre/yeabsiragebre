@@ -1,460 +1,212 @@
-<svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="900"
-    height="430"
-    viewBox="0 0 900 430">
 
-    
-    <defs>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="650"
+     height="430"
+     viewBox="0 0 650 430">
+
+<style>
+    .title {
+        font-family: monospace;
+        font-size: 25px;
+        font-weight: bold;
+        fill: #ffffff;
+    }
+
+    .label {
+        font-family: monospace;
+        font-size: 14px;
+        fill: #8b9bb4;
+        letter-spacing: 2px;
+    }
+
+    .value {
+        font-family: monospace;
+        font-size: 29px;
+        font-weight: bold;
+        fill: #ffffff;
+    }
+
+    .small {
+        font-family: monospace;
+        font-size: 12px;
+        fill: #718096;
+    }
+
+    .accent {
+        fill: #ff2bd6;
+    }
+
+    .cyan {
+        fill: #00e5ff;
+    }
+
+    .green {
+        fill: #39ff88;
+    }
+
+    .glow {
+        filter: url(#glow);
+    }
+
+    .pulse {
+        animation: pulse 2s infinite;
+    }
+
+    .scan {
+        animation: scan 4s linear infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% { opacity: .45; }
+        50% { opacity: 1; }
+    }
+
+    @keyframes scan {
+        from { transform: translateY(-20px); }
+        to { transform: translateY(450px); }
+    }
+</style>
+
+<defs>
+
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#090914"/>
+        <stop offset="55%" stop-color="#111124"/>
+        <stop offset="100%" stop-color="#07070d"/>
+    </linearGradient>
+
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#ff2bd6"/>
+        <stop offset="50%" stop-color="#00e5ff"/>
+        <stop offset="100%" stop-color="#39ff88"/>
+    </linearGradient>
+
+    <filter id="glow">
+        <feGaussianBlur stdDeviation="4" result="blur"/>
+        <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+    </filter>
+
+    <pattern id="grid"
+             width="30"
+             height="30"
+             patternUnits="userSpaceOnUse">
+        <path d="M 30 0 L 0 0 0 30"
+              fill="none"
+              stroke="#ffffff"
+              stroke-opacity=".035"/>
+    </pattern>
+
+</defs>
 
-        <linearGradient
-            id="background"
-            x1="0"
-            y1="0"
-            x2="1"
-            y2="1">
+<rect width="650" height="430" rx="22"
+      fill="url(#background)"
+      stroke="#24243d"
+      stroke-width="2"/>
 
-            <stop
-                offset="0%"
-                stop-color="#020204"/>
+<rect width="650" height="430" rx="22"
+      fill="url(#grid)"/>
 
-            <stop
-                offset="50%"
-                stop-color="#0A0D14"/>
+<rect x="0" y="0"
+      width="650"
+      height="3"
+      fill="url(#line)"
+      class="glow"/>
 
-            <stop
-                offset="100%"
-                stop-color="#1A0830"/>
+<rect x="0" y="-30"
+      width="650"
+      height="20"
+      fill="#00e5ff"
+      opacity=".08"
+      class="scan"/>
 
-        </linearGradient>
+<text x="35" y="55" class="label">
+    GITHUB // CORE
+</text>
 
+<text x="35" y="92" class="title">
+    YEABSIRA
+</text>
 
-        <linearGradient
-            id="purpleGradient"
-            x1="0"
-            y1="0"
-            x2="1"
-            y2="0">
+<circle cx="590" cy="48"
+        r="7"
+        class="green pulse glow"/>
 
-            <stop
-                offset="0%"
-                stop-color="#6D28D9"/>
+<text x="535" y="78" class="small">
+    ONLINE
+</text>
 
-            <stop
-                offset="50%"
-                stop-color="#A855F7"/>
+<line x1="35" y1="112"
+      x2="615" y2="112"
+      stroke="url(#line)"
+      stroke-opacity=".5"/>
 
-            <stop
-                offset="100%"
-                stop-color="#D8B4FE"/>
+<!-- PUBLIC REPOSITORIES -->
 
-        </linearGradient>
+<text x="55" y="155" class="label">
+    REPOSITORIES
+</text>
 
+<text x="55" y="195" class="value">
+    0
+</text>
 
-        <filter
-            id="purpleGlow"
-            x="-50%"
-            y="-50%"
-            width="200%"
-            height="200%">
+<text x="55" y="220" class="small">
+    PUBLIC
+</text>
 
-            <feGaussianBlur
-                stdDeviation="3"
-                result="blur"/>
+<!-- FOLLOWERS -->
 
-            <feMerge>
+<text x="245" y="155" class="label">
+    FOLLOWERS
+</text>
 
-                <feMergeNode
-                    in="blur"/>
+<text x="245" y="195" class="value">
+    1
+</text>
 
-                <feMergeNode
-                    in="SourceGraphic"/>
+<text x="245" y="220" class="small">
+    NETWORK
+</text>
 
-            </feMerge>
+<!-- FOLLOWING -->
 
-        </filter>
+<text x="435" y="155" class="label">
+    FOLLOWING
+</text>
 
+<text x="435" y="195" class="value">
+    1
+</text>
 
-        <pattern
-            id="grid"
-            width="32"
-            height="32"
-            patternUnits="userSpaceOnUse">
+<text x="435" y="220" class="small">
+    CONNECTIONS
+</text>
 
-            <path
-                d="M32 0H0V32"
-                fill="none"
-                stroke="#8B5CF6"
-                stroke-opacity="0.055"/>
+<line x1="55" y1="250"
+      x2="595" y2="250"
+      stroke="#272741"/>
 
-        </pattern>
+<text x="55" y="290" class="label">
+    SYSTEM STATUS
+</text>
 
-    </defs>
-    
+<text x="55" y="325" class="cyan value">
+    ACTIVE
+</text>
 
-    <!-- BACKGROUND -->
+<text x="55" y="350" class="small">
+    AI ENGINEERING / SOFTWARE DEVELOPMENT
+</text>
 
-    <rect
-        width="900"
-        height="430"
-        rx="18"
-        fill="url(#background)"
-        stroke="#8B5CF6"
-        stroke-opacity="0.55"
-        stroke-width="1.5"/>
+<text x="55" y="385" class="small">
+    DATA STREAM // LIVE
+</text>
 
-    <rect
-        x="1"
-        y="1"
-        width="898"
-        height="428"
-        rx="17"
-        fill="url(#grid)"/>
+<circle cx="565" cy="382"
+        r="5"
+        class="cyan pulse glow"/>
 
-
-    <!-- NEON TOP LINE -->
-
-    <rect
-        x="40"
-        y="27"
-        width="820"
-        height="2"
-        fill="url(#purpleGradient)"
-        filter="url(#purpleGlow)"/>
-
-
-    <!-- HEADER -->
-
-    <text x="45" y="65" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="18px" font-weight="700" fill="#F5F3FF" text-anchor="start">◈ YEABSIRA // GITHUB CORE</text>
-
-    <text x="855" y="65" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="10px" font-weight="700" fill="#C084FC" text-anchor="end">● ONLINE</text>
-
-    <text x="45" y="88" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="400" fill="#6B7280" text-anchor="start">AI ENGINEERING · SOFTWARE DEVELOPMENT · COMPUTER SCIENCE</text>
-
-
-    <!-- METRIC CARDS -->
-
-    
-    <rect x="45" y="115" width="190" height="105" rx="12" fill="#0A0D14" fill-opacity="1" stroke="#8B5CF6" stroke-opacity="0.32"/>
-
-    <text x="62" y="143" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" fill="#A78BFA" text-anchor="start">REPOSITORIES</text>
-
-    <text x="62" y="181" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="30px" font-weight="700" fill="#F5F3FF" text-anchor="start">0</text>
-
-    <text x="62" y="202" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="400" fill="#6B7280" text-anchor="start">PUBLIC PROJECTS</text>
-    
-
-    
-    <rect x="255" y="115" width="190" height="105" rx="12" fill="#0A0D14" fill-opacity="1" stroke="#8B5CF6" stroke-opacity="0.32"/>
-
-    <text x="272" y="143" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" fill="#A78BFA" text-anchor="start">FOLLOWERS</text>
-
-    <text x="272" y="181" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="30px" font-weight="700" fill="#F5F3FF" text-anchor="start">1</text>
-
-    <text x="272" y="202" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="400" fill="#6B7280" text-anchor="start">NETWORK</text>
-    
-
-    
-    <rect x="465" y="115" width="190" height="105" rx="12" fill="#0A0D14" fill-opacity="1" stroke="#8B5CF6" stroke-opacity="0.32"/>
-
-    <text x="482" y="143" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" fill="#A78BFA" text-anchor="start">STARS</text>
-
-    <text x="482" y="181" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="30px" font-weight="700" fill="#F5F3FF" text-anchor="start">0</text>
-
-    <text x="482" y="202" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="400" fill="#6B7280" text-anchor="start">PROJECT IMPACT</text>
-    
-
-    
-    <rect x="675" y="115" width="190" height="105" rx="12" fill="#0A0D14" fill-opacity="1" stroke="#8B5CF6" stroke-opacity="0.32"/>
-
-    <text x="692" y="143" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" fill="#A78BFA" text-anchor="start">FORKS</text>
-
-    <text x="692" y="181" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="30px" font-weight="700" fill="#F5F3FF" text-anchor="start">0</text>
-
-    <text x="692" y="202" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="400" fill="#6B7280" text-anchor="start">COLLABORATION</text>
-    
-
-
-    <!-- ACTIVITY -->
-
-    <text x="45" y="258" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="10px" font-weight="700" fill="#A78BFA" text-anchor="start">SYSTEM ACTIVITY</text>
-
-    <text x="855" y="258" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="700" fill="#6B7280" text-anchor="end">LIVE DATA</text>
-
-    <g filter="url(#purpleGlow)">
-        
-            <rect
-                x="45"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#241044"
-            />
-            
-
-            <rect
-                x="78"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#6D28D9"
-            />
-            
-
-            <rect
-                x="111"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#A855F7"
-            />
-            
-
-            <rect
-                x="144"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#35145F"
-            />
-            
-
-            <rect
-                x="177"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#7C3AED"
-            />
-            
-
-            <rect
-                x="210"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#C084FC"
-            />
-            
-
-            <rect
-                x="243"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#4C1D95"
-            />
-            
-
-            <rect
-                x="276"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#8B5CF6"
-            />
-            
-
-            <rect
-                x="309"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#241044"
-            />
-            
-
-            <rect
-                x="342"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#6D28D9"
-            />
-            
-
-            <rect
-                x="375"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#A855F7"
-            />
-            
-
-            <rect
-                x="408"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#35145F"
-            />
-            
-
-            <rect
-                x="441"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#7C3AED"
-            />
-            
-
-            <rect
-                x="474"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#C084FC"
-            />
-            
-
-            <rect
-                x="507"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#4C1D95"
-            />
-            
-
-            <rect
-                x="540"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#8B5CF6"
-            />
-            
-
-            <rect
-                x="573"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#241044"
-            />
-            
-
-            <rect
-                x="606"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#6D28D9"
-            />
-            
-
-            <rect
-                x="639"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#A855F7"
-            />
-            
-
-            <rect
-                x="672"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#35145F"
-            />
-            
-
-            <rect
-                x="705"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#7C3AED"
-            />
-            
-
-            <rect
-                x="738"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#C084FC"
-            />
-            
-
-            <rect
-                x="771"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#4C1D95"
-            />
-            
-
-            <rect
-                x="804"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#8B5CF6"
-            />
-            
-
-            <rect
-                x="837"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="#241044"
-            />
-            
-    </g>
-
-
-    <!-- DIVIDER -->
-
-    <rect
-        x="45"
-        y="325"
-        width="810"
-        height="1"
-        fill="#8B5CF6"
-        fill-opacity="0.25"/>
-
-
-    <!-- FOOTER -->
-
-    <text x="45" y="355" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" fill="#A78BFA" text-anchor="start">FOCUS: LLMs / RAG / AI AGENTS / BACKEND</text>
-
-    <text x="855" y="355" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" fill="#A78BFA" text-anchor="end">SYSTEM STATUS: OPERATIONAL</text>
-
-    <text x="45" y="390" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="400" fill="#4B5563" text-anchor="start">BUILDING INTELLIGENT SYSTEMS — ONE COMMIT AT A TIME</text>
-
-    <text x="855" y="390" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="700" fill="#4B5563" text-anchor="end">v2.0</text>
-
-    </svg>
-    
+</svg>
