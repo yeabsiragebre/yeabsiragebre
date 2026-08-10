@@ -642,19 +642,40 @@ def generate_languages_svg(languages):
     for index, (language, percentage, amount) in enumerate(language_data):
         color = language_colors[index % len(language_colors)]
         fill_width = max(4, int(bar_width * percentage / 100))
+        rank = index + 1
+        marker_x = bar_x + fill_width
 
         rows.append(f"""
         <g>
-          {text(48, y + 15, language.upper(), 15, WHITE, 700, spacing=.8)}
-          {text(48, y + 36, format_bytes(amount), 11, DIM, 700)}
+          <!-- rank + language identity -->
+          <circle cx="54" cy="{y+13}" r="12" fill="#0B1014"
+                  stroke="{color}" stroke-opacity=".35"/>
+          {text(54, y + 17, f"{rank:02d}", 8, color, 800, "middle", spacing=.5)}
+          {text(78, y + 15, language.upper(), 15, WHITE, 700, spacing=.8)}
+          {text(78, y + 36, format_bytes(amount), 11, DIM, 700)}
 
+          <!-- precision track -->
           <rect x="{bar_x}" y="{y+1}" width="{bar_width}" height="12"
-                rx="6" fill="#11171B"/>
+                rx="6" fill="#0B1014" stroke="#182127" stroke-width="1"/>
           <rect x="{bar_x}" y="{y+1}" width="{fill_width}" height="12"
                 rx="6" fill="{color}" filter="url(#glow)"/>
-          <rect class="hudSweep" x="{bar_x}" y="{y+1}" width="{fill_width}" height="12"
-                rx="6" fill="{color}" opacity=".28"
-                style="animation-delay:{index*.3}s"/>
+          <!-- static highlight: no sweeping animation -->
+          <rect x="{bar_x}" y="{y+1}" width="{fill_width}" height="3"
+                rx="1.5" fill="#FFFFFF" opacity=".10"/>
+
+          <!-- live endpoint + micro ticks -->
+          <circle cx="{marker_x}" cy="{y+7}" r="3.2" fill="{color}"
+                  filter="url(#tinyGlow)" class="pulse"
+                  style="animation-delay:{index*.22}s"/>
+          <line x1="{bar_x + bar_width*.25}" y1="{y+16}"
+                x2="{bar_x + bar_width*.25}" y2="{y+20}"
+                stroke="#263139" stroke-width="1"/>
+          <line x1="{bar_x + bar_width*.50}" y1="{y+16}"
+                x2="{bar_x + bar_width*.50}" y2="{y+20}"
+                stroke="#263139" stroke-width="1"/>
+          <line x1="{bar_x + bar_width*.75}" y1="{y+16}"
+                x2="{bar_x + bar_width*.75}" y2="{y+20}"
+                stroke="#263139" stroke-width="1"/>
 
           {text(850, y + 12, f"{percentage:.1f}%", 13, color, 700, "end")}
 
@@ -695,15 +716,21 @@ def generate_languages_svg(languages):
               stroke="{CYAN}" stroke-width="1"/>
       <circle cx="450" cy="620" r="300" fill="none"
               stroke="{VIOLET}" stroke-width="1"/>
+      <circle cx="450" cy="620" r="260" fill="none"
+              stroke="{CYAN_2}" stroke-width="1" stroke-dasharray="2 10"/>
     </g>
 
-    <rect class="hudSweep" x="-180" y="0" width="180" height="{HEIGHT}"
-          fill="url(#accentLine)" opacity=".035"/>
-
+    <!-- Static atmospheric glow only; the old sweeping language-card glow is removed. -->
     <circle cx="820" cy="80" r="130" fill="{VIOLET}"
             opacity=".018" filter="url(#softGlow)"/>
     <circle cx="70" cy="550" r="120" fill="{CYAN}"
             opacity=".02" filter="url(#softGlow)"/>
+
+    <!-- Precision HUD rails -->
+    <line x1="42" y1="126" x2="858" y2="126"
+          stroke="#1A2329" stroke-width="1"/>
+    <line x1="42" y1="129" x2="310" y2="129"
+          stroke="{CYAN}" stroke-width="1" stroke-opacity=".45"/>
 
     <rect x="1" y="1" width="898" height="618" rx="20"
           fill="none" stroke="#273139" stroke-opacity=".9"/>
@@ -725,14 +752,19 @@ def generate_languages_svg(languages):
            MUTED, 700, spacing=1.2)}
     {text(850, 116, f"{len(languages)} TOTAL DETECTED", 12,
            DIM, 700, "end", spacing=1)}
+    {text(245, 133, "DISTRIBUTION", 7, DIM, 700, spacing=1.1)}
+    {text(820, 133, "RELATIVE SHARE", 7, DIM, 700, "end", spacing=1.1)}
 
     {"".join(rows)}
 
     <rect x="42" y="570" width="816" height="1" fill="#182127"/>
+    <rect x="42" y="578" width="816" height="28" rx="8"
+          fill="#070A0D" stroke="#121A1F"/>
 
-    {text(42, 596, "LANGUAGE DISTRIBUTION // LIVE GITHUB DATA",
-           12, WHITE, 700, spacing=.8)}
-    {text(858, 596, "ONLINE", 12, CYAN, 700, "end", spacing=1.1)}
+    {text(58, 596, "LANGUAGE DISTRIBUTION", 10, WHITE, 700, spacing=.9)}
+    {text(250, 596, "BYTE WEIGHTED", 9, DIM, 700, spacing=1.0)}
+    {text(430, 596, f"{format_bytes(total_bytes)} TOTAL", 9, DIM, 700, spacing=.8)}
+    {text(858, 596, "ONLINE", 10, CYAN, 700, "end", spacing=1.1)}
 
   </g>
 </svg>
@@ -820,11 +852,15 @@ def generate_combined_svg(user, repositories, daily, total_contributions, langua
       {stats_content}
     </g>
 
-    <!-- No separate card/rectangle: just a living transition line. -->
+    <!-- Shared divider: one controlled data pulse between the two cards. -->
+    <line x1="42" y1="{CARD_HEIGHT + GAP//2}" x2="858" y2="{CARD_HEIGHT + GAP//2}"
+          stroke="#12191E" stroke-width="1"/>
     <g class="flow">
-      <rect x="-220" y="{CARD_HEIGHT + GAP//2}" width="220" height="2"
+      <rect x="-220" y="{CARD_HEIGHT + GAP//2 - 1}" width="220" height="2"
             rx="1" fill="url(#unifiedFlow)" filter="url(#glow)"/>
     </g>
+    <circle class="blink" cx="450" cy="{CARD_HEIGHT + GAP//2}" r="2.5"
+            fill="{CYAN}" filter="url(#tinyGlow)"/>
 
     <g transform="translate(0,{CARD_HEIGHT + GAP})">
       {language_content}
