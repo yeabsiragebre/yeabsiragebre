@@ -14,19 +14,14 @@
 
 ## `GITHUB`
 
-<img src="./profile/stats.svg" width="495">
+<img src="./profile/stats.svg?v=20260810" width="495">
 
 <br><br>
 
-<img src="./profile/top-langs.svg" width="495">
-
-<br><br>
-
-<a href="https://github.com/yeabsiragebre">
-  <img src="./profile/streak.svg" width="495">
-</a>
+<img src="./profile/top-langs.svg?v=20260810" width="495">
 
 </div>
+
 
 <br>
 
