@@ -101,83 +101,83 @@
     <rect x="42" y="27" width="816" height="2"
           fill="url(#accentLine)" filter="url(#glow)"/>
 
-    <text x="42" y="62" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="20px" font-weight="700" letter-spacing="1.1px" fill="#F3F5F7" fill-opacity="1" text-anchor="start">LANGUAGE MATRIX</text>
-    <text x="42" y="83" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="700" letter-spacing="1.2px" fill="#7D8992" fill-opacity="1" text-anchor="start">CODEBASE // BYTE DISTRIBUTION</text>
+    <text x="42" y="62" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="25px" font-weight="700" letter-spacing="1.2px" fill="#F3F5F7" fill-opacity="1" text-anchor="start">LANGUAGE MATRIX</text>
+    <text x="42" y="91" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="11px" font-weight="700" letter-spacing="1.5px" fill="#7D8992" fill-opacity="1" text-anchor="start">CODEBASE // BYTE DISTRIBUTION</text>
 
     <circle class="pulse" cx="782" cy="53" r="4"
             fill="#36E0C0" filter="url(#glow)"/>
     <text x="852" y="56" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="700" letter-spacing="1.1px" fill="#36E0C0" fill-opacity="1" text-anchor="end">SYSTEM ONLINE</text>
     <text x="852" y="75" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="7px" font-weight="700" letter-spacing="1px" fill="#46515A" fill-opacity="1" text-anchor="end">LANGUAGE ANALYSIS</text>
 
-    <text x="48" y="108" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="7px" font-weight="700" letter-spacing="1.2px" fill="#7D8992" fill-opacity="1" text-anchor="start">4 PRIMARY LANGUAGES</text>
-    <text x="850" y="108" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="7px" font-weight="700" letter-spacing="1px" fill="#46515A" fill-opacity="1" text-anchor="end">4 TOTAL DETECTED</text>
+    <text x="48" y="116" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" letter-spacing="1.2px" fill="#7D8992" fill-opacity="1" text-anchor="start">4 PRIMARY LANGUAGES</text>
+    <text x="850" y="116" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" letter-spacing="1px" fill="#46515A" fill-opacity="1" text-anchor="end">4 TOTAL DETECTED</text>
 
     
         <g>
-          <text x="48" y="145" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="10px" font-weight="700" letter-spacing="0.7px" fill="#F3F5F7" fill-opacity="1" text-anchor="start">PYTHON</text>
-          <text x="48" y="163" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="7px" font-weight="700" letter-spacing="0px" fill="#46515A" fill-opacity="1" text-anchor="start">53.4 KB</text>
+          <text x="48" y="155" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12px" font-weight="700" letter-spacing="0.8px" fill="#F3F5F7" fill-opacity="1" text-anchor="start">PYTHON</text>
+          <text x="48" y="176" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" letter-spacing="0px" fill="#46515A" fill-opacity="1" text-anchor="start">53.4 KB</text>
 
-          <rect x="245" y="134" width="575" height="8"
+          <rect x="245" y="142" width="575" height="8"
                 rx="4" fill="#11171B"/>
-          <rect x="245" y="134" width="559" height="8"
+          <rect x="245" y="142" width="559" height="8"
                 rx="4" fill="#36E0C0" filter="url(#glow)"/>
 
-          <text x="850" y="141" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" letter-spacing="0px" fill="#36E0C0" fill-opacity="1" text-anchor="end">97.3%</text>
+          <text x="850" y="152" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="11px" font-weight="700" letter-spacing="0px" fill="#36E0C0" fill-opacity="1" text-anchor="end">97.3%</text>
 
-          <line x1="48" y1="173" x2="850" y2="173"
+          <line x1="48" y1="181" x2="850" y2="181"
                 stroke="#141C21" stroke-width="1"/>
         </g>
         
         <g>
-          <text x="48" y="193" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="10px" font-weight="700" letter-spacing="0.7px" fill="#F3F5F7" fill-opacity="1" text-anchor="start">CSS</text>
-          <text x="48" y="211" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="7px" font-weight="700" letter-spacing="0px" fill="#46515A" fill-opacity="1" text-anchor="start">771 B</text>
+          <text x="48" y="205" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12px" font-weight="700" letter-spacing="0.8px" fill="#F3F5F7" fill-opacity="1" text-anchor="start">CSS</text>
+          <text x="48" y="226" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" letter-spacing="0px" fill="#46515A" fill-opacity="1" text-anchor="start">771 B</text>
 
-          <rect x="245" y="182" width="575" height="8"
+          <rect x="245" y="192" width="575" height="8"
                 rx="4" fill="#11171B"/>
-          <rect x="245" y="182" width="7" height="8"
+          <rect x="245" y="192" width="7" height="8"
                 rx="4" fill="#63B3FF" filter="url(#glow)"/>
 
-          <text x="850" y="189" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" letter-spacing="0px" fill="#63B3FF" fill-opacity="1" text-anchor="end">1.4%</text>
+          <text x="850" y="202" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="11px" font-weight="700" letter-spacing="0px" fill="#63B3FF" fill-opacity="1" text-anchor="end">1.4%</text>
 
-          <line x1="48" y1="221" x2="850" y2="221"
+          <line x1="48" y1="231" x2="850" y2="231"
                 stroke="#141C21" stroke-width="1"/>
         </g>
         
         <g>
-          <text x="48" y="241" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="10px" font-weight="700" letter-spacing="0.7px" fill="#F3F5F7" fill-opacity="1" text-anchor="start">HTML</text>
-          <text x="48" y="259" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="7px" font-weight="700" letter-spacing="0px" fill="#46515A" fill-opacity="1" text-anchor="start">628 B</text>
+          <text x="48" y="255" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12px" font-weight="700" letter-spacing="0.8px" fill="#F3F5F7" fill-opacity="1" text-anchor="start">HTML</text>
+          <text x="48" y="276" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" letter-spacing="0px" fill="#46515A" fill-opacity="1" text-anchor="start">628 B</text>
 
-          <rect x="245" y="230" width="575" height="8"
+          <rect x="245" y="242" width="575" height="8"
                 rx="4" fill="#11171B"/>
-          <rect x="245" y="230" width="6" height="8"
+          <rect x="245" y="242" width="6" height="8"
                 rx="4" fill="#8B7CFF" filter="url(#glow)"/>
 
-          <text x="850" y="237" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" letter-spacing="0px" fill="#8B7CFF" fill-opacity="1" text-anchor="end">1.1%</text>
+          <text x="850" y="252" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="11px" font-weight="700" letter-spacing="0px" fill="#8B7CFF" fill-opacity="1" text-anchor="end">1.1%</text>
 
-          <line x1="48" y1="269" x2="850" y2="269"
+          <line x1="48" y1="281" x2="850" y2="281"
                 stroke="#141C21" stroke-width="1"/>
         </g>
         
         <g>
-          <text x="48" y="289" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="10px" font-weight="700" letter-spacing="0.7px" fill="#F3F5F7" fill-opacity="1" text-anchor="start">JAVASCRIPT</text>
-          <text x="48" y="307" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="7px" font-weight="700" letter-spacing="0px" fill="#46515A" fill-opacity="1" text-anchor="start">108 B</text>
+          <text x="48" y="305" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12px" font-weight="700" letter-spacing="0.8px" fill="#F3F5F7" fill-opacity="1" text-anchor="start">JAVASCRIPT</text>
+          <text x="48" y="326" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" letter-spacing="0px" fill="#46515A" fill-opacity="1" text-anchor="start">108 B</text>
 
-          <rect x="245" y="278" width="575" height="8"
+          <rect x="245" y="292" width="575" height="8"
                 rx="4" fill="#11171B"/>
-          <rect x="245" y="278" width="4" height="8"
+          <rect x="245" y="292" width="4" height="8"
                 rx="4" fill="#A8E063" filter="url(#glow)"/>
 
-          <text x="850" y="285" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" letter-spacing="0px" fill="#A8E063" fill-opacity="1" text-anchor="end">0.2%</text>
+          <text x="850" y="302" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="11px" font-weight="700" letter-spacing="0px" fill="#A8E063" fill-opacity="1" text-anchor="end">0.2%</text>
 
-          <line x1="48" y1="317" x2="850" y2="317"
+          <line x1="48" y1="331" x2="850" y2="331"
                 stroke="#141C21" stroke-width="1"/>
         </g>
         
 
     <rect x="42" y="570" width="816" height="1" fill="#182127"/>
 
-    <text x="42" y="594" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="7px" font-weight="700" letter-spacing="0.7px" fill="#46515A" fill-opacity="1" text-anchor="start">SHARE BASED ON GITHUB BYTE DISTRIBUTION</text>
-    <text x="858" y="594" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="7px" font-weight="700" letter-spacing="1px" fill="#46515A" fill-opacity="1" text-anchor="end">LIVE REPOSITORY DATA</text>
+    <text x="42" y="596" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="10px" font-weight="700" letter-spacing="0.8px" fill="#F3F5F7" fill-opacity="1" text-anchor="start">LANGUAGE DISTRIBUTION // SAME LIVE GITHUB DATA LAYER</text>
+    <text x="858" y="596" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="10px" font-weight="700" letter-spacing="1.1px" fill="#36E0C0" fill-opacity="1" text-anchor="end">ONLINE</text>
 
   </g>
 </svg>
