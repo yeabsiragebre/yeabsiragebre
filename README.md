@@ -29,9 +29,7 @@ profile/stats.svg
 profile/top-langs.svg
 -->
 
-<img src="./profile/stats.svg" width="49%" alt="GitHub Statistics"/>
-
-<img src="./profile/top-langs.svg" width="49%" alt="Most Used Languages"/>
+<p align="center"> <img src="./profile/stats.svg" alt="Yeabsira GitHub Statistics" width="95%"> </p>
 
 <br><br>
 
