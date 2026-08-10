@@ -1,212 +1,460 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="900"
+    height="430"
+    viewBox="0 0 900 430">
 
-      <svg
-        width="450"
-        height="195"
-        viewBox="0 0 450 195"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        role="img"
-        aria-labelledby="descId"
-      >
-        <title id="titleId">Yeabsira&#39;s GitHub Stats, Rank: C</title>
-        <desc id="descId">Total Stars Earned: 1, Total Commits  (last year) : 0, Total PRs: 0, Total Issues: 0, Contributed to (last year): 1</desc>
-        <style>
-          .header {
-            font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
-            fill: #2f80ed;
-            animation: fadeInAnimation 0.8s ease-in-out forwards;
-          }
-          @supports(-moz-appearance: auto) {
-            /* Selector detects Firefox */
-            .header { font-size: 15.5px; }
-          }
-          
-    .stat {
-      font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif; fill: #434d58;
-    }
-    @supports(-moz-appearance: auto) {
-      /* Selector detects Firefox */
-      .stat { font-size:12px; }
-    }
-    .stagger {
-      opacity: 0;
-      animation: fadeInAnimation 0.3s ease-in-out forwards;
-    }
-    .rank-text {
-      font: 800 24px 'Segoe UI', Ubuntu, Sans-Serif; fill: #434d58;
-      animation: scaleInAnimation 0.3s ease-in-out forwards;
-    }
-    .rank-percentile-header {
-      font-size: 14px;
-    }
-    .rank-percentile-text {
-      font-size: 16px;
-    }
     
-    .not_bold { font-weight: 400 }
-    .bold { font-weight: 700 }
-    .icon {
-      fill: #4c71f2;
-      display: none;
-    }
+    <defs>
 
-    .rank-circle-rim {
-      stroke: #2f80ed;
-      fill: none;
-      stroke-width: 6;
-      opacity: 0.2;
-    }
-    .rank-circle {
-      stroke: #2f80ed;
-      stroke-dasharray: 250;
-      fill: none;
-      stroke-width: 6;
-      stroke-linecap: round;
-      opacity: 0.8;
-      transform-origin: -10px 8px;
-      transform: rotate(-90deg);
-      animation: rankAnimation 1s forwards ease-in-out;
-    }
+        <linearGradient
+            id="background"
+            x1="0"
+            y1="0"
+            x2="1"
+            y2="1">
+
+            <stop
+                offset="0%"
+                stop-color="#020204"/>
+
+            <stop
+                offset="50%"
+                stop-color="#0A0D14"/>
+
+            <stop
+                offset="100%"
+                stop-color="#1A0830"/>
+
+        </linearGradient>
+
+
+        <linearGradient
+            id="purpleGradient"
+            x1="0"
+            y1="0"
+            x2="1"
+            y2="0">
+
+            <stop
+                offset="0%"
+                stop-color="#6D28D9"/>
+
+            <stop
+                offset="50%"
+                stop-color="#A855F7"/>
+
+            <stop
+                offset="100%"
+                stop-color="#D8B4FE"/>
+
+        </linearGradient>
+
+
+        <filter
+            id="purpleGlow"
+            x="-50%"
+            y="-50%"
+            width="200%"
+            height="200%">
+
+            <feGaussianBlur
+                stdDeviation="3"
+                result="blur"/>
+
+            <feMerge>
+
+                <feMergeNode
+                    in="blur"/>
+
+                <feMergeNode
+                    in="SourceGraphic"/>
+
+            </feMerge>
+
+        </filter>
+
+
+        <pattern
+            id="grid"
+            width="32"
+            height="32"
+            patternUnits="userSpaceOnUse">
+
+            <path
+                d="M32 0H0V32"
+                fill="none"
+                stroke="#8B5CF6"
+                stroke-opacity="0.055"/>
+
+        </pattern>
+
+    </defs>
     
-    @keyframes rankAnimation {
-      from {
-        stroke-dashoffset: 251.32741228718345;
-      }
-      to {
-        stroke-dashoffset: 247.78075391414689;
-      }
-    }
-  
-  
 
-          
-      /* Animations */
-      @keyframes scaleInAnimation {
-        from {
-          transform: translate(-5px, 5px) scale(0);
-        }
-        to {
-          transform: translate(-5px, 5px) scale(1);
-        }
-      }
-      @keyframes fadeInAnimation {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
+    <!-- BACKGROUND -->
+
+    <rect
+        width="900"
+        height="430"
+        rx="18"
+        fill="url(#background)"
+        stroke="#8B5CF6"
+        stroke-opacity="0.55"
+        stroke-width="1.5"/>
+
+    <rect
+        x="1"
+        y="1"
+        width="898"
+        height="428"
+        rx="17"
+        fill="url(#grid)"/>
+
+
+    <!-- NEON TOP LINE -->
+
+    <rect
+        x="40"
+        y="27"
+        width="820"
+        height="2"
+        fill="url(#purpleGradient)"
+        filter="url(#purpleGlow)"/>
+
+
+    <!-- HEADER -->
+
+    <text x="45" y="65" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="18px" font-weight="700" fill="#F5F3FF" text-anchor="start">◈ YEABSIRA // GITHUB CORE</text>
+
+    <text x="855" y="65" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="10px" font-weight="700" fill="#C084FC" text-anchor="end">● ONLINE</text>
+
+    <text x="45" y="88" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="400" fill="#6B7280" text-anchor="start">AI ENGINEERING · SOFTWARE DEVELOPMENT · COMPUTER SCIENCE</text>
+
+
+    <!-- METRIC CARDS -->
+
     
-          
-        </style>
+    <rect x="45" y="115" width="190" height="105" rx="12" fill="#0A0D14" fill-opacity="1" stroke="#8B5CF6" stroke-opacity="0.32"/>
 
+    <text x="62" y="143" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" fill="#A78BFA" text-anchor="start">REPOSITORIES</text>
+
+    <text x="62" y="181" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="30px" font-weight="700" fill="#F5F3FF" text-anchor="start">0</text>
+
+    <text x="62" y="202" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="400" fill="#6B7280" text-anchor="start">PUBLIC PROJECTS</text>
+    
+
+    
+    <rect x="255" y="115" width="190" height="105" rx="12" fill="#0A0D14" fill-opacity="1" stroke="#8B5CF6" stroke-opacity="0.32"/>
+
+    <text x="272" y="143" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" fill="#A78BFA" text-anchor="start">FOLLOWERS</text>
+
+    <text x="272" y="181" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="30px" font-weight="700" fill="#F5F3FF" text-anchor="start">1</text>
+
+    <text x="272" y="202" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="400" fill="#6B7280" text-anchor="start">NETWORK</text>
+    
+
+    
+    <rect x="465" y="115" width="190" height="105" rx="12" fill="#0A0D14" fill-opacity="1" stroke="#8B5CF6" stroke-opacity="0.32"/>
+
+    <text x="482" y="143" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" fill="#A78BFA" text-anchor="start">STARS</text>
+
+    <text x="482" y="181" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="30px" font-weight="700" fill="#F5F3FF" text-anchor="start">0</text>
+
+    <text x="482" y="202" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="400" fill="#6B7280" text-anchor="start">PROJECT IMPACT</text>
+    
+
+    
+    <rect x="675" y="115" width="190" height="105" rx="12" fill="#0A0D14" fill-opacity="1" stroke="#8B5CF6" stroke-opacity="0.32"/>
+
+    <text x="692" y="143" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" fill="#A78BFA" text-anchor="start">FORKS</text>
+
+    <text x="692" y="181" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="30px" font-weight="700" fill="#F5F3FF" text-anchor="start">0</text>
+
+    <text x="692" y="202" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="400" fill="#6B7280" text-anchor="start">COLLABORATION</text>
+    
+
+
+    <!-- ACTIVITY -->
+
+    <text x="45" y="258" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="10px" font-weight="700" fill="#A78BFA" text-anchor="start">SYSTEM ACTIVITY</text>
+
+    <text x="855" y="258" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="700" fill="#6B7280" text-anchor="end">LIVE DATA</text>
+
+    <g filter="url(#purpleGlow)">
         
+            <rect
+                x="45"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#241044"
+            />
+            
 
-        <rect
-          data-testid="card-bg"
-          x="0.5"
-          y="0.5"
-          rx="4.5"
-          height="99%"
-          stroke="#e4e2e2"
-          width="449"
-          fill="#fffefe"
-          stroke-opacity="1"
-        />
+            <rect
+                x="78"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#6D28D9"
+            />
+            
 
-        
-      <g
-        data-testid="card-title"
-        transform="translate(25, 35)"
-      >
-        <g transform="translate(0, 0)">
-      <text
-        x="0"
-        y="0"
-        class="header"
-        data-testid="header"
-      >Yeabsira&#39;s GitHub Stats</text>
-    </g>
-      </g>
-    
+            <rect
+                x="111"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#A855F7"
+            />
+            
 
-        <g
-          data-testid="main-card-body"
-          transform="translate(0, 55)"
-        >
-          
-    <g data-testid="rank-circle"
-          transform="translate(365, 47.5)">
-        <circle class="rank-circle-rim" cx="-10" cy="8" r="40" />
-        <circle class="rank-circle" cx="-10" cy="8" r="40" />
-        <g class="rank-text">
-          
-        <text x="-5" y="3" alignment-baseline="central" dominant-baseline="central" text-anchor="middle" data-testid="level-rank-icon">
-          C
-        </text>
-      
-        </g>
-      </g>
-    <svg x="0" y="0">
-      <g transform="translate(0, 0)">
-    <g class="stagger" style="animation-delay: 450ms" transform="translate(25, 0)">
-      
-      <text class="stat  bold"  y="12.5">Total Stars Earned:</text>
-      <text
-        class="stat  bold"
-        x="204.01"
-        y="12.5"
-        data-testid="stars"
-      >1</text>
+            <rect
+                x="144"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#35145F"
+            />
+            
+
+            <rect
+                x="177"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#7C3AED"
+            />
+            
+
+            <rect
+                x="210"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#C084FC"
+            />
+            
+
+            <rect
+                x="243"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#4C1D95"
+            />
+            
+
+            <rect
+                x="276"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#8B5CF6"
+            />
+            
+
+            <rect
+                x="309"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#241044"
+            />
+            
+
+            <rect
+                x="342"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#6D28D9"
+            />
+            
+
+            <rect
+                x="375"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#A855F7"
+            />
+            
+
+            <rect
+                x="408"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#35145F"
+            />
+            
+
+            <rect
+                x="441"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#7C3AED"
+            />
+            
+
+            <rect
+                x="474"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#C084FC"
+            />
+            
+
+            <rect
+                x="507"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#4C1D95"
+            />
+            
+
+            <rect
+                x="540"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#8B5CF6"
+            />
+            
+
+            <rect
+                x="573"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#241044"
+            />
+            
+
+            <rect
+                x="606"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#6D28D9"
+            />
+            
+
+            <rect
+                x="639"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#A855F7"
+            />
+            
+
+            <rect
+                x="672"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#35145F"
+            />
+            
+
+            <rect
+                x="705"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#7C3AED"
+            />
+            
+
+            <rect
+                x="738"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#C084FC"
+            />
+            
+
+            <rect
+                x="771"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#4C1D95"
+            />
+            
+
+            <rect
+                x="804"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#8B5CF6"
+            />
+            
+
+            <rect
+                x="837"
+                y="278"
+                width="25"
+                height="9"
+                rx="3"
+                fill="#241044"
+            />
+            
     </g>
-  </g><g transform="translate(0, 25)">
-    <g class="stagger" style="animation-delay: 600ms" transform="translate(25, 0)">
-      
-      <text class="stat  bold"  y="12.5">Total Commits (last year):</text>
-      <text
-        class="stat  bold"
-        x="204.01"
-        y="12.5"
-        data-testid="commits"
-      >0</text>
-    </g>
-  </g><g transform="translate(0, 50)">
-    <g class="stagger" style="animation-delay: 750ms" transform="translate(25, 0)">
-      
-      <text class="stat  bold"  y="12.5">Total PRs:</text>
-      <text
-        class="stat  bold"
-        x="204.01"
-        y="12.5"
-        data-testid="prs"
-      >0</text>
-    </g>
-  </g><g transform="translate(0, 75)">
-    <g class="stagger" style="animation-delay: 900ms" transform="translate(25, 0)">
-      
-      <text class="stat  bold"  y="12.5">Total Issues:</text>
-      <text
-        class="stat  bold"
-        x="204.01"
-        y="12.5"
-        data-testid="issues"
-      >0</text>
-    </g>
-  </g><g transform="translate(0, 100)">
-    <g class="stagger" style="animation-delay: 1050ms" transform="translate(25, 0)">
-      
-      <text class="stat  bold"  y="12.5">Contributed to (last year):</text>
-      <text
-        class="stat  bold"
-        x="204.01"
-        y="12.5"
-        data-testid="contribs"
-      >1</text>
-    </g>
-  </g>
+
+
+    <!-- DIVIDER -->
+
+    <rect
+        x="45"
+        y="325"
+        width="810"
+        height="1"
+        fill="#8B5CF6"
+        fill-opacity="0.25"/>
+
+
+    <!-- FOOTER -->
+
+    <text x="45" y="355" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" fill="#A78BFA" text-anchor="start">FOCUS: LLMs / RAG / AI AGENTS / BACKEND</text>
+
+    <text x="855" y="355" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" fill="#A78BFA" text-anchor="end">SYSTEM STATUS: OPERATIONAL</text>
+
+    <text x="45" y="390" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="400" fill="#4B5563" text-anchor="start">BUILDING INTELLIGENT SYSTEMS — ONE COMMIT AT A TIME</text>
+
+    <text x="855" y="390" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="700" fill="#4B5563" text-anchor="end">v2.0</text>
+
     </svg>
-  
-        </g>
-      </svg>
     
