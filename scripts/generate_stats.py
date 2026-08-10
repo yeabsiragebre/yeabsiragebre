@@ -218,7 +218,11 @@ def esc(value):
 
 
 def text(x, y, value, size=14, fill=WHITE, weight=400,
-         anchor="start", spacing=0, opacity=1, family="JetBrains Mono, DejaVu Sans Mono, monospace"):
+         anchor="start", spacing=0, opacity=1,
+         family="JetBrains Mono, DejaVu Sans Mono, monospace",
+         letter_spacing=None):
+    if letter_spacing is not None:
+        spacing = letter_spacing
     return (
         f'<text x="{x}" y="{y}" font-family="{family}" '
         f'font-size="{size}px" font-weight="{weight}" '
@@ -254,7 +258,7 @@ def circle(cx, cy, r, fill, opacity=1, stroke="none", stroke_width=0):
 # SVG DESIGN SYSTEM
 # ============================================================
 
-def defs(seed):
+def defs(seed=0):
     # Seed changes the ambient animation phase from one generation to another.
     return f"""
 <defs>
@@ -503,7 +507,7 @@ def generate_stats_svg(user, repositories, daily, total_contributions):
      width="{WIDTH}" height="{HEIGHT}"
      viewBox="0 0 {WIDTH} {HEIGHT}">
 
-    {definitions()}
+    {defs()}
 
     <defs>
         <linearGradient id="blackPanel" x1="0" y1="0" x2="1" y2="1">
@@ -545,8 +549,8 @@ def generate_stats_svg(user, repositories, daily, total_contributions):
         <!-- BLACK FOUNDATION -->
         <rect width="{WIDTH}" height="{HEIGHT}" fill="#020304"/>
         <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#blackPanel)"/>
-        <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#grid)"/>
-        <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#scanlines)"/>
+        <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#microgrid)"/>
+        <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#scan)"/>
 
         <!-- AMBIENT LIGHT -->
         <circle cx="70" cy="70" r="150"
@@ -848,7 +852,7 @@ def generate_languages_svg(languages):
      width="{WIDTH}" height="{HEIGHT}"
      viewBox="0 0 {WIDTH} {HEIGHT}">
 
-    {definitions()}
+    {defs()}
 
     <defs>
         <linearGradient id="languageAccent"
@@ -882,8 +886,8 @@ def generate_languages_svg(languages):
         <!-- BLACK FOUNDATION -->
         <rect width="{WIDTH}" height="{HEIGHT}" fill="#020304"/>
         <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#blackPanel)"/>
-        <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#grid)"/>
-        <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#scanlines)"/>
+        <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#microgrid)"/>
+        <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#scan)"/>
 
         <!-- AMBIENT LIGHT -->
         <circle cx="820" cy="100" r="150"
