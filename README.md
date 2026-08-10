@@ -29,7 +29,7 @@ profile/stats.svg
 profile/top-langs.svg
 -->
 
-<p align="center"> <img src="./profile/stats.svg" alt="Yeabsira GitHub Statistics" width="95%"> </p>
+<p align="center"> <img src="./profile/stats.svg" alt="Yeabsira GitHub Statistics" width="100%"> </p>
 
 <br><br>
 
@@ -37,14 +37,14 @@ profile/top-langs.svg
 
 <br><br>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=yeabsiragebre&theme=tokyo-night&hide_border=true" width="95%" alt="Contribution Activity"/>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=yeabsiragebre&theme=tokyo-night&hide_border=true" width="100%" alt="Contribution Activity"/>
 
 <br><br>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./github-contribution-grid-snake-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./github-contribution-grid-snake.svg">
-  <img src="./github-contribution-grid-snake.svg" width="95%" alt="Contribution Snake"/>
+  <img src="./github-contribution-grid-snake.svg" width="100%" alt="Contribution Snake"/>
 </picture>
 
 </div>
@@ -57,7 +57,7 @@ profile/top-langs.svg
 
 <br>
 
-<img src="./metrics.svg" width="95%" alt="GitHub Metrics"/>
+<img src="./metrics.svg" width="100%" alt="GitHub Metrics"/>
 
 </div>
 
