@@ -1,5 +1,6 @@
 import os
 import math
+import re
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
 from collections import defaultdict
@@ -965,6 +966,57 @@ def format_bytes(value):
     return f"{int(value)} B"
 
 
+
+def generate_combined_svg(user, repositories, daily, total_contributions, languages):
+    """
+    Generate one tall SVG containing the stats dashboard followed immediately
+    by the language matrix. Both sections keep the same 900px width so the
+    result can be embedded as one long GitHub profile image.
+    """
+    stats_svg = generate_stats_svg(
+        user, repositories, daily, total_contributions
+    )
+    language_svg = generate_languages_svg(languages)
+
+    # Extract the reusable SVG contents from each existing renderer.
+    stats_match = re.search(
+        r"<svg[^>]*>(.*)</svg>\s*$", stats_svg, flags=re.DOTALL
+    )
+    language_match = re.search(
+        r"<svg[^>]*>(.*)</svg>\s*$", language_svg, flags=re.DOTALL
+    )
+
+    if not stats_match or not language_match:
+        raise RuntimeError("Could not compose the generated SVG cards.")
+
+    stats_content = stats_match.group(1)
+    language_content = language_match.group(1)
+
+    WIDTH = 900
+    CARD_HEIGHT = 620
+    GAP = 24
+    HEIGHT = CARD_HEIGHT * 2 + GAP
+
+    return f"""<svg xmlns="http://www.w3.org/2000/svg"
+    width="{WIDTH}" height="{HEIGHT}"
+    viewBox="0 0 {WIDTH} {HEIGHT}">
+    <rect width="{WIDTH}" height="{HEIGHT}" fill="#020304"/>
+
+    <svg x="0" y="0" width="{WIDTH}" height="{CARD_HEIGHT}"
+         viewBox="0 0 {WIDTH} {CARD_HEIGHT}">
+        {stats_content}
+    </svg>
+
+    <rect x="0" y="{CARD_HEIGHT}" width="{WIDTH}" height="{GAP}"
+          fill="#020304"/>
+
+    <svg x="0" y="{CARD_HEIGHT + GAP}" width="{WIDTH}"
+         height="{CARD_HEIGHT}" viewBox="0 0 {WIDTH} {CARD_HEIGHT}">
+        {language_content}
+    </svg>
+</svg>
+"""
+
 # ============================================================
 # MAIN
 # ============================================================
@@ -1001,7 +1053,13 @@ def main():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     STATS_FILE.write_text(
-        generate_stats_svg(user, repositories, daily, total_contributions),
+        generate_combined_svg(
+            user,
+            repositories,
+            daily,
+            total_contributions,
+            languages,
+        ),
         encoding="utf-8",
     )
     LANGUAGES_FILE.write_text(
@@ -1012,7 +1070,7 @@ def main():
     print("=" * 68)
     print("  GENERATION COMPLETE")
     print(f"  -> {STATS_FILE}")
-    print(f"  -> {LANGUAGES_FILE}")
+    print(f"  -> {LANGUAGES_FILE} (standalone compatibility copy)")
     print("  DESIGN: BLACK / CYAN / VIOLET / MAGENTA")
     print("  DATA:   LIVE GITHUB REST + GRAPHQL")
     print("  AUTH:   GH_TOKEN")
