@@ -6,7 +6,7 @@
 
 <br>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&duration=2800&pause=900&color=8B5CF6&center=true&vCenter=true&width=720&lines=AI+Engineering;LLMs+%7C+RAG+%7C+AI+Agents;Building+%7C+Learning+%7C+Shipping" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&duration=2800&pause=900&color=8B5CF6&center=true&vCenter=true&width=720&lines=AI+Engineering;LLMs+%7C+RAG+%7C+AI+Agents;Building+%7C+Learning+%7C+Shipping"/>
 
 <br><br>
 
@@ -22,9 +22,9 @@
 
 <br>
 
-<img src="./profile/stats.svg" width="49%" alt="GitHub Statistics"/>
+<img src="https://github-stats-extended.vercel.app/api?username=yeabsiragebre&show_icons=true&include_all_commits=true&theme=tokyonight&hide_border=true&rank_icon=github" width="49%" alt="GitHub Statistics"/>
 
-<img src="./profile/top-langs.svg" width="49%" alt="Most Used Languages"/>
+<img src="https://github-stats-extended.vercel.app/api/top-langs/?username=yeabsiragebre&layout=donut&langs_count=8&theme=tokyonight&hide_border=true" width="49%" alt="Most Used Languages"/>
 
 <br><br>
 
@@ -113,7 +113,7 @@
 
 <a href="https://github.com/yeabsiragebre/Cram">
 
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=yeabsiragebre&repo=Cram&theme=tokyonight&hide_border=true" width="70%" alt="Cram"/>
+<img src="https://github-stats-extended.vercel.app/api/pin/?username=yeabsiragebre&repo=Cram&theme=tokyonight&hide_border=true" width="70%" alt="Cram"/>
 
 </a>
 
@@ -179,9 +179,7 @@
 <div align="center">
 
 <img src="https://img.shields.io/github/followers/yeabsiragebre?style=for-the-badge&logo=github&label=FOLLOWERS"/>
-
 <img src="https://img.shields.io/github/stars/yeabsiragebre?style=for-the-badge&logo=github&label=STARS"/>
-
 <img src="https://img.shields.io/github/commit-activity/y/yeabsiragebre?style=for-the-badge&logo=github&label=ACTIVITY"/>
 
 </div>
