@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  generate-stats:
+  generate:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,18 +18,23 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Generate futuristic statistics
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Generate futuristic SVGs
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           python scripts/generate_stats.py
 
-      - name: Commit generated statistics
+      - name: Commit updated SVGs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
