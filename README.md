@@ -20,9 +20,9 @@
 
 <br>
 
-<img src="https://github-readme-stats.vercel.app/api?username=yeabsiragebre&show_icons=true&include_all_commits=true&theme=tokyonight&hide_border=true&rank_icon=github" width="49%" alt="GitHub Statistics"/>
+<img src="https://github-stats-extended.vercel.app/api?username=yeabsiragebre&show_icons=true&include_all_commits=true&theme=tokyonight&hide_border=true&rank_icon=github" width="49%" alt="GitHub Statistics"/>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yeabsiragebre&layout=donut&langs_count=8&theme=tokyonight&hide_border=true" width="49%" alt="Most Used Languages"/>
+<img src="https://github-stats-extended.vercel.app/api/top-langs/?username=yeabsiragebre&layout=donut&langs_count=8&theme=tokyonight&hide_border=true" width="49%" alt="Most Used Languages"/>
 
 <br><br>
 
@@ -62,19 +62,19 @@
 
 <br>
 
-<img src="https://skillicons.dev/icons?i=python,java,cpp,javascript,typescript&perline=5" />
+<img src="https://skillicons.dev/icons?i=python,java,cpp,javascript,typescript&perline=5"/>
 
 <br><br>
 
-<img src="https://skillicons.dev/icons?i=fastapi,nodejs,react,nextjs&perline=4" />
+<img src="https://skillicons.dev/icons?i=fastapi,nodejs,react,nextjs&perline=4"/>
 
 <br><br>
 
-<img src="https://skillicons.dev/icons?i=pytorch,tensorflow,postgres,mongodb,redis&perline=5" />
+<img src="https://skillicons.dev/icons?i=pytorch,tensorflow,postgres,mongodb,redis&perline=5"/>
 
 <br><br>
 
-<img src="https://skillicons.dev/icons?i=git,github,linux,docker,vscode&perline=5" />
+<img src="https://skillicons.dev/icons?i=git,github,linux,docker,vscode&perline=5"/>
 
 </div>
 
@@ -111,7 +111,7 @@
 
 <a href="https://github.com/yeabsiragebre/Cram">
 
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=yeabsiragebre&repo=Cram&theme=tokyonight&hide_border=true" alt="Cram Repository"/>
+<img src="https://github-stats-extended.vercel.app/api/pin/?username=yeabsiragebre&repo=Cram&theme=tokyonight&hide_border=true" alt="Cram Repository"/>
 
 </a>
 
@@ -168,7 +168,7 @@
 
 <br>
 
-<img src="https://skillicons.dev/icons?i=python,git,github,vscode,linux,docker" />
+<img src="https://skillicons.dev/icons?i=python,git,github,vscode,linux,docker"/>
 
 </div>
 
@@ -177,14 +177,10 @@
 <div align="center">
 
 <img src="https://img.shields.io/github/followers/yeabsiragebre?style=for-the-badge&logo=github&label=FOLLOWERS"/>
+
 <img src="https://img.shields.io/github/stars/yeabsiragebre?style=for-the-badge&logo=github&label=STARS"/>
+
 <img src="https://img.shields.io/github/commit-activity/y/yeabsiragebre?style=for-the-badge&logo=github&label=ACTIVITY"/>
-
-<br><br>
-
-<a href="https://github.com/yeabsiragebre">
-<img src="https://img.shields.io/badge/GITHUB-181717?style=for-the-badge&logo=github"/>
-</a>
 
 </div>
 
