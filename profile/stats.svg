@@ -1,7 +1,11 @@
-
 <svg xmlns="http://www.w3.org/2000/svg"
-     width="900" height="620"
-     viewBox="0 0 900 620">
+    width="900" height="1264"
+    viewBox="0 0 900 1264">
+    <rect width="900" height="1264" fill="#020304"/>
+
+    <svg x="0" y="0" width="900" height="620"
+         viewBox="0 0 900 620">
+        
 
     
 <defs>
@@ -232,7 +236,7 @@
 
         <text x="42" y="334" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" letter-spacing="0px" fill="#CBD5E1" fill-opacity="1" text-anchor="start">3 PRIVATE</text>
         <text x="170" y="334" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" letter-spacing="0px" fill="#CBD5E1" fill-opacity="1" text-anchor="start">1 FOLLOWING</text>
-        <text x="340" y="334" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" letter-spacing="0px" fill="#CBD5E1" fill-opacity="1" text-anchor="start">156 RECENT EVENTS</text>
+        <text x="340" y="334" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" letter-spacing="0px" fill="#CBD5E1" fill-opacity="1" text-anchor="start">160 RECENT EVENTS</text>
 
         <!-- CONTRIBUTION MATRIX -->
         <text x="42" y="367" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" letter-spacing="1px" fill="#67E8F9" fill-opacity="1" text-anchor="start">CONTRIBUTION MATRIX</text>
@@ -1026,7 +1030,7 @@
             
 
             <rect x="314" y="433" width="12" height="11"
-                  rx="3" fill="#A78BFA" opacity="0.96">
+                  rx="3" fill="#22D3EE" opacity="0.96">
                 <title>2025-12-19: 46 contribution events</title>
             </rect>
             
@@ -2431,7 +2435,7 @@
 
             <rect x="824" y="389" width="12" height="11"
                   rx="3" fill="#A78BFA" opacity="0.96">
-                <title>2026-08-10: 48 contribution events</title>
+                <title>2026-08-10: 52 contribution events</title>
             </rect>
             
 
@@ -2467,9 +2471,9 @@
 
         <!-- 30-DAY ACTIVITY -->
         <text x="42" y="480" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="700" letter-spacing="1px" fill="#64748B" fill-opacity="1" text-anchor="start">30-DAY ACTIVITY</text>
-        <text x="858" y="480" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="700" letter-spacing="1px" fill="#7DD3FC" fill-opacity="1" text-anchor="end">75 EVENTS</text>
+        <text x="858" y="480" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="700" letter-spacing="1px" fill="#7DD3FC" fill-opacity="1" text-anchor="end">79 EVENTS</text>
 
-        <polyline points="48.0,568.0 75.7,568.0 103.4,568.0 131.2,568.0 158.9,568.0 186.6,568.0 214.3,568.0 242.1,568.0 269.8,568.0 297.5,568.0 325.2,568.0 353.0,568.0 380.7,568.0 408.4,568.0 436.1,568.0 463.9,568.0 491.6,568.0 519.3,568.0 547.0,568.0 574.8,568.0 602.5,568.0 630.2,561.6 657.9,565.2 685.7,566.2 713.4,568.0 741.1,568.0 768.8,564.3 796.6,562.5 824.3,563.4 852.0,524.0"
+        <polyline points="48.0,568.0 75.7,568.0 103.4,568.0 131.2,568.0 158.9,568.0 186.6,568.0 214.3,568.0 242.1,568.0 269.8,568.0 297.5,568.0 325.2,568.0 353.0,568.0 380.7,568.0 408.4,568.0 436.1,568.0 463.9,568.0 491.6,568.0 519.3,568.0 547.0,568.0 574.8,568.0 602.5,568.0 630.2,562.1 657.9,565.5 685.7,566.3 713.4,568.0 741.1,568.0 768.8,564.6 796.6,562.9 824.3,563.8 852.0,524.0"
                   fill="none"
                   stroke="url(#graphGlow)"
                   stroke-width="2.5"
@@ -2477,7 +2481,7 @@
                   stroke-linejoin="round"
                   filter="url(#strongGlow)"/>
 
-        <polyline points="48.0,568.0 75.7,568.0 103.4,568.0 131.2,568.0 158.9,568.0 186.6,568.0 214.3,568.0 242.1,568.0 269.8,568.0 297.5,568.0 325.2,568.0 353.0,568.0 380.7,568.0 408.4,568.0 436.1,568.0 463.9,568.0 491.6,568.0 519.3,568.0 547.0,568.0 574.8,568.0 602.5,568.0 630.2,561.6 657.9,565.2 685.7,566.2 713.4,568.0 741.1,568.0 768.8,564.3 796.6,562.5 824.3,563.4 852.0,524.0"
+        <polyline points="48.0,568.0 75.7,568.0 103.4,568.0 131.2,568.0 158.9,568.0 186.6,568.0 214.3,568.0 242.1,568.0 269.8,568.0 297.5,568.0 325.2,568.0 353.0,568.0 380.7,568.0 408.4,568.0 436.1,568.0 463.9,568.0 491.6,568.0 519.3,568.0 547.0,568.0 574.8,568.0 602.5,568.0 630.2,562.1 657.9,565.5 685.7,566.3 713.4,568.0 741.1,568.0 768.8,564.6 796.6,562.9 824.3,563.8 852.0,524.0"
                   fill="none"
                   stroke="#67E8F9"
                   stroke-width="1"
@@ -2491,4 +2495,248 @@
         <text x="858" y="608" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="7px" font-weight="700" letter-spacing="1px" fill="#475569" fill-opacity="1" text-anchor="end">LIVE GITHUB DATA</text>
 
     </g>
+
+    </svg>
+
+    <rect x="0" y="620" width="900" height="24"
+          fill="#020304"/>
+
+    <svg x="0" y="644" width="900"
+         height="620" viewBox="0 0 900 620">
+        
+
+    
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#020304"/>
+    <stop offset="48%" stop-color="#070B0E"/>
+    <stop offset="100%" stop-color="#020405"/>
+  </linearGradient>
+
+  <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#00F5D4" stop-opacity="0"/>
+    <stop offset="20%" stop-color="#00F5D4" stop-opacity=".95"/>
+    <stop offset="55%" stop-color="#9B7BFF" stop-opacity=".9"/>
+    <stop offset="82%" stop-color="#FF4FD8" stop-opacity=".75"/>
+    <stop offset="100%" stop-color="#FF4FD8" stop-opacity="0"/>
+  </linearGradient>
+
+  <linearGradient id="cyanSweep" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#00F5D4" stop-opacity=".05"/>
+    <stop offset="48%" stop-color="#00F5D4" stop-opacity=".9"/>
+    <stop offset="100%" stop-color="#00C2FF" stop-opacity=".05"/>
+  </linearGradient>
+
+  <linearGradient id="violetSweep" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#9B7BFF" stop-opacity=".04"/>
+    <stop offset="50%" stop-color="#FF4FD8" stop-opacity=".8"/>
+    <stop offset="100%" stop-color="#9B7BFF" stop-opacity=".04"/>
+  </linearGradient>
+
+  <pattern id="microgrid" width="24" height="24" patternUnits="userSpaceOnUse">
+    <path d="M24 0H0V24" fill="none" stroke="#8EA3AE" stroke-opacity=".055"/>
+  </pattern>
+
+  <pattern id="scan" width="6" height="6" patternUnits="userSpaceOnUse">
+    <path d="M0 0H6" stroke="#FFFFFF" stroke-opacity=".018"/>
+  </pattern>
+
+  <filter id="glowC" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="3" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+
+  <filter id="glowS" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="13"/>
+  </filter>
+
+  <filter id="glowXL" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="28"/>
+  </filter>
+
+  <clipPath id="clip900"><rect x="0" y="0" width="900" height="540" rx="24"/></clipPath>
+  <clipPath id="clip720"><rect x="0" y="0" width="720" height="500" rx="24"/></clipPath>
+
+  <style>
+    .blink { animation: blink 2.2s ease-in-out infinite; }
+    .pulse { animation: pulse 3.4s ease-in-out infinite; transform-origin:center; }
+    .drift { animation: drift 9s ease-in-out infinite alternate; }
+    .scanmove { animation: scanmove 5s linear infinite; }
+    @keyframes blink { 0%,100% { opacity:.25; } 50% { opacity:1; } }
+    @keyframes pulse { 0%,100% { opacity:.35; transform:scale(.96); } 50% { opacity:.95; transform:scale(1.04); } }
+    @keyframes drift { from { transform:translateX(-18px); } to { transform:translateX(18px); } }
+    @keyframes scanmove { from { transform:translateY(-80px); } to { transform:translateY(600px); } }
+  </style>
+</defs>
+
+
+    <defs>
+        <linearGradient id="languageAccent"
+                        x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#22D3EE"/>
+            <stop offset="50%" stop-color="#818CF8"/>
+            <stop offset="100%" stop-color="#D946EF"/>
+        </linearGradient>
+
+        <filter id="languageGlow"
+                x="-50%" y="-100%" width="200%" height="300%">
+            <feGaussianBlur stdDeviation="2.5" result="blur"/>
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <filter id="languageAmbient"
+                x="-100%" y="-100%" width="300%" height="300%">
+            <feGaussianBlur stdDeviation="25"/>
+        </filter>
+
+        <clipPath id="languageClip">
+            <rect x="0" y="0" width="900" height="620" rx="22"/>
+        </clipPath>
+    </defs>
+
+    <g clip-path="url(#languageClip)">
+
+        <!-- BLACK FOUNDATION -->
+        <rect width="900" height="620" fill="#020304"/>
+        <rect width="900" height="620" fill="url(#blackPanel)"/>
+        <rect width="900" height="620" fill="url(#microgrid)"/>
+        <rect width="900" height="620" fill="url(#scan)"/>
+
+        <!-- AMBIENT LIGHT -->
+        <circle cx="820" cy="100" r="150"
+                fill="#A855F7" opacity="0.035"
+                filter="url(#languageAmbient)"/>
+        <circle cx="80" cy="560" r="150"
+                fill="#22D3EE" opacity="0.035"
+                filter="url(#languageAmbient)"/>
+
+        <!-- FRAME -->
+        <rect x="1" y="1" width="898" height="618" rx="21"
+              fill="none" stroke="#334155" stroke-opacity="0.65"/>
+
+        <rect x="38" y="25" width="824" height="2"
+              fill="url(#languageAccent)"
+              filter="url(#languageGlow)"/>
+
+        <!-- HEADER -->
+        <text x="42" y="65" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="21px" font-weight="700" letter-spacing="1px" fill="#F8FAFC" fill-opacity="1" text-anchor="start">◈ LANGUAGE MATRIX</text>
+
+        <text x="42" y="88" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" letter-spacing="1px" fill="#64748B" fill-opacity="1" text-anchor="start">CODEBASE // BYTE DISTRIBUTION</text>
+
+        <!-- ONLINE STATUS -->
+        <circle cx="780" cy="56" r="5"
+                fill="#22D3EE" filter="url(#languageGlow)">
+            <animate attributeName="opacity"
+                     values="1;0.35;1" dur="2s"
+                     repeatCount="indefinite"/>
+        </circle>
+
+        <text x="852" y="59" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" letter-spacing="1px" fill="#67E8F9" fill-opacity="1" text-anchor="end">SYSTEM ONLINE</text>
+
+        <text x="852" y="79" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="7px" font-weight="700" letter-spacing="1px" fill="#475569" fill-opacity="1" text-anchor="end">LANGUAGE ANALYSIS</text>
+
+        <!-- SECTION LABEL -->
+        <text x="48" y="111" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="700" letter-spacing="1px" fill="#64748B" fill-opacity="1" text-anchor="start">4 PRIMARY LANGUAGES</text>
+
+        <!-- LANGUAGE ROWS -->
+        
+            <g>
+                <text x="48" y="141" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12px" font-weight="700" letter-spacing="0.5px" fill="#F1F5F9" fill-opacity="1" text-anchor="start">PYTHON</text>
+
+                <text x="850" y="141" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="11px" font-weight="700" letter-spacing="0px" fill="#22D3EE" fill-opacity="1" text-anchor="end">97.6%</text>
+
+                <rect x="250" y="134"
+                      width="570" height="10"
+                      rx="5" fill="#111827"/>
+
+                <rect x="250" y="134"
+                      width="556" height="10"
+                      rx="5" fill="#22D3EE"
+                      filter="url(#languageGlow)"/>
+
+                <text x="48" y="164" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="700" letter-spacing="0px" fill="#475569" fill-opacity="1" text-anchor="start">59.7 KB</text>
+
+                <rect x="48" y="173"
+                      width="802" height="1"
+                      fill="#111827"/>
+            </g>
+            
+            <g>
+                <text x="48" y="194" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12px" font-weight="700" letter-spacing="0.5px" fill="#F1F5F9" fill-opacity="1" text-anchor="start">CSS</text>
+
+                <text x="850" y="194" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="11px" font-weight="700" letter-spacing="0px" fill="#818CF8" fill-opacity="1" text-anchor="end">1.2%</text>
+
+                <rect x="250" y="187"
+                      width="570" height="10"
+                      rx="5" fill="#111827"/>
+
+                <rect x="250" y="187"
+                      width="10" height="10"
+                      rx="5" fill="#818CF8"
+                      filter="url(#languageGlow)"/>
+
+                <text x="48" y="217" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="700" letter-spacing="0px" fill="#475569" fill-opacity="1" text-anchor="start">771 B</text>
+
+                <rect x="48" y="226"
+                      width="802" height="1"
+                      fill="#111827"/>
+            </g>
+            
+            <g>
+                <text x="48" y="247" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12px" font-weight="700" letter-spacing="0.5px" fill="#F1F5F9" fill-opacity="1" text-anchor="start">HTML</text>
+
+                <text x="850" y="247" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="11px" font-weight="700" letter-spacing="0px" fill="#D946EF" fill-opacity="1" text-anchor="end">1.0%</text>
+
+                <rect x="250" y="240"
+                      width="570" height="10"
+                      rx="5" fill="#111827"/>
+
+                <rect x="250" y="240"
+                      width="10" height="10"
+                      rx="5" fill="#D946EF"
+                      filter="url(#languageGlow)"/>
+
+                <text x="48" y="270" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="700" letter-spacing="0px" fill="#475569" fill-opacity="1" text-anchor="start">628 B</text>
+
+                <rect x="48" y="279"
+                      width="802" height="1"
+                      fill="#111827"/>
+            </g>
+            
+            <g>
+                <text x="48" y="300" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12px" font-weight="700" letter-spacing="0.5px" fill="#F1F5F9" fill-opacity="1" text-anchor="start">JAVASCRIPT</text>
+
+                <text x="850" y="300" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="11px" font-weight="700" letter-spacing="0px" fill="#38BDF8" fill-opacity="1" text-anchor="end">0.2%</text>
+
+                <rect x="250" y="293"
+                      width="570" height="10"
+                      rx="5" fill="#111827"/>
+
+                <rect x="250" y="293"
+                      width="10" height="10"
+                      rx="5" fill="#38BDF8"
+                      filter="url(#languageGlow)"/>
+
+                <text x="48" y="323" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="700" letter-spacing="0px" fill="#475569" fill-opacity="1" text-anchor="start">108 B</text>
+
+                <rect x="48" y="332"
+                      width="802" height="1"
+                      fill="#111827"/>
+            </g>
+            
+
+        <!-- FOOTER -->
+        <rect x="42" y="570" width="816" height="1"
+              fill="#1E293B"/>
+
+        <text x="42" y="594" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="7px" font-weight="700" letter-spacing="0.5px" fill="#475569" fill-opacity="1" text-anchor="start">LANGUAGE SHARE IS BASED ON GITHUB BYTE DISTRIBUTION</text>
+
+        <text x="858" y="594" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="7px" font-weight="700" letter-spacing="1px" fill="#475569" fill-opacity="1" text-anchor="end">4 TOTAL DETECTED</text>
+
+    </g>
+
+    </svg>
 </svg>
