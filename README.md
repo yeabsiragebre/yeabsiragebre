@@ -22,6 +22,13 @@
 
 <br>
 
+<!--
+These cards are generated automatically by GitHub Actions.
+The workflow updates:
+profile/stats.svg
+profile/top-langs.svg
+-->
+
 <img src="./profile/stats.svg" width="49%" alt="GitHub Statistics"/>
 
 <img src="./profile/top-langs.svg" width="49%" alt="Most Used Languages"/>
