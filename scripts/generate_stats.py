@@ -432,154 +432,533 @@ def contribution_matrix(daily, x=42, y=305, cols=53, rows=7, cell=9, gap=3):
     return "".join(out)
 
 
-def generate_stats_svg(user, repos, daily, total_contributions):
-    now = datetime.now(timezone.utc)
-    seed = int(now.timestamp()) // 3600
+def generate_stats_svg(user, repositories, contributions):
+    """
+    Generate a larger, readable dashboard card.
 
-    public_repos = user.get("public_repos", 0)
-    private_repos = sum(1 for r in repos if r.get("private"))
+    Layout:
+      - 2x2 stat cards so the four headline metrics remain readable.
+      - Large contribution matrix with room to breathe.
+      - Compact 30-day activity telemetry.
+      - Prominent ONLINE status that never overlaps the header.
+      - Same canvas size as the language card for README side-by-side use.
+    """
+    WIDTH = 900
+    HEIGHT = 620
+
+    public_repositories = user.get("public_repos", 0)
     followers = user.get("followers", 0)
     following = user.get("following", 0)
-    stars = sum(r.get("stargazers_count", 0) for r in repos)
-    forks = sum(r.get("forks_count", 0) for r in repos)
 
-    recent_values = []
-    for offset in range(29, -1, -1):
-        d = now.date() - timedelta(days=offset)
-        recent_values.append(daily.get(str(d), 0))
+    stars = sum(repo.get("stargazers_count", 0) for repo in repositories)
+    forks = sum(repo.get("forks_count", 0) for repo in repositories)
+
+    private_repositories = sum(
+        1 for repo in repositories if repo.get("private")
+    )
+
+    total_activity = sum(contributions.values())
+
+    # Recent 30-day telemetry.
+    today = datetime.now(timezone.utc).date()
+    recent_days = [today - timedelta(days=i) for i in range(29, -1, -1)]
+    recent_values = [
+        contributions.get(str(day), 0)
+        for day in recent_days
+    ]
     recent_total = sum(recent_values)
-    active_days = sum(1 for v in recent_values if v > 0)
-    best_day = max(recent_values, default=0)
-    repo_count = len(repos)
+    recent_peak = max(recent_values, default=1)
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="900" height="540" viewBox="0 0 900 540">
-  {defs(seed)}
-  <g clip-path="url(#clip900)">
-    {background(900, 540, seed)}
+    # Keep the matrix visually dense but readable.
+    matrix = activity_grid_large(contributions, WIDTH=900)
 
-    <rect x="1" y="1" width="898" height="538" rx="23"
-          fill="none" stroke="#24323A" stroke-width="1"/>
-    {corner_brackets(900, 540)}
+    # Build the 30-day mini graph.
+    graph_x = 48
+    graph_y = 524
+    graph_w = 804
+    graph_h = 44
 
-    <rect x="38" y="27" width="824" height="2" fill="url(#edge)" filter="url(#glowC)"/>
+    graph_points = []
+    for i, value in enumerate(recent_values):
+        x = graph_x + (i / max(1, len(recent_values) - 1)) * graph_w
+        y = graph_y + graph_h - (
+            (value / max(1, recent_peak)) * graph_h
+        )
+        graph_points.append(f"{x:.1f},{y:.1f}")
 
-    {text(42, 60, "YEABSIRA", 22, WHITE, 800, spacing=2.2)}
-    {text(42, 80, "GITHUB // LIVE TELEMETRY", 7, MUTED, 700, spacing=2)}
-    {text(858, 56, "SYSTEM", 7, MUTED, 700, "end", spacing=1.5)}
-    {circle(838, 52, 3.5, CYAN, 1)}
-    {text(858, 72, "ONLINE / {now.strftime('%H:%M UTC')}", 7, CYAN, 700, "end", spacing=1)}
+    graph_polyline = " ".join(graph_points)
 
-    {stat_tile(38, 104, 190, 100, "Repositories", repo_count, f"{public_repos} public / {private_repos} private", CYAN, 0)}
-    {stat_tile(240, 104, 190, 100, "Followers", followers, "network reach", VIOLET, 1)}
-    {stat_tile(442, 104, 190, 100, "Stars", stars, "project impact", MAGENTA, 2)}
-    {stat_tile(644, 104, 218, 100, "Forks", forks, "collaboration", LIME, 3)}
+    # Dynamic status text.
+    if recent_total >= 50:
+        activity_state = "HIGH ACTIVITY"
+    elif recent_total >= 15:
+        activity_state = "ACTIVE"
+    elif recent_total > 0:
+        activity_state = "LOW ACTIVITY"
+    else:
+        activity_state = "STANDBY"
 
-    {text(42, 231, "CONTRIBUTION MATRIX", 8, MUTED, 700, spacing=1.8)}
-    {text(858, 231, f"{total_contributions:,} TOTAL / 365D", 8, DIM, 700, "end", spacing=1)}
+    svg = f"""
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="{WIDTH}" height="{HEIGHT}"
+     viewBox="0 0 {WIDTH} {HEIGHT}">
 
-    {contribution_matrix(daily)}
+    {definitions()}
 
-    <rect x="42" y="384" width="816" height="1" fill="#182228"/>
-    {text(42, 407, "30 DAY ACTIVITY", 7, MUTED, 700, spacing=1.5)}
-    {text(858, 407, f"{recent_total:,} EVENTS // {active_days} ACTIVE DAYS", 7, DIM, 700, "end", spacing=.8)}
+    <defs>
+        <linearGradient id="blackPanel" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#05070A"/>
+            <stop offset="55%" stop-color="#080B10"/>
+            <stop offset="100%" stop-color="#030406"/>
+        </linearGradient>
 
-    <g>
-      {sparkline(recent_values, 42, 420, 520, 48, CYAN)}
-      {text(42, 487, "0", 6, DIM, 600)}
-      {text(562, 487, f"PEAK {best_day}", 6, CYAN, 700, "end")}
+        <linearGradient id="statGlow" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#22D3EE"/>
+            <stop offset="50%" stop-color="#818CF8"/>
+            <stop offset="100%" stop-color="#D946EF"/>
+        </linearGradient>
+
+        <linearGradient id="graphGlow" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#22D3EE"/>
+            <stop offset="100%" stop-color="#A78BFA"/>
+        </linearGradient>
+
+        <filter id="strongGlow" x="-100%" y="-100%" width="300%" height="300%">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <filter id="softBlackGlow" x="-100%" y="-100%" width="300%" height="300%">
+            <feGaussianBlur stdDeviation="24"/>
+        </filter>
+
+        <clipPath id="statsClip">
+            <rect x="0" y="0" width="{WIDTH}" height="{HEIGHT}" rx="22"/>
+        </clipPath>
+    </defs>
+
+    <g clip-path="url(#statsClip)">
+
+        <!-- BLACK FOUNDATION -->
+        <rect width="{WIDTH}" height="{HEIGHT}" fill="#020304"/>
+        <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#blackPanel)"/>
+        <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#grid)"/>
+        <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#scanlines)"/>
+
+        <!-- AMBIENT LIGHT -->
+        <circle cx="70" cy="70" r="150"
+                fill="#22D3EE" opacity="0.045"
+                filter="url(#softBlackGlow)"/>
+        <circle cx="820" cy="570" r="170"
+                fill="#A855F7" opacity="0.035"
+                filter="url(#softBlackGlow)"/>
+
+        <!-- OUTER FRAME -->
+        <rect x="1" y="1" width="898" height="618" rx="21"
+              fill="none" stroke="#334155" stroke-opacity="0.65"/>
+
+        <!-- TOP SIGNAL LINE -->
+        <rect x="38" y="25" width="824" height="2"
+              fill="url(#statGlow)" filter="url(#strongGlow)"/>
+
+        <!-- HEADER -->
+        {text(42, 64, "◈ YEABSIRA", 21, "#F8FAFC", "700", letter_spacing="1")}
+        {text(42, 87, "GITHUB // LIVE TELEMETRY", 9, "#64748B", "700", letter_spacing="1")}
+
+        <!-- ONLINE STATUS — deliberately isolated from all other content -->
+        <circle cx="780" cy="56" r="5"
+                fill="#22D3EE" filter="url(#strongGlow)">
+            <animate attributeName="opacity"
+                     values="1;0.35;1" dur="2s"
+                     repeatCount="indefinite"/>
+        </circle>
+
+        {text(852, 59, "SYSTEM ONLINE", 9, "#67E8F9", "700",
+               "end", letter_spacing="1")}
+        {text(852, 79, activity_state, 7, "#475569", "700",
+               "end", letter_spacing="1")}
+
+        <!-- 2x2 STAT GRID -->
+        {stat_card_large(42, 108, 392, 84, "REPOSITORIES",
+                         public_repositories, "PUBLIC PROJECTS", "#22D3EE")}
+
+        {stat_card_large(466, 108, 392, 84, "FOLLOWERS",
+                         followers, "NETWORK", "#818CF8")}
+
+        {stat_card_large(42, 204, 392, 84, "STARS",
+                         stars, "PROJECT IMPACT", "#D946EF")}
+
+        {stat_card_large(466, 204, 392, 84, "FORKS",
+                         forks, "COLLABORATION", "#38BDF8")}
+
+        <!-- SECONDARY METADATA -->
+        {text(42, 310, "REPOSITORY TELEMETRY", 8, "#64748B", "700",
+               letter_spacing="1")}
+
+        {text(42, 334, f"{private_repositories} PRIVATE", 9,
+               "#CBD5E1", "700")}
+        {text(170, 334, f"{following} FOLLOWING", 9,
+               "#CBD5E1", "700")}
+        {text(340, 334, f"{total_activity} RECENT EVENTS", 9,
+               "#CBD5E1", "700")}
+
+        <!-- CONTRIBUTION MATRIX -->
+        {text(42, 367, "CONTRIBUTION MATRIX", 9, "#67E8F9", "700",
+               letter_spacing="1")}
+        {text(858, 367, "LAST 365 DAYS", 8, "#475569", "700",
+               "end", letter_spacing="1")}
+
+        {matrix}
+
+        <!-- 30-DAY ACTIVITY -->
+        {text(42, 480, "30-DAY ACTIVITY", 8, "#64748B", "700",
+               letter_spacing="1")}
+        {text(858, 480, f"{recent_total} EVENTS", 8, "#7DD3FC",
+               "700", "end", letter_spacing="1")}
+
+        <polyline points="{graph_polyline}"
+                  fill="none"
+                  stroke="url(#graphGlow)"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  filter="url(#strongGlow)"/>
+
+        <polyline points="{graph_polyline}"
+                  fill="none"
+                  stroke="#67E8F9"
+                  stroke-width="1"
+                  stroke-opacity="0.35"/>
+
+        <!-- FOOTER -->
+        <rect x="42" y="587" width="816" height="1"
+              fill="#1E293B"/>
+
+        {text(42, 608, "BUILDING INTELLIGENT SYSTEMS", 7,
+               "#475569", "700", letter_spacing="1")}
+        {text(858, 608, "LIVE GITHUB DATA", 7,
+               "#475569", "700", "end", letter_spacing="1")}
+
     </g>
+</svg>
+"""
 
-    <g>
-      {rect(590, 416, 268, 62, PANEL_2, 10, "#1C2930", .7)}
-      {text(608, 437, "FOLLOWING", 7, MUTED, 700, spacing=1.2)}
-      {text(608, 462, following, 20, WHITE, 700)}
-      {text(845, 437, "PROFILE", 7, MUTED, 700, "end", spacing=1.2)}
-      {text(845, 462, f"@{USERNAME}", 8, CYAN, 700, "end")}
-    </g>
-
-    <rect x="42" y="504" width="816" height="1" fill="#182228"/>
-    {text(42, 524, "BLACKOUT // DATA IS GENERATED FROM THE GITHUB API", 6.5, DIM, 700, spacing=1)}
-    {text(858, 524, "AUTO REFRESH 24H", 6.5, CYAN, 700, "end", spacing=1)}
-  </g>
-</svg>"""
     return svg
 
 
-# ============================================================
-# LANGUAGE MATRIX
-# ============================================================
+def stat_card_large(x, y, width, height, title, value,
+                    subtitle, accent):
+    return f"""
+    <g>
+        <rect x="{x}" y="{y}" width="{width}" height="{height}"
+              rx="12" fill="#070A0E"
+              stroke="#1E293B" stroke-width="1"/>
 
-def language_arc(cx, cy, radius, percent, color):
-    # SVG circle dash makes a clean progress ring without JS.
-    circumference = 2 * math.pi * radius
-    dash = circumference * percent / 100
-    return (
-        f'<circle cx="{cx}" cy="{cy}" r="{radius}" fill="none" '
-        f'stroke="#182329" stroke-width="7"/>'
-        f'<circle cx="{cx}" cy="{cy}" r="{radius}" fill="none" '
-        f'stroke="{color}" stroke-width="7" stroke-linecap="round" '
-        f'stroke-dasharray="{dash:.2f} {circumference:.2f}" '
-        f'transform="rotate(-90 {cx} {cy})" filter="url(#glowC)"/>'
-    )
+        <rect x="{x}" y="{y}" width="3" height="{height}"
+              rx="2" fill="{accent}"/>
+
+        <rect x="{x + 18}" y="{y + 18}"
+              width="55" height="2"
+              fill="{accent}" opacity="0.65"/>
+
+        {text(x + 18, y + 40, title, 8, "#64748B",
+               "700", letter_spacing="1")}
+
+        {text(x + 18, y + 70, value, 24, "#F8FAFC", "700")}
+
+        {text(x + width - 18, y + 70, subtitle, 8, "#475569",
+               "700", "end")}
+    </g>
+"""
+
+
+def activity_grid_large(contributions, WIDTH=900):
+    """
+    Larger, clean 52-column x 7-row contribution matrix.
+    Fits beneath the 2x2 stats without colliding with the activity graph.
+    """
+    today = datetime.now(timezone.utc).date()
+
+    # Start on a Sunday so the seven rows remain aligned.
+    start = today - timedelta(days=364)
+    start -= timedelta(days=(start.weekday() + 1) % 7)
+
+    total_days = 371
+    columns = 53
+
+    max_activity = max(contributions.values(), default=1)
+
+    colors = [
+        "#0B1117",
+        "#12303A",
+        "#155E63",
+        "#0E7490",
+        "#0891B2",
+        "#22D3EE",
+        "#A78BFA",
+    ]
+
+    blocks = []
+
+    cell = 12
+    gap = 3
+    x0 = 44
+    y0 = 378
+
+    for day_index in range(total_days):
+        date = start + timedelta(days=day_index)
+        count = contributions.get(str(date), 0)
+
+        if count <= 0:
+            level = 0
+        else:
+            ratio = count / max_activity
+            if ratio < 0.15:
+                level = 1
+            elif ratio < 0.30:
+                level = 2
+            elif ratio < 0.50:
+                level = 3
+            elif ratio < 0.70:
+                level = 4
+            elif ratio < 0.90:
+                level = 5
+            else:
+                level = 6
+
+        column = day_index // 7
+        row = day_index % 7
+
+        x = x0 + column * (cell + gap)
+        y = y0 + row * (cell - 1)
+
+        # Keep the last column inside the frame.
+        if x + cell > 858:
+            continue
+
+        blocks.append(
+            f"""
+            <rect x="{x}" y="{y}" width="{cell}" height="{cell - 1}"
+                  rx="3" fill="{colors[level]}" opacity="0.96">
+                <title>{escape(str(date))}: {count} contribution events</title>
+            </rect>
+            """
+        )
+
+    return "\n".join(blocks)
 
 
 def generate_languages_svg(languages):
-    total = sum(languages.values())
-    ordered = sorted(languages.items(), key=lambda kv: kv[1], reverse=True)[:8]
-    data = []
-    for lang, amount in ordered:
-        pct = (amount / total * 100) if total else 0
-        data.append((lang, pct, amount))
+    """
+    Generate the same-size companion card as the stats dashboard.
 
-    now = datetime.now(timezone.utc)
-    seed = int(now.timestamp()) // 3600
+    The language panel is intentionally simplified:
+      - no redundant CODEBASE labels
+      - larger language names
+      - percentage and bar on the same visual row
+      - enough vertical spacing to prevent overlap
+      - top 8 languages remain fully readable
+    """
+    WIDTH = 900
+    HEIGHT = 620
+
+    total_bytes = sum(languages.values())
+    language_data = []
+
+    if total_bytes:
+        for language, amount in sorted(
+            languages.items(),
+            key=lambda item: item[1],
+            reverse=True,
+        )[:8]:
+            percentage = amount / total_bytes * 100
+            language_data.append((language, percentage, amount))
+
+    language_colors = [
+        "#22D3EE",
+        "#818CF8",
+        "#D946EF",
+        "#38BDF8",
+        "#A78BFA",
+        "#67E8F9",
+        "#60A5FA",
+        "#C084FC",
+    ]
 
     rows = []
-    for i, (lang, pct, amount) in enumerate(data):
-        y = 112 + i * 42
-        color = LANG_COLORS[i % len(LANG_COLORS)]
-        width = 420 * pct / 100
-        rows.append(f"""
-          {text(40, y, lang.upper(), 8, WHITE, 700, spacing=1)}
-          {text(610, y, f"{pct:.1f}%", 8, color, 800, "end")}
-          <rect x="40" y="{y+10}" width="570" height="5" rx="2.5" fill="#111A1F"/>
-          <rect x="40" y="{y+10}" width="{width:.2f}" height="5" rx="2.5"
-                fill="{color}" filter="url(#glowC)"/>
-          {circle(625, y+12.5, 2.5, color, 1)}
-          {text(645, y+15, f"{amount/1024:.0f} KB", 6.5, DIM, 600)}
-        """)
 
-    if not rows:
-        rows.append(text(40, 120, "NO LANGUAGE DATA RETURNED", 9, RED, 700))
+    # Large, readable rows.
+    y = 126
+    row_height = 53
 
-    lead = data[0] if data else ("N/A", 0, 0)
+    for index, (language, percentage, amount) in enumerate(language_data):
+        color = language_colors[index % len(language_colors)]
 
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="680" height="500" viewBox="0 0 680 500">
-  {defs(seed)}
-  <g clip-path="url(#clip720)">
-    {background(680, 500, seed + 19)}
-    <rect x="1" y="1" width="678" height="498" rx="23" fill="none" stroke="#24323A"/>
-    {corner_brackets(680, 500, VIOLET)}
+        bar_x = 250
+        bar_y = y + 8
+        bar_width = 570
+        fill_width = max(10, int(bar_width * percentage / 100))
 
-    <rect x="36" y="27" width="608" height="2" fill="url(#edge)" filter="url(#glowC)"/>
-    {text(40, 60, "LANGUAGE / MATRIX", 19, WHITE, 800, spacing=1.8)}
-    {text(640, 56, "CODEBASE", 7, MUTED, 700, "end", spacing=1.5)}
-    {text(640, 72, f"{len(data):02d} LANGUAGES", 7, CYAN, 700, "end", spacing=1)}
+        rows.append(
+            f"""
+            <g>
+                {text(48, y + 15, language.upper(), 12,
+                       "#F1F5F9", "700", letter_spacing="0.5")}
 
-    <g>
-      {language_arc(565, 78, 27, lead[1], CYAN)}
-      {text(565, 83, f"{lead[1]:.0f}%", 8, WHITE, 800, "middle")}
+                {text(850, y + 15, f"{percentage:.1f}%", 11,
+                       color, "700", "end")}
+
+                <rect x="{bar_x}" y="{bar_y}"
+                      width="{bar_width}" height="10"
+                      rx="5" fill="#111827"/>
+
+                <rect x="{bar_x}" y="{bar_y}"
+                      width="{fill_width}" height="10"
+                      rx="5" fill="{color}"
+                      filter="url(#languageGlow)"/>
+
+                {text(48, y + 38,
+                       f"{format_bytes(amount)}",
+                       8, "#475569", "700")}
+
+                <rect x="48" y="{y + 47}"
+                      width="802" height="1"
+                      fill="#111827"/>
+            </g>
+            """
+        )
+
+        y += row_height
+
+    if not language_data:
+        rows.append(
+            text(48, 150, "NO LANGUAGE DATA RETURNED", 12,
+                 "#F87171", "700")
+        )
+        rows.append(
+            text(48, 178, "CHECK GH_TOKEN REPOSITORY ACCESS", 9,
+                 "#64748B", "700")
+        )
+
+    svg = f"""
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="{WIDTH}" height="{HEIGHT}"
+     viewBox="0 0 {WIDTH} {HEIGHT}">
+
+    {definitions()}
+
+    <defs>
+        <linearGradient id="languageAccent"
+                        x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#22D3EE"/>
+            <stop offset="50%" stop-color="#818CF8"/>
+            <stop offset="100%" stop-color="#D946EF"/>
+        </linearGradient>
+
+        <filter id="languageGlow"
+                x="-50%" y="-100%" width="200%" height="300%">
+            <feGaussianBlur stdDeviation="2.5" result="blur"/>
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <filter id="languageAmbient"
+                x="-100%" y="-100%" width="300%" height="300%">
+            <feGaussianBlur stdDeviation="25"/>
+        </filter>
+
+        <clipPath id="languageClip">
+            <rect x="0" y="0" width="{WIDTH}" height="{HEIGHT}" rx="22"/>
+        </clipPath>
+    </defs>
+
+    <g clip-path="url(#languageClip)">
+
+        <!-- BLACK FOUNDATION -->
+        <rect width="{WIDTH}" height="{HEIGHT}" fill="#020304"/>
+        <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#blackPanel)"/>
+        <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#grid)"/>
+        <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#scanlines)"/>
+
+        <!-- AMBIENT LIGHT -->
+        <circle cx="820" cy="100" r="150"
+                fill="#A855F7" opacity="0.035"
+                filter="url(#languageAmbient)"/>
+        <circle cx="80" cy="560" r="150"
+                fill="#22D3EE" opacity="0.035"
+                filter="url(#languageAmbient)"/>
+
+        <!-- FRAME -->
+        <rect x="1" y="1" width="898" height="618" rx="21"
+              fill="none" stroke="#334155" stroke-opacity="0.65"/>
+
+        <rect x="38" y="25" width="824" height="2"
+              fill="url(#languageAccent)"
+              filter="url(#languageGlow)"/>
+
+        <!-- HEADER -->
+        {text(42, 65, "◈ LANGUAGE MATRIX", 21,
+               "#F8FAFC", "700", letter_spacing="1")}
+
+        {text(42, 88, "CODEBASE // BYTE DISTRIBUTION", 9,
+               "#64748B", "700", letter_spacing="1")}
+
+        <!-- ONLINE STATUS -->
+        <circle cx="780" cy="56" r="5"
+                fill="#22D3EE" filter="url(#languageGlow)">
+            <animate attributeName="opacity"
+                     values="1;0.35;1" dur="2s"
+                     repeatCount="indefinite"/>
+        </circle>
+
+        {text(852, 59, "SYSTEM ONLINE", 9,
+               "#67E8F9", "700", "end", letter_spacing="1")}
+
+        {text(852, 79, "LANGUAGE ANALYSIS", 7,
+               "#475569", "700", "end", letter_spacing="1")}
+
+        <!-- SECTION LABEL -->
+        {text(48, 111, f"{len(language_data)} PRIMARY LANGUAGES",
+               8, "#64748B", "700", letter_spacing="1")}
+
+        <!-- LANGUAGE ROWS -->
+        {"".join(rows)}
+
+        <!-- FOOTER -->
+        <rect x="42" y="570" width="816" height="1"
+              fill="#1E293B"/>
+
+        {text(42, 594,
+               "LANGUAGE SHARE IS BASED ON GITHUB BYTE DISTRIBUTION",
+               7, "#475569", "700", letter_spacing="0.5")}
+
+        {text(858, 594,
+               f"{len(languages)} TOTAL DETECTED",
+               7, "#475569", "700", "end", letter_spacing="1")}
+
     </g>
+</svg>
+"""
 
-    {text(40, 92, "BYTE-WEIGHTED DISTRIBUTION / TOP 8", 6.5, DIM, 700, spacing=1)}
+    return svg
 
-    {"".join(rows)}
 
-    <rect x="40" y="456" width="600" height="1" fill="#182228"/>
-    {text(40, 477, "PRIMARY LANGUAGES ACROSS REPOSITORIES", 6.5, DIM, 700, spacing=1)}
-    {text(640, 477, f"SYNC // {now.strftime('%Y-%m-%d')}", 6.5, CYAN, 700, "end", spacing=1)}
-  </g>
-</svg>"""
+def format_bytes(value):
+    """Compact byte display for the language card."""
+    value = float(value)
+
+    if value >= 1024 ** 3:
+        return f"{value / (1024 ** 3):.1f} GB"
+    if value >= 1024 ** 2:
+        return f"{value / (1024 ** 2):.1f} MB"
+    if value >= 1024:
+        return f"{value / 1024:.1f} KB"
+    return f"{int(value)} B"
 
 
 # ============================================================
