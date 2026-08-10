@@ -14,26 +14,6 @@
 
 </div>
 
-<br>
-
-<div align="center">
-
-```text
-╭──────────────────────────────────────────────────────────────╮
-│                                                              │
-│   YEABSIRA                                                    │
-│                                                              │
-│   COMPUTER SCIENCE      →      AI ENGINEERING                │
-│                                                              │
-│   BUILDING SYSTEMS      →      SOLVING PROBLEMS              │
-│                                                              │
-╰──────────────────────────────────────────────────────────────╯
-```
-
-</div>
-
----
-
 <div align="center">
 
 ## `GITHUB`
