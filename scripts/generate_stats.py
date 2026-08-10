@@ -41,25 +41,27 @@ session.headers.update(HEADERS)
 # DESIGN TOKENS
 # ============================================================
 
-BG = "#030507"
-PANEL = "#080B0F"
-PANEL_2 = "#0B1015"
-WHITE = "#F4F7F8"
-MUTED = "#69757E"
-DIM = "#364149"
-GRID = "#8EA3AE"
-CYAN = "#00F5D4"
-CYAN_2 = "#00C2FF"
-LIME = "#B7FF4A"
-VIOLET = "#9B7BFF"
-MAGENTA = "#FF4FD8"
-ORANGE = "#FF9D3D"
-RED = "#FF476F"
+# Minimal, premium dark palette — intentionally restrained.
+BG = "#050607"
+PANEL = "#0A0D10"
+PANEL_2 = "#0E1216"
+WHITE = "#F3F5F7"
+MUTED = "#7D8992"
+DIM = "#46515A"
+GRID = "#64727C"
+
+# Primary accent + restrained secondary accent.
+CYAN = "#36E0C0"
+CYAN_2 = "#63B3FF"
+LIME = "#A8E063"
+VIOLET = "#8B7CFF"
+MAGENTA = "#D978C9"
+ORANGE = "#D9A45F"
+RED = "#E06C75"
 
 LANG_COLORS = [
-    CYAN, VIOLET, MAGENTA, LIME, CYAN_2, ORANGE, "#6EE7FF", "#C084FC"
+    CYAN, CYAN_2, VIOLET, LIME, MAGENTA, ORANGE, "#75C7D8", "#B19CFF"
 ]
-
 # ============================================================
 # API
 # ============================================================
@@ -260,84 +262,93 @@ def circle(cx, cy, r, fill, opacity=1, stroke="none", stroke_width=0):
 # ============================================================
 
 def defs(seed=0):
-    # Seed changes the ambient animation phase from one generation to another.
+    phase = seed % 360
     return f"""
 <defs>
   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0%" stop-color="#020304"/>
-    <stop offset="48%" stop-color="#070B0E"/>
-    <stop offset="100%" stop-color="#020405"/>
+    <stop offset="0%" stop-color="#040607"/>
+    <stop offset="55%" stop-color="#080B0E"/>
+    <stop offset="100%" stop-color="#030405"/>
   </linearGradient>
 
-  <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
+  <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0%" stop-color="{CYAN}" stop-opacity="0"/>
-    <stop offset="20%" stop-color="{CYAN}" stop-opacity=".95"/>
-    <stop offset="55%" stop-color="{VIOLET}" stop-opacity=".9"/>
-    <stop offset="82%" stop-color="{MAGENTA}" stop-opacity=".75"/>
-    <stop offset="100%" stop-color="{MAGENTA}" stop-opacity="0"/>
+    <stop offset="18%" stop-color="{CYAN}" stop-opacity=".85"/>
+    <stop offset="52%" stop-color="{CYAN_2}" stop-opacity=".9"/>
+    <stop offset="82%" stop-color="{VIOLET}" stop-opacity=".65"/>
+    <stop offset="100%" stop-color="{VIOLET}" stop-opacity="0"/>
   </linearGradient>
 
-  <linearGradient id="cyanSweep" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="{CYAN}" stop-opacity=".05"/>
-    <stop offset="48%" stop-color="{CYAN}" stop-opacity=".9"/>
-    <stop offset="100%" stop-color="{CYAN_2}" stop-opacity=".05"/>
+  <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="{CYAN}"/>
+    <stop offset="100%" stop-color="{CYAN_2}"/>
   </linearGradient>
 
-  <linearGradient id="violetSweep" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="{VIOLET}" stop-opacity=".04"/>
-    <stop offset="50%" stop-color="{MAGENTA}" stop-opacity=".8"/>
-    <stop offset="100%" stop-color="{VIOLET}" stop-opacity=".04"/>
+  <linearGradient id="violetBar" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="{CYAN_2}"/>
+    <stop offset="100%" stop-color="{VIOLET}"/>
   </linearGradient>
 
-  <pattern id="microgrid" width="24" height="24" patternUnits="userSpaceOnUse">
-    <path d="M24 0H0V24" fill="none" stroke="{GRID}" stroke-opacity=".055"/>
+  <pattern id="microgrid" width="28" height="28" patternUnits="userSpaceOnUse">
+    <path d="M28 0H0V28" fill="none" stroke="{GRID}" stroke-opacity=".035"/>
   </pattern>
 
-  <pattern id="scan" width="6" height="6" patternUnits="userSpaceOnUse">
-    <path d="M0 0H6" stroke="#FFFFFF" stroke-opacity=".018"/>
+  <pattern id="scan" width="4" height="8" patternUnits="userSpaceOnUse">
+    <path d="M0 0H4" stroke="#FFFFFF" stroke-opacity=".012"/>
   </pattern>
 
-  <filter id="glowC" x="-100%" y="-100%" width="300%" height="300%">
-    <feGaussianBlur stdDeviation="3" result="b"/>
-    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="3" result="blur"/>
+    <feMerge>
+      <feMergeNode in="blur"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
   </filter>
 
-  <filter id="glowS" x="-100%" y="-100%" width="300%" height="300%">
-    <feGaussianBlur stdDeviation="13"/>
+  <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="18"/>
   </filter>
 
-  <filter id="glowXL" x="-100%" y="-100%" width="300%" height="300%">
-    <feGaussianBlur stdDeviation="28"/>
+  <filter id="tinyGlow" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="1.8" result="blur"/>
+    <feMerge>
+      <feMergeNode in="blur"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
   </filter>
-
-  <clipPath id="clip900"><rect x="0" y="0" width="900" height="540" rx="24"/></clipPath>
-  <clipPath id="clip720"><rect x="0" y="0" width="720" height="500" rx="24"/></clipPath>
 
   <style>
-    .blink {{ animation: blink 2.2s ease-in-out infinite; }}
-    .pulse {{ animation: pulse 3.4s ease-in-out infinite; transform-origin:center; }}
-    .drift {{ animation: drift 9s ease-in-out infinite alternate; }}
-    .scanmove {{ animation: scanmove 5s linear infinite; }}
-    @keyframes blink {{ 0%,100% {{ opacity:.25; }} 50% {{ opacity:1; }} }}
-    @keyframes pulse {{ 0%,100% {{ opacity:.35; transform:scale(.96); }} 50% {{ opacity:.95; transform:scale(1.04); }} }}
-    @keyframes drift {{ from {{ transform:translateX(-18px); }} to {{ transform:translateX(18px); }} }}
-    @keyframes scanmove {{ from {{ transform:translateY(-80px); }} to {{ transform:translateY(600px); }} }}
+    .pulse {{ animation:pulse 2.8s ease-in-out infinite; }}
+    .scanmove {{ animation:scanmove 7s linear infinite; }}
+    .float {{ animation:float 8s ease-in-out infinite alternate; }}
+    @keyframes pulse {{
+      0%,100% {{ opacity:.35; }}
+      50% {{ opacity:1; }}
+    }}
+    @keyframes scanmove {{
+      from {{ transform:translateY(-100px); }}
+      to {{ transform:translateY(720px); }}
+    }}
+    @keyframes float {{
+      from {{ transform:translateX(-14px); }}
+      to {{ transform:translateX(14px); }}
+    }}
   </style>
 </defs>
 """
 
 
 def corner_brackets(w, h, color=CYAN):
-    s = 18
+    s = 14
     return "".join([
-        line(16, 16, 16+s, 16, color, 2, .9),
-        line(16, 16, 16, 16+s, color, 2, .9),
-        line(w-16-s, 16, w-16, 16, color, 2, .9),
-        line(w-16, 16, w-16, 16+s, color, 2, .9),
-        line(16, h-16, 16+s, h-16, color, 2, .9),
-        line(16, h-16-s, 16, h-16, color, 2, .9),
-        line(w-16-s, h-16, w-16, h-16, color, 2, .9),
-        line(w-16, h-16-s, w-16, h-16, color, 2, .9),
+        line(18, 18, 18+s, 18, color, 1, .8),
+        line(18, 18, 18, 18+s, color, 1, .8),
+        line(w-18-s, 18, w-18, 18, color, 1, .8),
+        line(w-18, 18, w-18, 18+s, color, 1, .8),
+        line(18, h-18, 18+s, h-18, color, 1, .8),
+        line(18, h-18-s, 18, h-18, color, 1, .8),
+        line(w-18-s, h-18, w-18, h-18, color, 1, .8),
+        line(w-18, h-18-s, w-18, h-18, color, 1, .8),
     ])
 
 
@@ -348,25 +359,21 @@ def background(w, h, seed):
       <rect width="{w}" height="{h}" fill="url(#microgrid)"/>
       <rect width="{w}" height="{h}" fill="url(#scan)"/>
 
-      <circle class="drift" cx="120" cy="75" r="95" fill="{CYAN}"
-              opacity=".045" filter="url(#glowXL)"/>
-      <circle class="pulse" cx="790" cy="430" r="105" fill="{MAGENTA}"
-              opacity=".035" filter="url(#glowXL)"/>
+      <circle class="float" cx="110" cy="70" r="100"
+              fill="{CYAN}" opacity=".025" filter="url(#softGlow)"/>
+      <circle class="float" cx="800" cy="510" r="130"
+              fill="{VIOLET}" opacity=".02" filter="url(#softGlow)"/>
 
-      <g opacity=".22">
-        <path d="M0 86H{w}" stroke="{CYAN}" stroke-opacity=".08"/>
-        <path d="M0 430H{w}" stroke="{VIOLET}" stroke-opacity=".07"/>
+      <rect class="scanmove" x="0" y="-100" width="{w}" height="55"
+            fill="url(#accentLine)" opacity=".08"/>
+
+      <g transform="rotate({phase} 450 310)" opacity=".018">
+        <circle cx="450" cy="310" r="250" fill="none"
+                stroke="{CYAN}" stroke-width="1"/>
+        <circle cx="450" cy="310" r="340" fill="none"
+                stroke="{VIOLET}" stroke-width="1"/>
       </g>
-
-      <rect class="scanmove" x="0" y="-100" width="{w}" height="70"
-            fill="url(#cyanSweep)" opacity=".14"/>
-      <g transform="rotate({phase} 450 270)" opacity=".025">
-        <circle cx="450" cy="270" r="240" fill="none" stroke="{CYAN}" stroke-width="1"/>
-        <circle cx="450" cy="270" r="330" fill="none" stroke="{MAGENTA}" stroke-width="1"/>
-      </g>
-"""
-
-
+    """
 # ============================================================
 # STATS CARD
 # ============================================================
@@ -374,13 +381,15 @@ def background(w, h, seed):
 def stat_tile(x, y, w, h, label, value, sub, accent, index):
     return f"""
       <g>
-        {rect(x, y, w, h, PANEL, 12, "#1C2930", .8)}
-        <rect x="{x}" y="{y}" width="3" height="{h}" rx="1.5" fill="{accent}"/>
-        <circle class="pulse" cx="{x+w-18}" cy="{y+18}" r="3"
-                fill="{accent}" filter="url(#glowC)" style="animation-delay:{index*.3}s"/>
-        {text(x+17, y+27, label.upper(), 7, MUTED, 700, spacing=1.6)}
-        {text(x+17, y+62, value, 27, WHITE, 700)}
-        {text(x+17, y+83, sub.upper(), 7, DIM, 700, spacing=.8)}
+        <rect x="{x}" y="{y}" width="{w}" height="{h}" rx="10"
+              fill="{PANEL}" stroke="#1A2329" stroke-width="1"/>
+        <rect x="{x}" y="{y}" width="2" height="{h}" rx="1" fill="{accent}"/>
+        <circle class="pulse" cx="{x+w-18}" cy="{y+18}" r="2.5"
+                fill="{accent}" filter="url(#glow)"
+                style="animation-delay:{index*.25}s"/>
+        {text(x+16, y+24, label.upper(), 7, MUTED, 700, spacing=1.4)}
+        {text(x+16, y+57, value, 25, WHITE, 700)}
+        {text(x+16, y+75, sub.upper(), 7, DIM, 700, spacing=.7)}
       </g>
     """
 
@@ -400,9 +409,7 @@ def sparkline(values, x, y, w, h, color=CYAN):
     return f"""
       <polyline points="{points}" fill="none" stroke="{color}"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-        filter="url(#glowC)"/>
-      <polyline points="{points}" fill="none" stroke="{color}"
-        stroke-opacity=".18" stroke-width="8" stroke-linecap="round"/>
+        filter="url(#glow)"/>
     """
 
 
@@ -411,7 +418,7 @@ def contribution_matrix(daily, x=42, y=305, cols=53, rows=7, cell=9, gap=3):
     start = end - timedelta(days=363)
     max_count = max(daily.values(), default=1)
 
-    palette = ["#0A0F12", "#12352F", "#11604F", "#00A887", CYAN, LIME]
+    palette = ["#0B1013", "#12302D", "#185148", "#24776A", "#2BAF96", CYAN]
     out = []
 
     for day_index in range(364):
@@ -430,7 +437,7 @@ def contribution_matrix(daily, x=42, y=305, cols=53, rows=7, cell=9, gap=3):
 
         out.append(
             f'<rect x="{px}" y="{py}" width="{cell}" height="{cell}" rx="2" '
-            f'fill="{palette[level]}" opacity=".94">'
+            f'fill="{palette[level]}" opacity=".95">'
             f'<title>{date.isoformat()} · {count} contributions</title></rect>'
         )
 
@@ -438,16 +445,6 @@ def contribution_matrix(daily, x=42, y=305, cols=53, rows=7, cell=9, gap=3):
 
 
 def generate_stats_svg(user, repositories, daily, total_contributions):
-    """
-    Generate a larger, readable dashboard card.
-
-    Layout:
-      - 2x2 stat cards so the four headline metrics remain readable.
-      - Large contribution matrix with room to breathe.
-      - Compact 30-day activity telemetry.
-      - Prominent ONLINE status that never overlaps the header.
-      - Same canvas size as the language card for README side-by-side use.
-    """
     WIDTH = 900
     HEIGHT = 620
 
@@ -457,43 +454,14 @@ def generate_stats_svg(user, repositories, daily, total_contributions):
 
     stars = sum(repo.get("stargazers_count", 0) for repo in repositories)
     forks = sum(repo.get("forks_count", 0) for repo in repositories)
+    private_repositories = sum(1 for repo in repositories if repo.get("private"))
 
-    private_repositories = sum(
-        1 for repo in repositories if repo.get("private")
-    )
-
-    total_activity = total_contributions
-
-    # Recent 30-day telemetry.
     today = datetime.now(timezone.utc).date()
     recent_days = [today - timedelta(days=i) for i in range(29, -1, -1)]
-    recent_values = [
-        daily.get(str(day), 0)
-        for day in recent_days
-    ]
+    recent_values = [daily.get(str(day), 0) for day in recent_days]
     recent_total = sum(recent_values)
     recent_peak = max(recent_values, default=1)
 
-    # Keep the matrix visually dense but readable.
-    matrix = activity_grid_large(daily, WIDTH=900)
-
-    # Build the 30-day mini graph.
-    graph_x = 48
-    graph_y = 524
-    graph_w = 804
-    graph_h = 44
-
-    graph_points = []
-    for i, value in enumerate(recent_values):
-        x = graph_x + (i / max(1, len(recent_values) - 1)) * graph_w
-        y = graph_y + graph_h - (
-            (value / max(1, recent_peak)) * graph_h
-        )
-        graph_points.append(f"{x:.1f},{y:.1f}")
-
-    graph_polyline = " ".join(graph_points)
-
-    # Dynamic status text.
     if recent_total >= 50:
         activity_state = "HIGH ACTIVITY"
     elif recent_total >= 15:
@@ -503,215 +471,138 @@ def generate_stats_svg(user, repositories, daily, total_contributions):
     else:
         activity_state = "STANDBY"
 
+    matrix = activity_grid_large(daily, WIDTH=WIDTH)
+
+    graph_x, graph_y, graph_w, graph_h = 48, 526, 804, 38
+    graph_points = []
+    for i, value in enumerate(recent_values):
+        x = graph_x + (i / max(1, len(recent_values)-1)) * graph_w
+        y = graph_y + graph_h - (value / max(1, recent_peak)) * graph_h
+        graph_points.append(f"{x:.1f},{y:.1f}")
+    graph_polyline = " ".join(graph_points)
+
     svg = f"""
 <svg xmlns="http://www.w3.org/2000/svg"
-     width="{WIDTH}" height="{HEIGHT}"
-     viewBox="0 0 {WIDTH} {HEIGHT}">
+     width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}">
 
-    {defs()}
+  {defs()}
 
-    <defs>
-        <linearGradient id="blackPanel" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#05070A"/>
-            <stop offset="55%" stop-color="#080B10"/>
-            <stop offset="100%" stop-color="#030406"/>
-        </linearGradient>
+  <defs>
+    <clipPath id="statsClip">
+      <rect x="0" y="0" width="{WIDTH}" height="{HEIGHT}" rx="20"/>
+    </clipPath>
+  </defs>
 
-        <linearGradient id="statGlow" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stop-color="#22D3EE"/>
-            <stop offset="50%" stop-color="#818CF8"/>
-            <stop offset="100%" stop-color="#D946EF"/>
-        </linearGradient>
+  <g clip-path="url(#statsClip)">
+    <rect width="{WIDTH}" height="{HEIGHT}" fill="#030506"/>
+    <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#bg)"/>
+    <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#microgrid)"/>
+    <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#scan)"/>
 
-        <linearGradient id="graphGlow" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stop-color="#22D3EE"/>
-            <stop offset="100%" stop-color="#A78BFA"/>
-        </linearGradient>
+    <circle cx="65" cy="75" r="130" fill="{CYAN}" opacity=".025"
+            filter="url(#softGlow)"/>
+    <circle cx="835" cy="540" r="150" fill="{VIOLET}" opacity=".018"
+            filter="url(#softGlow)"/>
 
-        <filter id="strongGlow" x="-100%" y="-100%" width="300%" height="300%">
-            <feGaussianBlur stdDeviation="4" result="blur"/>
-            <feMerge>
-                <feMergeNode in="blur"/>
-                <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-        </filter>
+    <rect x="1" y="1" width="898" height="618" rx="20"
+          fill="none" stroke="#273139" stroke-opacity=".9"/>
 
-        <filter id="softBlackGlow" x="-100%" y="-100%" width="300%" height="300%">
-            <feGaussianBlur stdDeviation="24"/>
-        </filter>
+    {corner_brackets(WIDTH, HEIGHT)}
 
-        <clipPath id="statsClip">
-            <rect x="0" y="0" width="{WIDTH}" height="{HEIGHT}" rx="22"/>
-        </clipPath>
-    </defs>
+    <rect x="42" y="27" width="816" height="2"
+          fill="url(#accentLine)" filter="url(#glow)"/>
 
-    <g clip-path="url(#statsClip)">
+    {text(42, 62, "YEABSIRA", 20, WHITE, 700, spacing=1.2)}
+    {text(42, 83, "GITHUB // LIVE TELEMETRY", 8, MUTED, 700, spacing=1.2)}
 
-        <!-- BLACK FOUNDATION -->
-        <rect width="{WIDTH}" height="{HEIGHT}" fill="#020304"/>
-        <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#blackPanel)"/>
-        <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#microgrid)"/>
-        <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#scan)"/>
+    <circle class="pulse" cx="782" cy="53" r="4"
+            fill="{CYAN}" filter="url(#glow)"/>
+    {text(852, 56, "SYSTEM ONLINE", 8, CYAN, 700, "end", spacing=1.1)}
+    {text(852, 75, activity_state, 7, DIM, 700, "end", spacing=1)}
 
-        <!-- AMBIENT LIGHT -->
-        <circle cx="70" cy="70" r="150"
-                fill="#22D3EE" opacity="0.045"
-                filter="url(#softBlackGlow)"/>
-        <circle cx="820" cy="570" r="170"
-                fill="#A855F7" opacity="0.035"
-                filter="url(#softBlackGlow)"/>
+    <!-- HEADLINE METRICS -->
+    {stat_tile(42, 102, 198, 88, "REPOSITORIES",
+               public_repositories, "PUBLIC PROJECTS", CYAN, 0)}
+    {stat_tile(252, 102, 198, 88, "FOLLOWERS",
+               followers, "NETWORK", CYAN_2, 1)}
+    {stat_tile(462, 102, 198, 88, "STARS",
+               stars, "PROJECT IMPACT", VIOLET, 2)}
+    {stat_tile(672, 102, 186, 88, "FORKS",
+               forks, "COLLABORATION", CYAN, 3)}
 
-        <!-- OUTER FRAME -->
-        <rect x="1" y="1" width="898" height="618" rx="21"
-              fill="none" stroke="#334155" stroke-opacity="0.65"/>
+    <!-- DATA STRIP -->
+    <rect x="42" y="204" width="816" height="48" rx="8"
+          fill="#070A0D" stroke="#172026"/>
 
-        <!-- TOP SIGNAL LINE -->
-        <rect x="38" y="25" width="824" height="2"
-              fill="url(#statGlow)" filter="url(#strongGlow)"/>
+    {text(58, 224, "PRIVATE", 7, DIM, 700, spacing=1)}
+    {text(58, 241, private_repositories, 12, WHITE, 700)}
 
-        <!-- HEADER -->
-        {text(42, 64, "◈ YEABSIRA", 21, "#F8FAFC", "700", letter_spacing="1")}
-        {text(42, 87, "GITHUB // LIVE TELEMETRY", 9, "#64748B", "700", letter_spacing="1")}
+    {text(220, 224, "FOLLOWING", 7, DIM, 700, spacing=1)}
+    {text(220, 241, following, 12, WHITE, 700)}
 
-        <!-- ONLINE STATUS — deliberately isolated from all other content -->
-        <circle cx="780" cy="56" r="5"
-                fill="#22D3EE" filter="url(#strongGlow)">
-            <animate attributeName="opacity"
-                     values="1;0.35;1" dur="2s"
-                     repeatCount="indefinite"/>
-        </circle>
+    {text(390, 224, "365D CONTRIBUTIONS", 7, DIM, 700, spacing=1)}
+    {text(390, 241, f"{total_contributions:,}", 12, WHITE, 700)}
 
-        {text(852, 59, "SYSTEM ONLINE", 9, "#67E8F9", "700",
-               "end", letter_spacing="1")}
-        {text(852, 79, activity_state, 7, "#475569", "700",
-               "end", letter_spacing="1")}
+    {text(650, 224, "30D EVENTS", 7, DIM, 700, spacing=1)}
+    {text(650, 241, f"{recent_total:,}", 12, CYAN, 700)}
 
-        <!-- 2x2 STAT GRID -->
-        {stat_card_large(42, 108, 392, 84, "REPOSITORIES",
-                         public_repositories, "PUBLIC PROJECTS", "#22D3EE")}
+    {text(842, 241, "LIVE", 7, CYAN, 700, "end", spacing=1)}
 
-        {stat_card_large(466, 108, 392, 84, "FOLLOWERS",
-                         followers, "NETWORK", "#818CF8")}
+    <!-- CONTRIBUTION MATRIX -->
+    {text(42, 280, "CONTRIBUTION MATRIX", 8, WHITE, 700, spacing=1.3)}
+    {text(858, 280, "LAST 365 DAYS", 7, DIM, 700, "end", spacing=1.1)}
 
-        {stat_card_large(42, 204, 392, 84, "STARS",
-                         stars, "PROJECT IMPACT", "#D946EF")}
+    {matrix}
 
-        {stat_card_large(466, 204, 392, 84, "FORKS",
-                         forks, "COLLABORATION", "#38BDF8")}
+    <!-- ACTIVITY TELEMETRY -->
+    {text(42, 489, "30-DAY ACTIVITY", 8, MUTED, 700, spacing=1.2)}
+    {text(858, 489, f"PEAK {recent_peak}", 7, DIM, 700, "end", spacing=1)}
 
-        <!-- SECONDARY METADATA -->
-        {text(42, 310, "REPOSITORY TELEMETRY", 8, "#64748B", "700",
-               letter_spacing="1")}
+    <line x1="48" y1="564" x2="852" y2="564"
+          stroke="#182127" stroke-width="1"/>
 
-        {text(42, 334, f"{private_repositories} PRIVATE", 9,
-               "#CBD5E1", "700")}
-        {text(170, 334, f"{following} FOLLOWING", 9,
-               "#CBD5E1", "700")}
-        {text(340, 334, f"{total_activity} RECENT EVENTS", 9,
-               "#CBD5E1", "700")}
+    <polyline points="{graph_polyline}" fill="none"
+              stroke="url(#bar)" stroke-width="2.3"
+              stroke-linecap="round" stroke-linejoin="round"
+              filter="url(#glow)"/>
 
-        <!-- CONTRIBUTION MATRIX -->
-        {text(42, 367, "CONTRIBUTION MATRIX", 9, "#67E8F9", "700",
-               letter_spacing="1")}
-        {text(858, 367, "LAST 365 DAYS", 8, "#475569", "700",
-               "end", letter_spacing="1")}
+    <circle cx="852" cy="{graph_y + graph_h - (recent_values[-1] / max(1, recent_peak)) * graph_h}"
+            r="3" fill="{CYAN}" filter="url(#glow)"/>
 
-        {matrix}
+    {text(42, 600, "BUILDING INTELLIGENT SYSTEMS", 7, DIM, 700, spacing=1)}
+    {text(858, 600, "LIVE GITHUB DATA", 7, DIM, 700, "end", spacing=1)}
 
-        <!-- 30-DAY ACTIVITY -->
-        {text(42, 480, "30-DAY ACTIVITY", 8, "#64748B", "700",
-               letter_spacing="1")}
-        {text(858, 480, f"{recent_total} EVENTS", 8, "#7DD3FC",
-               "700", "end", letter_spacing="1")}
-
-        <polyline points="{graph_polyline}"
-                  fill="none"
-                  stroke="url(#graphGlow)"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  filter="url(#strongGlow)"/>
-
-        <polyline points="{graph_polyline}"
-                  fill="none"
-                  stroke="#67E8F9"
-                  stroke-width="1"
-                  stroke-opacity="0.35"/>
-
-        <!-- FOOTER -->
-        <rect x="42" y="587" width="816" height="1"
-              fill="#1E293B"/>
-
-        {text(42, 608, "BUILDING INTELLIGENT SYSTEMS", 7,
-               "#475569", "700", letter_spacing="1")}
-        {text(858, 608, "LIVE GITHUB DATA", 7,
-               "#475569", "700", "end", letter_spacing="1")}
-
-    </g>
+  </g>
 </svg>
 """
-
     return svg
 
 
-def stat_card_large(x, y, width, height, title, value,
-                    subtitle, accent):
-    return f"""
-    <g>
-        <rect x="{x}" y="{y}" width="{width}" height="{height}"
-              rx="12" fill="#070A0E"
-              stroke="#1E293B" stroke-width="1"/>
-
-        <rect x="{x}" y="{y}" width="3" height="{height}"
-              rx="2" fill="{accent}"/>
-
-        <rect x="{x + 18}" y="{y + 18}"
-              width="55" height="2"
-              fill="{accent}" opacity="0.65"/>
-
-        {text(x + 18, y + 40, title, 8, "#64748B",
-               "700", letter_spacing="1")}
-
-        {text(x + 18, y + 70, value, 24, "#F8FAFC", "700")}
-
-        {text(x + width - 18, y + 70, subtitle, 8, "#475569",
-               "700", "end")}
-    </g>
-"""
+def stat_card_large(x, y, width, height, title, value, subtitle, accent):
+    # Compatibility helper retained for the existing renderer structure.
+    return stat_tile(x, y, width, height, title, value, subtitle, accent, 0)
 
 
 def activity_grid_large(daily, WIDTH=900):
-    """
-    Larger, clean 52-column x 7-row contribution matrix.
-    Fits beneath the 2x2 stats without colliding with the activity graph.
-    """
     today = datetime.now(timezone.utc).date()
 
-    # Start on a Sunday so the seven rows remain aligned.
+    # Sunday-aligned 53-column calendar.
     start = today - timedelta(days=364)
     start -= timedelta(days=(start.weekday() + 1) % 7)
 
     total_days = 371
-    columns = 53
-
     max_activity = max(daily.values(), default=1)
 
     colors = [
-        "#0B1117",
-        "#12303A",
-        "#155E63",
-        "#0E7490",
-        "#0891B2",
-        "#22D3EE",
-        "#A78BFA",
+        "#0B1013", "#12302D", "#185148", "#24776A",
+        "#2BAF96", "#36E0C0", "#63B3FF"
     ]
 
     blocks = []
-
     cell = 12
     gap = 3
     x0 = 44
-    y0 = 378
+    y0 = 302
 
     for day_index in range(total_days):
         date = start + timedelta(days=day_index)
@@ -721,52 +612,40 @@ def activity_grid_large(daily, WIDTH=900):
             level = 0
         else:
             ratio = count / max_activity
-            if ratio < 0.15:
+            if ratio < .15:
                 level = 1
-            elif ratio < 0.30:
+            elif ratio < .30:
                 level = 2
-            elif ratio < 0.50:
+            elif ratio < .50:
                 level = 3
-            elif ratio < 0.70:
+            elif ratio < .70:
                 level = 4
-            elif ratio < 0.90:
+            elif ratio < .90:
                 level = 5
             else:
                 level = 6
 
         column = day_index // 7
         row = day_index % 7
-
         x = x0 + column * (cell + gap)
         y = y0 + row * (cell - 1)
 
-        # Keep the last column inside the frame.
         if x + cell > 858:
             continue
 
         blocks.append(
-            f"""
-            <rect x="{x}" y="{y}" width="{cell}" height="{cell - 1}"
-                  rx="3" fill="{colors[level]}" opacity="0.96">
-                <title>{escape(str(date))}: {count} contribution events</title>
-            </rect>
-            """
+            f'<rect x="{x}" y="{y}" width="{cell}" height="{cell-1}" '
+            f'rx="3" fill="{colors[level]}" opacity=".94">'
+            f'<title>{escape(str(date))}: {count} contribution events</title></rect>'
         )
 
     return "\n".join(blocks)
 
+# ============================================================
+# LANGUAGE CARD
+# ============================================================
 
 def generate_languages_svg(languages):
-    """
-    Generate the same-size companion card as the stats dashboard.
-
-    The language panel is intentionally simplified:
-      - no redundant CODEBASE labels
-      - larger language names
-      - percentage and bar on the same visual row
-      - enough vertical spacing to prevent overlap
-      - top 8 languages remain fully readable
-    """
     WIDTH = 900
     HEIGHT = 620
 
@@ -775,188 +654,111 @@ def generate_languages_svg(languages):
 
     if total_bytes:
         for language, amount in sorted(
-            languages.items(),
-            key=lambda item: item[1],
-            reverse=True,
+            languages.items(), key=lambda item: item[1], reverse=True
         )[:8]:
             percentage = amount / total_bytes * 100
             language_data.append((language, percentage, amount))
 
     language_colors = [
-        "#22D3EE",
-        "#818CF8",
-        "#D946EF",
-        "#38BDF8",
-        "#A78BFA",
-        "#67E8F9",
-        "#60A5FA",
-        "#C084FC",
+        CYAN, CYAN_2, VIOLET, LIME,
+        "#75C7D8", "#9BA8FF", "#B19CFF", "#D978C9"
     ]
 
     rows = []
-
-    # Large, readable rows.
-    y = 126
-    row_height = 53
+    y = 132
+    row_height = 48
+    bar_x = 245
+    bar_width = 575
 
     for index, (language, percentage, amount) in enumerate(language_data):
         color = language_colors[index % len(language_colors)]
+        fill_width = max(4, int(bar_width * percentage / 100))
 
-        bar_x = 250
-        bar_y = y + 8
-        bar_width = 570
-        fill_width = max(10, int(bar_width * percentage / 100))
+        rows.append(f"""
+        <g>
+          {text(48, y + 13, language.upper(), 10, WHITE, 700, spacing=.7)}
+          {text(48, y + 31, format_bytes(amount), 7, DIM, 700)}
 
-        rows.append(
-            f"""
-            <g>
-                {text(48, y + 15, language.upper(), 12,
-                       "#F1F5F9", "700", letter_spacing="0.5")}
+          <rect x="{bar_x}" y="{y+2}" width="{bar_width}" height="8"
+                rx="4" fill="#11171B"/>
+          <rect x="{bar_x}" y="{y+2}" width="{fill_width}" height="8"
+                rx="4" fill="{color}" filter="url(#glow)"/>
 
-                {text(850, y + 15, f"{percentage:.1f}%", 11,
-                       color, "700", "end")}
+          {text(850, y + 9, f"{percentage:.1f}%", 9, color, 700, "end")}
 
-                <rect x="{bar_x}" y="{bar_y}"
-                      width="{bar_width}" height="10"
-                      rx="5" fill="#111827"/>
-
-                <rect x="{bar_x}" y="{bar_y}"
-                      width="{fill_width}" height="10"
-                      rx="5" fill="{color}"
-                      filter="url(#languageGlow)"/>
-
-                {text(48, y + 38,
-                       f"{format_bytes(amount)}",
-                       8, "#475569", "700")}
-
-                <rect x="48" y="{y + 47}"
-                      width="802" height="1"
-                      fill="#111827"/>
-            </g>
-            """
-        )
-
+          <line x1="48" y1="{y+41}" x2="850" y2="{y+41}"
+                stroke="#141C21" stroke-width="1"/>
+        </g>
+        """)
         y += row_height
 
     if not language_data:
         rows.append(
-            text(48, 150, "NO LANGUAGE DATA RETURNED", 12,
-                 "#F87171", "700")
+            text(48, 145, "NO LANGUAGE DATA RETURNED", 11, RED, 700)
         )
         rows.append(
-            text(48, 178, "CHECK GH_TOKEN REPOSITORY ACCESS", 9,
-                 "#64748B", "700")
+            text(48, 168, "CHECK GH_TOKEN REPOSITORY ACCESS", 8, MUTED, 700)
         )
 
-    svg = f"""
+    return f"""
 <svg xmlns="http://www.w3.org/2000/svg"
-     width="{WIDTH}" height="{HEIGHT}"
-     viewBox="0 0 {WIDTH} {HEIGHT}">
+     width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}">
 
-    {defs()}
+  {defs()}
 
-    <defs>
-        <linearGradient id="languageAccent"
-                        x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stop-color="#22D3EE"/>
-            <stop offset="50%" stop-color="#818CF8"/>
-            <stop offset="100%" stop-color="#D946EF"/>
-        </linearGradient>
+  <defs>
+    <clipPath id="languageClip">
+      <rect x="0" y="0" width="{WIDTH}" height="{HEIGHT}" rx="20"/>
+    </clipPath>
+  </defs>
 
-        <filter id="languageGlow"
-                x="-50%" y="-100%" width="200%" height="300%">
-            <feGaussianBlur stdDeviation="2.5" result="blur"/>
-            <feMerge>
-                <feMergeNode in="blur"/>
-                <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-        </filter>
+  <g clip-path="url(#languageClip)">
+    <rect width="{WIDTH}" height="{HEIGHT}" fill="#030506"/>
+    <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#bg)"/>
+    <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#microgrid)"/>
+    <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#scan)"/>
 
-        <filter id="languageAmbient"
-                x="-100%" y="-100%" width="300%" height="300%">
-            <feGaussianBlur stdDeviation="25"/>
-        </filter>
+    <circle cx="820" cy="80" r="130" fill="{VIOLET}"
+            opacity=".018" filter="url(#softGlow)"/>
+    <circle cx="70" cy="550" r="120" fill="{CYAN}"
+            opacity=".02" filter="url(#softGlow)"/>
 
-        <clipPath id="languageClip">
-            <rect x="0" y="0" width="{WIDTH}" height="{HEIGHT}" rx="22"/>
-        </clipPath>
-    </defs>
+    <rect x="1" y="1" width="898" height="618" rx="20"
+          fill="none" stroke="#273139" stroke-opacity=".9"/>
 
-    <g clip-path="url(#languageClip)">
+    {corner_brackets(WIDTH, HEIGHT)}
 
-        <!-- BLACK FOUNDATION -->
-        <rect width="{WIDTH}" height="{HEIGHT}" fill="#020304"/>
-        <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#blackPanel)"/>
-        <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#microgrid)"/>
-        <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#scan)"/>
+    <rect x="42" y="27" width="816" height="2"
+          fill="url(#accentLine)" filter="url(#glow)"/>
 
-        <!-- AMBIENT LIGHT -->
-        <circle cx="820" cy="100" r="150"
-                fill="#A855F7" opacity="0.035"
-                filter="url(#languageAmbient)"/>
-        <circle cx="80" cy="560" r="150"
-                fill="#22D3EE" opacity="0.035"
-                filter="url(#languageAmbient)"/>
+    {text(42, 62, "LANGUAGE MATRIX", 20, WHITE, 700, spacing=1.1)}
+    {text(42, 83, "CODEBASE // BYTE DISTRIBUTION", 8, MUTED, 700, spacing=1.2)}
 
-        <!-- FRAME -->
-        <rect x="1" y="1" width="898" height="618" rx="21"
-              fill="none" stroke="#334155" stroke-opacity="0.65"/>
+    <circle class="pulse" cx="782" cy="53" r="4"
+            fill="{CYAN}" filter="url(#glow)"/>
+    {text(852, 56, "SYSTEM ONLINE", 8, CYAN, 700, "end", spacing=1.1)}
+    {text(852, 75, "LANGUAGE ANALYSIS", 7, DIM, 700, "end", spacing=1)}
 
-        <rect x="38" y="25" width="824" height="2"
-              fill="url(#languageAccent)"
-              filter="url(#languageGlow)"/>
+    {text(48, 108, f"{len(language_data)} PRIMARY LANGUAGES", 7,
+           MUTED, 700, spacing=1.2)}
+    {text(850, 108, f"{len(languages)} TOTAL DETECTED", 7,
+           DIM, 700, "end", spacing=1)}
 
-        <!-- HEADER -->
-        {text(42, 65, "◈ LANGUAGE MATRIX", 21,
-               "#F8FAFC", "700", letter_spacing="1")}
+    {"".join(rows)}
 
-        {text(42, 88, "CODEBASE // BYTE DISTRIBUTION", 9,
-               "#64748B", "700", letter_spacing="1")}
+    <rect x="42" y="570" width="816" height="1" fill="#182127"/>
 
-        <!-- ONLINE STATUS -->
-        <circle cx="780" cy="56" r="5"
-                fill="#22D3EE" filter="url(#languageGlow)">
-            <animate attributeName="opacity"
-                     values="1;0.35;1" dur="2s"
-                     repeatCount="indefinite"/>
-        </circle>
+    {text(42, 594, "SHARE BASED ON GITHUB BYTE DISTRIBUTION",
+           7, DIM, 700, spacing=.7)}
+    {text(858, 594, "LIVE REPOSITORY DATA", 7, DIM, 700, "end", spacing=1)}
 
-        {text(852, 59, "SYSTEM ONLINE", 9,
-               "#67E8F9", "700", "end", letter_spacing="1")}
-
-        {text(852, 79, "LANGUAGE ANALYSIS", 7,
-               "#475569", "700", "end", letter_spacing="1")}
-
-        <!-- SECTION LABEL -->
-        {text(48, 111, f"{len(language_data)} PRIMARY LANGUAGES",
-               8, "#64748B", "700", letter_spacing="1")}
-
-        <!-- LANGUAGE ROWS -->
-        {"".join(rows)}
-
-        <!-- FOOTER -->
-        <rect x="42" y="570" width="816" height="1"
-              fill="#1E293B"/>
-
-        {text(42, 594,
-               "LANGUAGE SHARE IS BASED ON GITHUB BYTE DISTRIBUTION",
-               7, "#475569", "700", letter_spacing="0.5")}
-
-        {text(858, 594,
-               f"{len(languages)} TOTAL DETECTED",
-               7, "#475569", "700", "end", letter_spacing="1")}
-
-    </g>
+  </g>
 </svg>
 """
 
-    return svg
-
 
 def format_bytes(value):
-    """Compact byte display for the language card."""
     value = float(value)
-
     if value >= 1024 ** 3:
         return f"{value / (1024 ** 3):.1f} GB"
     if value >= 1024 ** 2:
@@ -966,19 +768,12 @@ def format_bytes(value):
     return f"{int(value)} B"
 
 
-
 def generate_combined_svg(user, repositories, daily, total_contributions, languages):
-    """
-    Generate one tall SVG containing the stats dashboard followed immediately
-    by the language matrix. Both sections keep the same 900px width so the
-    result can be embedded as one long GitHub profile image.
-    """
     stats_svg = generate_stats_svg(
         user, repositories, daily, total_contributions
     )
     language_svg = generate_languages_svg(languages)
 
-    # Extract the reusable SVG contents from each existing renderer.
     stats_match = re.search(
         r"<svg[^>]*>(.*)</svg>\s*$", stats_svg, flags=re.DOTALL
     )
@@ -1000,7 +795,7 @@ def generate_combined_svg(user, repositories, daily, total_contributions, langua
     return f"""<svg xmlns="http://www.w3.org/2000/svg"
     width="{WIDTH}" height="{HEIGHT}"
     viewBox="0 0 {WIDTH} {HEIGHT}">
-    <rect width="{WIDTH}" height="{HEIGHT}" fill="#020304"/>
+    <rect width="{WIDTH}" height="{HEIGHT}" fill="#030506"/>
 
     <svg x="0" y="0" width="{WIDTH}" height="{CARD_HEIGHT}"
          viewBox="0 0 {WIDTH} {CARD_HEIGHT}">
@@ -1008,7 +803,7 @@ def generate_combined_svg(user, repositories, daily, total_contributions, langua
     </svg>
 
     <rect x="0" y="{CARD_HEIGHT}" width="{WIDTH}" height="{GAP}"
-          fill="#020304"/>
+          fill="#030506"/>
 
     <svg x="0" y="{CARD_HEIGHT + GAP}" width="{WIDTH}"
          height="{CARD_HEIGHT}" viewBox="0 0 {WIDTH} {CARD_HEIGHT}">
@@ -1016,7 +811,6 @@ def generate_combined_svg(user, repositories, daily, total_contributions, langua
     </svg>
 </svg>
 """
-
 # ============================================================
 # MAIN
 # ============================================================
@@ -1071,7 +865,7 @@ def main():
     print("  GENERATION COMPLETE")
     print(f"  -> {STATS_FILE}")
     print(f"  -> {LANGUAGES_FILE} (standalone compatibility copy)")
-    print("  DESIGN: BLACK / CYAN / VIOLET / MAGENTA")
+    print("  DESIGN: BLACK / GRAPHITE / CYAN / RESTRAINED VIOLET")
     print("  DATA:   LIVE GITHUB REST + GRAPHQL")
     print("  AUTH:   GH_TOKEN")
     print("=" * 68)
