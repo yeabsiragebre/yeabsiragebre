@@ -1,70 +1,461 @@
-name: Update GitHub Stats
+name: Generate Futuristic GitHub Stats
 
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: "0 0 * * *"
+workflow_dispatch:
+schedule:
+- cron: "0 0 * * *"
 
 permissions:
-  contents: write
+contents: write
 
 jobs:
-  stats:
-    runs-on: ubuntu-latest
+generate:
+runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+```
+steps:
+  - name: Checkout repository
+    uses: actions/checkout@v4
 
-      - name: Generate GitHub Statistics
-        uses: stats-organization/github-readme-stats-action@v2
-        with:
-          card: stats
-          options: >-
-            username=yeabsiragebre&
-            show_icons=true&
-            include_all_commits=true&
-            count_private=true&
-            theme=radical&
-            hide_border=true&
-            rank_icon=github&
-            card_width=500&
-            text_bold=true&
-            line_height=30
-          path: profile/stats.svg
-          token: ${{ secrets.GH_TOKEN }}
-          fail_on_error: true
+  - name: Set up Python
+    uses: actions/setup-python@v5
+    with:
+      python-version: "3.12"
 
-      - name: Generate Most Used Languages
-        uses: stats-organization/github-readme-stats-action@v2
-        with:
-          card: top-langs
-          options: >-
-            username=yeabsiragebre&
-            layout=donut&
-            langs_count=8&
-            count_private=true&
-            theme=radical&
-            hide_border=true&
-            card_width=500&
-            text_bold=true
-          path: profile/top-langs.svg
-          token: ${{ secrets.GH_TOKEN }}
-          fail_on_error: true
+  - name: Install dependencies
+    run: |
+      pip install requests
 
-      - name: Commit generated SVG files
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+  - name: Generate futuristic statistics
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    run: |
+      mkdir -p profile
 
-          git add profile/stats.svg profile/top-langs.svg
+      python <<'PY'
+      import os
+      import requests
+      from xml.sax.saxutils import escape
 
-          if git diff --cached --quiet; then
-            echo "No statistics changes detected."
-            exit 0
-          fi
+      USERNAME = "yeabsiragebre"
+      TOKEN = os.environ["GITHUB_TOKEN"]
 
-          git commit -m "Update GitHub statistics"
-          git push origin main
+      headers = {
+          "Authorization": f"Bearer {TOKEN}",
+          "Accept": "application/vnd.github+json"
+      }
+
+      api = "https://api.github.com"
+
+      # ---------------------------------------------------------
+      # GitHub API
+      # ---------------------------------------------------------
+
+      user = requests.get(
+          f"{api}/users/{USERNAME}",
+          headers=headers
+      ).json()
+
+      repos = requests.get(
+          f"{api}/users/{USERNAME}/repos?per_page=100",
+          headers=headers
+      ).json()
+
+      public_repos = user.get("public_repos", 0)
+      followers = user.get("followers", 0)
+      following = user.get("following", 0)
+
+      stars = sum(
+          repo.get("stargazers_count", 0)
+          for repo in repos
+          if isinstance(repo, dict)
+      )
+
+      forks = sum(
+          repo.get("forks_count", 0)
+          for repo in repos
+          if isinstance(repo, dict)
+      )
+
+      # ---------------------------------------------------------
+      # Language statistics
+      # ---------------------------------------------------------
+
+      languages = {}
+
+      for repo in repos:
+          if not isinstance(repo, dict):
+              continue
+
+          owner = repo.get("owner", {}).get("login", "")
+          name = repo.get("name", "")
+
+          if owner != USERNAME:
+              continue
+
+          response = requests.get(
+              f"{api}/repos/{USERNAME}/{name}/languages",
+              headers=headers
+          )
+
+          if response.ok:
+              for language, amount in response.json().items():
+                  languages[language] = languages.get(language, 0) + amount
+
+      total_bytes = sum(languages.values())
+
+      language_data = []
+
+      if total_bytes:
+          for language, amount in sorted(
+              languages.items(),
+              key=lambda x: x[1],
+              reverse=True
+          )[:8]:
+              percentage = amount / total_bytes * 100
+              language_data.append((language, percentage))
+
+      # ---------------------------------------------------------
+      # SVG helpers
+      # ---------------------------------------------------------
+
+      def text(x, y, value, size=14, fill="#EDE9FE",
+               weight="400", anchor="start",
+               family="JetBrains Mono"):
+          return (
+              f'<text x="{x}" y="{y}" '
+              f'font-family="{family}" '
+              f'font-size="{size}px" '
+              f'font-weight="{weight}" '
+              f'fill="{fill}" '
+              f'text-anchor="{anchor}">'
+              f'{escape(str(value))}</text>'
+          )
+
+      def rect(x, y, width, height, rx=12,
+               fill="#111827", stroke="#8B5CF6",
+               stroke_width=1):
+          return (
+              f'<rect x="{x}" y="{y}" width="{width}" height="{height}" '
+              f'rx="{rx}" fill="{fill}" '
+              f'stroke="{stroke}" stroke-width="{stroke_width}"/>'
+          )
+
+      # ---------------------------------------------------------
+      # STATS SVG
+      # ---------------------------------------------------------
+
+      stats_svg = f'''<svg width="900" height="430"
+      viewBox="0 0 900 430"
+      xmlns="http://www.w3.org/2000/svg">
+
+      <defs>
+
+        <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#050509"/>
+          <stop offset="55%" stop-color="#0D1117"/>
+          <stop offset="100%" stop-color="#160B24"/>
+        </linearGradient>
+
+        <linearGradient id="purple" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#7C3AED"/>
+          <stop offset="50%" stop-color="#A855F7"/>
+          <stop offset="100%" stop-color="#C084FC"/>
+        </linearGradient>
+
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="4"
+            result="coloredBlur"/>
+          <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+
+        <pattern id="grid"
+          width="32"
+          height="32"
+          patternUnits="userSpaceOnUse">
+          <path
+            d="M 32 0 L 0 0 0 32"
+            fill="none"
+            stroke="#8B5CF6"
+            stroke-opacity="0.07"/>
+        </pattern>
+
+      </defs>
+
+      <!-- BACKGROUND -->
+
+      <rect width="900" height="430"
+        rx="18"
+        fill="url(#bg)"
+        stroke="#8B5CF6"
+        stroke-opacity="0.55"
+        stroke-width="1.5"/>
+
+      <rect x="1" y="1"
+        width="898"
+        height="428"
+        rx="17"
+        fill="url(#grid)"/>
+
+      <!-- TOP GLOW -->
+
+      <rect x="35" y="28"
+        width="830"
+        height="1"
+        fill="url(#purple)"
+        filter="url(#glow)"/>
+
+      <!-- HEADER -->
+
+      {text(45, 62, "◈ YEABSIRA // GITHUB CORE",
+            18, "#EDE9FE", "700")}
+
+      {text(855, 62, "● ONLINE",
+            12, "#A78BFA", "700", "end")}
+
+      {text(45, 86,
+            "AI ENGINEERING · SOFTWARE DEVELOPMENT · COMPUTER SCIENCE",
+            10, "#6B7280", "400")}
+
+      <!-- METRIC CARDS -->
+
+      {rect(45, 115, 195, 105, 10)}
+      {rect(255, 115, 195, 105, 10)}
+      {rect(465, 115, 195, 105, 10)}
+      {rect(675, 115, 180, 105, 10)}
+
+      {text(62, 142, "REPOSITORIES",
+            10, "#8B5CF6", "700")}
+      {text(62, 180, public_repos,
+            30, "#F5F3FF", "700")}
+      {text(62, 202, "PUBLIC PROJECTS",
+            9, "#6B7280")}
+
+      {text(272, 142, "FOLLOWERS",
+            10, "#8B5CF6", "700")}
+      {text(272, 180, followers,
+            30, "#F5F3FF", "700")}
+      {text(272, 202, "NETWORK",
+            9, "#6B7280")}
+
+      {text(482, 142, "STARS",
+            10, "#8B5CF6", "700")}
+      {text(482, 180, stars,
+            30, "#F5F3FF", "700")}
+      {text(482, 202, "PROJECT IMPACT",
+            9, "#6B7280")}
+
+      {text(692, 142, "FORKS",
+            10, "#8B5CF6", "700")}
+      {text(692, 180, forks,
+            30, "#F5F3FF", "700")}
+      {text(692, 202, "COLLABORATION",
+            9, "#6B7280")}
+
+      <!-- ACTIVITY -->
+
+      {text(45, 260, "SYSTEM ACTIVITY",
+            11, "#A78BFA", "700")}
+
+      {text(855, 260, "LIVE DATA",
+            9, "#6B7280", "400", "end")}
+
+      <!-- activity bars -->
+
+      <g opacity="0.9">
+        <rect x="45" y="280" width="28" height="8" rx="3" fill="#2E1065"/>
+        <rect x="79" y="280" width="28" height="8" rx="3" fill="#4C1D95"/>
+        <rect x="113" y="280" width="28" height="8" rx="3" fill="#7C3AED"/>
+        <rect x="147" y="280" width="28" height="8" rx="3" fill="#A855F7"/>
+        <rect x="181" y="280" width="28" height="8" rx="3" fill="#6D28D9"/>
+        <rect x="215" y="280" width="28" height="8" rx="3" fill="#3B0764"/>
+        <rect x="249" y="280" width="28" height="8" rx="3" fill="#8B5CF6"/>
+        <rect x="283" y="280" width="28" height="8" rx="3" fill="#C084FC"/>
+        <rect x="317" y="280" width="28" height="8" rx="3" fill="#4C1D95"/>
+        <rect x="351" y="280" width="28" height="8" rx="3" fill="#7C3AED"/>
+        <rect x="385" y="280" width="28" height="8" rx="3" fill="#A855F7"/>
+        <rect x="419" y="280" width="28" height="8" rx="3" fill="#581C87"/>
+        <rect x="453" y="280" width="28" height="8" rx="3" fill="#8B5CF6"/>
+        <rect x="487" y="280" width="28" height="8" rx="3" fill="#C084FC"/>
+        <rect x="521" y="280" width="28" height="8" rx="3" fill="#7C3AED"/>
+        <rect x="555" y="280" width="28" height="8" rx="3" fill="#4C1D95"/>
+        <rect x="589" y="280" width="28" height="8" rx="3" fill="#A855F7"/>
+        <rect x="623" y="280" width="28" height="8" rx="3" fill="#6D28D9"/>
+        <rect x="657" y="280" width="28" height="8" rx="3" fill="#8B5CF6"/>
+        <rect x="691" y="280" width="28" height="8" rx="3" fill="#C084FC"/>
+        <rect x="725" y="280" width="28" height="8" rx="3" fill="#4C1D95"/>
+        <rect x="759" y="280" width="28" height="8" rx="3" fill="#7C3AED"/>
+        <rect x="793" y="280" width="28" height="8" rx="3" fill="#A855F7"/>
+      </g>
+
+      <!-- FOOTER -->
+
+      <rect x="45" y="325"
+        width="810"
+        height="1"
+        fill="#8B5CF6"
+        fill-opacity="0.25"/>
+
+      {text(45, 355,
+            "FOCUS: LLMs / RAG / AI AGENTS / BACKEND",
+            10, "#A78BFA", "700")}
+
+      {text(855, 355,
+            "SYSTEM STATUS: OPERATIONAL",
+            10, "#A78BFA", "700", "end")}
+
+      {text(45, 390,
+            "BUILDING INTELLIGENT SYSTEMS — ONE COMMIT AT A TIME",
+            9, "#4B5563")}
+
+      {text(855, 390,
+            "v2.0",
+            9, "#4B5563", "700", "end")}
+
+      </svg>'''
+
+      with open("profile/stats.svg", "w", encoding="utf-8") as f:
+          f.write(stats_svg)
+
+      # ---------------------------------------------------------
+      # LANGUAGE SVG
+      # ---------------------------------------------------------
+
+      language_rows = ""
+
+      y = 125
+
+      for language, percentage in language_data:
+          bar_width = int(300 * percentage / 100)
+
+          language_rows += f'''
+          {text(55, y, language.upper(),
+                11, "#EDE9FE", "700")}
+
+          <rect x="200" y="{y-12}"
+                width="300"
+                height="8"
+                rx="4"
+                fill="#1F1633"/>
+
+          <rect x="200" y="{y-12}"
+                width="{bar_width}"
+                height="8"
+                rx="4"
+                fill="url(#purple)"
+                filter="url(#glow)"/>
+
+          {text(525, y, f"{percentage:.1f}%",
+                10, "#A78BFA", "700")}
+          '''
+
+          y += 42
+
+      langs_svg = f'''<svg width="620" height="430"
+      viewBox="0 0 620 430"
+      xmlns="http://www.w3.org/2000/svg">
+
+      <defs>
+
+        <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#050509"/>
+          <stop offset="55%" stop-color="#0D1117"/>
+          <stop offset="100%" stop-color="#160B24"/>
+        </linearGradient>
+
+        <linearGradient id="purple" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#7C3AED"/>
+          <stop offset="50%" stop-color="#A855F7"/>
+          <stop offset="100%" stop-color="#C084FC"/>
+        </linearGradient>
+
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="3"
+            result="coloredBlur"/>
+          <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+
+        <pattern id="grid"
+          width="28"
+          height="28"
+          patternUnits="userSpaceOnUse">
+          <path
+            d="M 28 0 L 0 0 0 28"
+            fill="none"
+            stroke="#8B5CF6"
+            stroke-opacity="0.06"/>
+        </pattern>
+
+      </defs>
+
+      <rect width="620" height="430"
+        rx="18"
+        fill="url(#bg)"
+        stroke="#8B5CF6"
+        stroke-opacity="0.55"/>
+
+      <rect x="1" y="1"
+        width="618"
+        height="428"
+        rx="17"
+        fill="url(#grid)"/>
+
+      {text(35, 55,
+            "◈ LANGUAGE MATRIX",
+            18, "#EDE9FE", "700")}
+
+      {text(585, 55,
+            "CODEBASE",
+            9, "#6B7280", "700", "end")}
+
+      <rect x="35" y="75"
+        width="550"
+        height="1"
+        fill="url(#purple)"/>
+
+      {language_rows}
+
+      <rect x="35" y="375"
+        width="550"
+        height="1"
+        fill="#8B5CF6"
+        fill-opacity="0.25"/>
+
+      {text(35, 400,
+            "PYTHON / C++ / JAVASCRIPT / TYPESCRIPT",
+            9, "#6B7280", "700")}
+
+      {text(585, 400,
+            "ANALYSIS COMPLETE",
+            9, "#A78BFA", "700", "end")}
+
+      </svg>'''
+
+      with open("profile/top-langs.svg", "w", encoding="utf-8") as f:
+          f.write(langs_svg)
+
+      print("Futuristic SVG files generated successfully.")
+      PY
+
+  - name: Commit generated SVG files
+    run: |
+      git config user.name "github-actions[bot]"
+      git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      git add profile/stats.svg profile/top-langs.svg
+
+      if git diff --cached --quiet; then
+        echo "No changes detected."
+        exit 0
+      fi
+
+      git commit -m "Generate futuristic GitHub stats"
+
+      git push origin main
+```
