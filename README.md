@@ -4,9 +4,11 @@
 
 ### `AI ENGINEERING` · `COMPUTER SCIENCE` · `SOFTWARE DEVELOPMENT`
 
+<br>
+
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&duration=2800&pause=900&color=8B5CF6&center=true&vCenter=true&width=720&lines=AI+Engineering;LLMs+%7C+RAG+%7C+AI+Agents;Building+%7C+Learning+%7C+Shipping" />
 
-<br>
+<br><br>
 
 <img src="https://komarev.com/ghpvc/?username=yeabsiragebre&style=for-the-badge&color=8B5CF6&label=PROFILE+VIEWS"/>
 
@@ -20,9 +22,9 @@
 
 <br>
 
-<img src="https://github-stats-extended.vercel.app/api?username=yeabsiragebre&show_icons=true&include_all_commits=true&theme=tokyonight&hide_border=true&rank_icon=github" width="49%" alt="GitHub Statistics"/>
+<img src="./profile/stats.svg" width="49%" alt="GitHub Statistics"/>
 
-<img src="https://github-stats-extended.vercel.app/api/top-langs/?username=yeabsiragebre&layout=donut&langs_count=8&theme=tokyonight&hide_border=true" width="49%" alt="Most Used Languages"/>
+<img src="./profile/top-langs.svg" width="49%" alt="Most Used Languages"/>
 
 <br><br>
 
@@ -111,7 +113,7 @@
 
 <a href="https://github.com/yeabsiragebre/Cram">
 
-<img src="https://github-stats-extended.vercel.app/api/pin/?username=yeabsiragebre&repo=Cram&theme=tokyonight&hide_border=true" alt="Cram Repository"/>
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=yeabsiragebre&repo=Cram&theme=tokyonight&hide_border=true" width="70%" alt="Cram"/>
 
 </a>
 
@@ -133,13 +135,13 @@
 <br>
 
 <a href="https://github.com/yeabsiragebre?tab=repositories">
-<img src="https://img.shields.io/badge/VIEW%20ALL%20REPOSITORIES-181717?style=for-the-badge&logo=github"/>
+<img src="https://img.shields.io/badge/ALL%20REPOSITORIES-181717?style=for-the-badge&logo=github"/>
 </a>
 
  
 
 <a href="https://github.com/yeabsiragebre?tab=stars">
-<img src="https://img.shields.io/badge/STARRED%20PROJECTS-8B5CF6?style=for-the-badge&logo=github"/>
+<img src="https://img.shields.io/badge/STARRED-8B5CF6?style=for-the-badge&logo=github"/>
 </a>
 
 </div>
