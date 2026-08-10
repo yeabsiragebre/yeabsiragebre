@@ -54,7 +54,7 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
           fail_on_error: true
 
-      - name: Commit statistics
+      - name: Commit generated SVG files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -67,7 +67,4 @@ jobs:
           fi
 
           git commit -m "Update GitHub statistics"
-
-          git pull --rebase origin main
-
           git push origin main
