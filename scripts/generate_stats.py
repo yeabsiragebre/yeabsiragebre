@@ -435,9 +435,9 @@ def generate_stats_svg(user, repositories, daily=None, total_contributions=0):
           <circle class="pulse" cx="{x+w-25}" cy="{y+25}" r="4"
                   fill="{accent}" filter="url(#glow)"
                   style="animation-delay:{index*.25}s"/>
-          {text(x+22, y+31, label, 10, MUTED, 700, spacing=1.6)}
-          {text(x+22, y+73, f"{value:,}", 31, WHITE, 700)}
-          {text(x+22, y+98, sub, 9, DIM, 700, spacing=.8)}
+          {text(x+22, y+31, label, 13, MUTED, 700, spacing=1.6)}
+          {text(x+22, y+73, f"{value:,}", 38, WHITE, 700)}
+          {text(x+22, y+98, sub, 12, DIM, 700, spacing=.8)}
           <rect x="{x+w-112}" y="{y+h-14}" width="86" height="2" rx="1"
                 fill="{accent}" opacity=".25"/>
           <rect x="{x+w-112}" y="{y+h-14}" width="{max(12, min(86, 12 + (int(value) % 75)))}"
@@ -460,7 +460,7 @@ def generate_stats_svg(user, repositories, daily=None, total_contributions=0):
     <rect width="{WIDTH}" height="{HEIGHT}" fill="#030506"/>
     <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#bg)"/>
     <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#microgrid)"/>
-    <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#scan)"/>
+    <rect class="scanmove" x="0" y="-100" width="{WIDTH}" height="{HEIGHT}" fill="url(#scan)" opacity=".45"/>
 
     <circle class="float" cx="70" cy="80" r="130" fill="{CYAN}"
             opacity=".025" filter="url(#softGlow)"/>
@@ -474,13 +474,9 @@ def generate_stats_svg(user, repositories, daily=None, total_contributions=0):
     <rect x="42" y="27" width="816" height="2"
           fill="url(#accentLine)" filter="url(#glow)"/>
 
-    {text(42, 66, "YEABSIRA", 25, WHITE, 700, spacing=1.3)}
-    {text(42, 91, "GITHUB // LIVE TELEMETRY", 11, MUTED, 700, spacing=1.5)}
+    <circle class="pulse" cx="52" cy="60" r="6" fill="{CYAN}" filter="url(#glow)"/>{text(68, 66, "SYSTEM ONLINE", 25, WHITE, 700, spacing=1.3)}
+    {text(68, 91, "LIVE GITHUB DATA", 11, MUTED, 700, spacing=1.5)}
 
-    <circle class="pulse" cx="775" cy="54" r="5"
-            fill="{CYAN}" filter="url(#glow)"/>
-    {text(852, 58, "SYSTEM ONLINE", 11, CYAN, 700, "end", spacing=1.2)}
-    {text(852, 80, activity_state, 9, DIM, 700, "end", spacing=1.1)}
 
     <!-- 2 x 2 primary statistics -->
     {"".join(advanced_tile(*card) for card in cards)}
@@ -489,34 +485,34 @@ def generate_stats_svg(user, repositories, daily=None, total_contributions=0):
     <rect x="42" y="382" width="816" height="168" rx="14"
           fill="#070A0D" stroke="#172026"/>
 
-    {text(62, 413, "REPOSITORY TELEMETRY", 11, WHITE, 700, spacing=1.4)}
-    {text(838, 413, "LIVE SNAPSHOT", 9, CYAN, 700, "end", spacing=1.1)}
+    {text(62, 413, "REPOSITORY TELEMETRY", 14, WHITE, 700, spacing=1.4)}
+    {text(838, 413, "LIVE SNAPSHOT", 12, CYAN, 700, "end", spacing=1.1)}
 
-    {text(62, 449, "PUBLIC PROJECTS", 9, DIM, 700, spacing=1.0)}
+    {text(62, 449, "PUBLIC PROJECTS", 12, DIM, 700, spacing=1.0)}
     {text(62, 477, public_repositories, 21, WHITE, 700)}
 
-    {text(245, 449, "PRIVATE PROJECTS", 9, DIM, 700, spacing=1.0)}
+    {text(245, 449, "PRIVATE PROJECTS", 12, DIM, 700, spacing=1.0)}
     {text(245, 477, private_repositories, 21, WHITE, 700)}
 
-    {text(428, 449, "WATCHERS", 9, DIM, 700, spacing=1.0)}
+    {text(428, 449, "WATCHERS", 12, DIM, 700, spacing=1.0)}
     {text(428, 477, watched, 21, WHITE, 700)}
 
-    {text(611, 449, "OPEN ISSUES", 9, DIM, 700, spacing=1.0)}
+    {text(611, 449, "OPEN ISSUES", 12, DIM, 700, spacing=1.0)}
     {text(611, 477, open_issues, 21, WHITE, 700)}
 
     <line x1="62" y1="506" x2="838" y2="506"
           stroke="#182127" stroke-width="1"/>
 
-    {text(62, 532, "DATA SOURCE", 8, DIM, 700, spacing=1.1)}
-    {text(165, 532, "GITHUB REST API", 9, WHITE, 700, spacing=.8)}
-    {text(365, 532, "AUTH", 8, DIM, 700, spacing=1.1)}
-    {text(414, 532, "GH_TOKEN", 9, WHITE, 700, spacing=.8)}
-    {text(575, 532, "REPOS", 8, DIM, 700, spacing=1.1)}
+    {text(62, 532, "DATA SOURCE", 11, DIM, 700, spacing=1.1)}
+    {text(165, 532, "GITHUB REST API", 11, WHITE, 700, spacing=.8)}
+    {text(365, 532, "AUTH", 11, DIM, 700, spacing=1.1)}
+    {text(414, 532, "GH_TOKEN", 11, WHITE, 700, spacing=.8)}
+    {text(575, 532, "REPOS", 11, DIM, 700, spacing=1.1)}
     {text(625, 532, total_repos, 9, WHITE, 700)}
 
     <!-- Footer replaces the removed notes -->
-    {text(42, 586, "REAL-TIME GITHUB PROFILE INTELLIGENCE", 10, WHITE, 700, spacing=1.0)}
-    {text(858, 586, "ONLINE", 10, CYAN, 700, "end", spacing=1.1)}
+    {text(42, 586, "REAL-TIME GITHUB PROFILE INTELLIGENCE", 12, WHITE, 700, spacing=1.0)}
+    {text(858, 586, "ONLINE", 12, CYAN, 700, "end", spacing=1.1)}
   </g>
 </svg>
 """
@@ -620,15 +616,15 @@ def generate_languages_svg(languages):
 
         rows.append(f"""
         <g>
-          {text(48, y + 15, language.upper(), 12, WHITE, 700, spacing=.8)}
-          {text(48, y + 36, format_bytes(amount), 9, DIM, 700)}
+          {text(48, y + 15, language.upper(), 15, WHITE, 700, spacing=.8)}
+          {text(48, y + 36, format_bytes(amount), 11, DIM, 700)}
 
           <rect x="{bar_x}" y="{y+2}" width="{bar_width}" height="8"
                 rx="4" fill="#11171B"/>
           <rect x="{bar_x}" y="{y+2}" width="{fill_width}" height="8"
                 rx="4" fill="{color}" filter="url(#glow)"/>
 
-          {text(850, y + 12, f"{percentage:.1f}%", 11, color, 700, "end")}
+          {text(850, y + 12, f"{percentage:.1f}%", 13, color, 700, "end")}
 
           <line x1="48" y1="{y+41}" x2="850" y2="{y+41}"
                 stroke="#141C21" stroke-width="1"/>
@@ -638,10 +634,10 @@ def generate_languages_svg(languages):
 
     if not language_data:
         rows.append(
-            text(48, 145, "NO LANGUAGE DATA RETURNED", 11, RED, 700)
+            text(48, 145, "NO LANGUAGE DATA RETURNED", 14, RED, 700)
         )
         rows.append(
-            text(48, 168, "CHECK GH_TOKEN REPOSITORY ACCESS", 8, MUTED, 700)
+            text(48, 168, "CHECK GH_TOKEN REPOSITORY ACCESS", 11, MUTED, 700)
         )
 
     return f"""
@@ -683,18 +679,18 @@ def generate_languages_svg(languages):
     {text(852, 56, "SYSTEM ONLINE", 8, CYAN, 700, "end", spacing=1.1)}
     {text(852, 75, "LANGUAGE ANALYSIS", 7, DIM, 700, "end", spacing=1)}
 
-    {text(48, 116, f"{len(language_data)} PRIMARY LANGUAGES", 9,
+    {text(48, 116, f"{len(language_data)} PRIMARY LANGUAGES", 12,
            MUTED, 700, spacing=1.2)}
-    {text(850, 116, f"{len(languages)} TOTAL DETECTED", 9,
+    {text(850, 116, f"{len(languages)} TOTAL DETECTED", 12,
            DIM, 700, "end", spacing=1)}
 
     {"".join(rows)}
 
     <rect x="42" y="570" width="816" height="1" fill="#182127"/>
 
-    {text(42, 596, "LANGUAGE DISTRIBUTION // SAME LIVE GITHUB DATA LAYER",
-           10, WHITE, 700, spacing=.8)}
-    {text(858, 596, "ONLINE", 10, CYAN, 700, "end", spacing=1.1)}
+    {text(42, 596, "LANGUAGE DISTRIBUTION // LIVE GITHUB DATA",
+           12, WHITE, 700, spacing=.8)}
+    {text(858, 596, "ONLINE", 12, CYAN, 700, "end", spacing=1.1)}
 
   </g>
 </svg>
@@ -739,20 +735,48 @@ def generate_combined_svg(user, repositories, daily, total_contributions, langua
     return f"""<svg xmlns="http://www.w3.org/2000/svg"
     width="{WIDTH}" height="{HEIGHT}"
     viewBox="0 0 {WIDTH} {HEIGHT}">
+    <defs>
+      <linearGradient id="unifiedFlow" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="{CYAN}" stop-opacity="0"/>
+        <stop offset="20%" stop-color="{CYAN}" stop-opacity=".45"/>
+        <stop offset="50%" stop-color="{CYAN_2}" stop-opacity=".7"/>
+        <stop offset="80%" stop-color="{VIOLET}" stop-opacity=".45"/>
+        <stop offset="100%" stop-color="{VIOLET}" stop-opacity="0"/>
+      </linearGradient>
+      <style>
+        .flow {{ animation: flow 5s linear infinite; }}
+        .blink {{ animation: blink 1.8s ease-in-out infinite; }}
+        @keyframes flow {{
+          from {{ transform: translateX(-220px); opacity:.15; }}
+          50% {{ opacity:1; }}
+          to {{ transform: translateX(1120px); opacity:.15; }}
+        }}
+        @keyframes blink {{
+          0%,100% {{ opacity:.35; }}
+          50% {{ opacity:1; }}
+        }}
+      </style>
+    </defs>
+
     <rect width="{WIDTH}" height="{HEIGHT}" fill="#030506"/>
+    <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#bg)"/>
+    <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#microgrid)"/>
+    <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#scan)"/>
 
-    <svg x="0" y="0" width="{WIDTH}" height="{CARD_HEIGHT}"
-         viewBox="0 0 {WIDTH} {CARD_HEIGHT}">
-        {stats_content}
-    </svg>
+    <!-- Both sections share one continuous visual surface. -->
+    <g transform="translate(0,0)">
+      {stats_content}
+    </g>
 
-    <rect x="0" y="{CARD_HEIGHT}" width="{WIDTH}" height="{GAP}"
-          fill="#030506"/>
+    <!-- No separate card/rectangle: just a living transition line. -->
+    <g class="flow">
+      <rect x="-220" y="{CARD_HEIGHT + GAP//2}" width="220" height="2"
+            rx="1" fill="url(#unifiedFlow)" filter="url(#glow)"/>
+    </g>
 
-    <svg x="0" y="{CARD_HEIGHT + GAP}" width="{WIDTH}"
-         height="{CARD_HEIGHT}" viewBox="0 0 {WIDTH} {CARD_HEIGHT}">
-        {language_content}
-    </svg>
+    <g transform="translate(0,{CARD_HEIGHT + GAP})">
+      {language_content}
+    </g>
 </svg>
 """
 # ============================================================
@@ -813,7 +837,3 @@ def main():
     print("  DATA:   LIVE GITHUB REST + GRAPHQL")
     print("  AUTH:   GH_TOKEN")
     print("=" * 68)
-
-
-if __name__ == "__main__":
-    main()
