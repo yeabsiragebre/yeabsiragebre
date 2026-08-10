@@ -1,76 +1,48 @@
+import json
 import os
+import urllib.request
+from collections import Counter
 from pathlib import Path
-from xml.sax.saxutils import escape
 
-import requests
-
-
-# ============================================================
-# CONFIGURATION
-# ============================================================
 
 USERNAME = "yeabsiragebre"
-TOKEN = os.environ.get("GITHUB_TOKEN")
-
-API = "https://api.github.com"
-
 OUTPUT_DIR = Path("profile")
-STATS_FILE = OUTPUT_DIR / "stats.svg"
-LANGUAGES_FILE = OUTPUT_DIR / "top-langs.svg"
 
-HEADERS = {
-    "Accept": "application/vnd.github+json",
-}
-
-if TOKEN:
-    HEADERS["Authorization"] = f"Bearer {TOKEN}"
+GITHUB_API = "https://api.github.com"
 
 
-# ============================================================
-# GITHUB API
-# ============================================================
+def github_request(endpoint):
+    token = os.environ.get("GH_TOKEN")
 
-def github_get(url, params=None):
-    response = requests.get(
-        url,
-        headers=HEADERS,
-        params=params,
-        timeout=30,
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "User-Agent": "yeabsiragebre-profile-stats",
+    }
+
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+
+    request = urllib.request.Request(
+        f"{GITHUB_API}{endpoint}",
+        headers=headers,
     )
 
-    response.raise_for_status()
+    with urllib.request.urlopen(request) as response:
+        return json.loads(response.read().decode())
 
-    return response.json()
-
-
-# ============================================================
-# GET USER DATA
-# ============================================================
 
 def get_user():
-    return github_get(
-        f"{API}/users/{USERNAME}"
-    )
+    return github_request(f"/users/{USERNAME}")
 
-
-# ============================================================
-# GET REPOSITORIES
-# ============================================================
 
 def get_repositories():
     repositories = []
-
     page = 1
 
     while True:
-
-        data = github_get(
-            f"{API}/users/{USERNAME}/repos",
-            params={
-                "per_page": 100,
-                "page": page,
-                "sort": "updated",
-            },
+        data = github_request(
+            f"/users/{USERNAME}/repos"
+            f"?per_page=100&page={page}&type=owner"
         )
 
         if not data:
@@ -86,796 +58,516 @@ def get_repositories():
     return repositories
 
 
-# ============================================================
-# GET LANGUAGE DATA
-# ============================================================
+def get_languages(repo):
+    return github_request(f"/repos/{USERNAME}/{repo}/languages")
 
-def get_languages(repositories):
 
-    languages = {}
+def calculate_languages(repositories):
+    language_counts = Counter()
 
-    for repository in repositories:
-
-        name = repository.get("name")
-
-        if not name:
+    for repo in repositories:
+        if repo.get("fork"):
             continue
 
         try:
-            data = github_get(
-                f"{API}/repos/{USERNAME}/{name}/languages"
-            )
-        except requests.RequestException:
-            continue
+            languages = get_languages(repo["name"])
 
-        for language, amount in data.items():
+            for language, amount in languages.items():
+                language_counts[language] += amount
 
-            languages[language] = (
-                languages.get(language, 0) + amount
-            )
+        except Exception as error:
+            print(f"Could not read {repo['name']}: {error}")
 
-    return languages
+    return language_counts
 
 
-# ============================================================
-# SVG HELPERS
-# ============================================================
+def percentage_values(counter):
+    total = sum(counter.values())
 
-def text(
-    x,
-    y,
-    value,
-    size=14,
-    color="#EDE9FE",
-    weight="400",
-    anchor="start",
-):
-    return (
-        f'<text '
-        f'x="{x}" '
-        f'y="{y}" '
-        f'font-family="JetBrains Mono, '
-        f"DejaVu Sans Mono, monospace\" "
-        f'font-size="{size}px" '
-        f'font-weight="{weight}" '
-        f'fill="{color}" '
-        f'text-anchor="{anchor}">'
-        f'{escape(str(value))}'
-        f'</text>'
-    )
+    if total == 0:
+        return []
 
-
-def rounded_rect(
-    x,
-    y,
-    width,
-    height,
-    radius=12,
-    fill="#0A0D14",
-    stroke="#8B5CF6",
-    opacity="1",
-):
-    return (
-        f'<rect '
-        f'x="{x}" '
-        f'y="{y}" '
-        f'width="{width}" '
-        f'height="{height}" '
-        f'rx="{radius}" '
-        f'fill="{fill}" '
-        f'fill-opacity="{opacity}" '
-        f'stroke="{stroke}" '
-        f'stroke-opacity="0.32"/>'
-    )
-
-
-# ============================================================
-# METRIC CARD
-# ============================================================
-
-def metric_card(
-    x,
-    title,
-    value,
-    subtitle,
-):
-    return f"""
-    {rounded_rect(
-        x,
-        115,
-        190,
-        105,
-    )}
-
-    {text(
-        x + 17,
-        143,
-        title,
-        9,
-        "#A78BFA",
-        "700",
-    )}
-
-    {text(
-        x + 17,
-        181,
-        value,
-        30,
-        "#F5F3FF",
-        "700",
-    )}
-
-    {text(
-        x + 17,
-        202,
-        subtitle,
-        8,
-        "#6B7280",
-        "400",
-    )}
-    """
-
-
-# ============================================================
-# FUTURISTIC BACKGROUND
-# ============================================================
-
-def background_defs():
-
-    return """
-    <defs>
-
-        <linearGradient
-            id="background"
-            x1="0"
-            y1="0"
-            x2="1"
-            y2="1">
-
-            <stop
-                offset="0%"
-                stop-color="#020204"/>
-
-            <stop
-                offset="50%"
-                stop-color="#0A0D14"/>
-
-            <stop
-                offset="100%"
-                stop-color="#1A0830"/>
-
-        </linearGradient>
-
-
-        <linearGradient
-            id="purpleGradient"
-            x1="0"
-            y1="0"
-            x2="1"
-            y2="0">
-
-            <stop
-                offset="0%"
-                stop-color="#6D28D9"/>
-
-            <stop
-                offset="50%"
-                stop-color="#A855F7"/>
-
-            <stop
-                offset="100%"
-                stop-color="#D8B4FE"/>
-
-        </linearGradient>
-
-
-        <filter
-            id="purpleGlow"
-            x="-50%"
-            y="-50%"
-            width="200%"
-            height="200%">
-
-            <feGaussianBlur
-                stdDeviation="3"
-                result="blur"/>
-
-            <feMerge>
-
-                <feMergeNode
-                    in="blur"/>
-
-                <feMergeNode
-                    in="SourceGraphic"/>
-
-            </feMerge>
-
-        </filter>
-
-
-        <pattern
-            id="grid"
-            width="32"
-            height="32"
-            patternUnits="userSpaceOnUse">
-
-            <path
-                d="M32 0H0V32"
-                fill="none"
-                stroke="#8B5CF6"
-                stroke-opacity="0.055"/>
-
-        </pattern>
-
-    </defs>
-    """
-
-
-# ============================================================
-# ACTIVITY VISUAL
-# ============================================================
-
-def activity_visual():
-
-    shades = [
-        "#241044",
-        "#35145F",
-        "#4C1D95",
-        "#6D28D9",
-        "#7C3AED",
-        "#8B5CF6",
-        "#A855F7",
-        "#C084FC",
+    return [
+        (language, amount / total * 100)
+        for language, amount in counter.most_common(8)
     ]
 
-    blocks = []
 
-    for index in range(25):
-
-        x = 45 + index * 33
-
-        shade = shades[
-            (index * 3) % len(shades)
-        ]
-
-        blocks.append(
-            f"""
-            <rect
-                x="{x}"
-                y="278"
-                width="25"
-                height="9"
-                rx="3"
-                fill="{shade}"
-            />
-            """
-        )
-
-    return "\n".join(blocks)
-
-
-# ============================================================
-# STATS SVG
-# ============================================================
-
-def generate_stats_svg(
-    user,
-    repositories,
-):
-
-    public_repositories = user.get(
-        "public_repos",
-        0,
+def escape(text):
+    return (
+        str(text)
+        .replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+        .replace('"', "&quot;")
     )
 
-    followers = user.get(
-        "followers",
-        0,
-    )
 
-    stars = sum(
-        repository.get(
-            "stargazers_count",
-            0,
-        )
-        for repository in repositories
-    )
+def stat_card(user):
+    followers = user.get("followers", 0)
+    following = user.get("following", 0)
+    public_repos = user.get("public_repos", 0)
 
-    forks = sum(
-        repository.get(
-            "forks_count",
-            0,
-        )
-        for repository in repositories
-    )
+    return f"""
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="650"
+     height="430"
+     viewBox="0 0 650 430">
 
-    svg = f"""<svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="900"
-    height="430"
-    viewBox="0 0 900 430">
+<style>
+    .title {{
+        font-family: monospace;
+        font-size: 25px;
+        font-weight: bold;
+        fill: #ffffff;
+    }}
 
-    {background_defs()}
+    .label {{
+        font-family: monospace;
+        font-size: 14px;
+        fill: #8b9bb4;
+        letter-spacing: 2px;
+    }}
 
-    <!-- BACKGROUND -->
+    .value {{
+        font-family: monospace;
+        font-size: 29px;
+        font-weight: bold;
+        fill: #ffffff;
+    }}
 
-    <rect
-        width="900"
-        height="430"
-        rx="18"
-        fill="url(#background)"
-        stroke="#8B5CF6"
-        stroke-opacity="0.55"
-        stroke-width="1.5"/>
+    .small {{
+        font-family: monospace;
+        font-size: 12px;
+        fill: #718096;
+    }}
 
-    <rect
-        x="1"
-        y="1"
-        width="898"
-        height="428"
-        rx="17"
-        fill="url(#grid)"/>
+    .accent {{
+        fill: #ff2bd6;
+    }}
+
+    .cyan {{
+        fill: #00e5ff;
+    }}
+
+    .green {{
+        fill: #39ff88;
+    }}
+
+    .glow {{
+        filter: url(#glow);
+    }}
+
+    .pulse {{
+        animation: pulse 2s infinite;
+    }}
+
+    .scan {{
+        animation: scan 4s linear infinite;
+    }}
+
+    @keyframes pulse {{
+        0%, 100% {{ opacity: .45; }}
+        50% {{ opacity: 1; }}
+    }}
+
+    @keyframes scan {{
+        from {{ transform: translateY(-20px); }}
+        to {{ transform: translateY(450px); }}
+    }}
+</style>
+
+<defs>
+
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#090914"/>
+        <stop offset="55%" stop-color="#111124"/>
+        <stop offset="100%" stop-color="#07070d"/>
+    </linearGradient>
+
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#ff2bd6"/>
+        <stop offset="50%" stop-color="#00e5ff"/>
+        <stop offset="100%" stop-color="#39ff88"/>
+    </linearGradient>
+
+    <filter id="glow">
+        <feGaussianBlur stdDeviation="4" result="blur"/>
+        <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+    </filter>
+
+    <pattern id="grid"
+             width="30"
+             height="30"
+             patternUnits="userSpaceOnUse">
+        <path d="M 30 0 L 0 0 0 30"
+              fill="none"
+              stroke="#ffffff"
+              stroke-opacity=".035"/>
+    </pattern>
+
+</defs>
+
+<rect width="650" height="430" rx="22"
+      fill="url(#background)"
+      stroke="#24243d"
+      stroke-width="2"/>
+
+<rect width="650" height="430" rx="22"
+      fill="url(#grid)"/>
+
+<rect x="0" y="0"
+      width="650"
+      height="3"
+      fill="url(#line)"
+      class="glow"/>
+
+<rect x="0" y="-30"
+      width="650"
+      height="20"
+      fill="#00e5ff"
+      opacity=".08"
+      class="scan"/>
+
+<text x="35" y="55" class="label">
+    GITHUB // CORE
+</text>
+
+<text x="35" y="92" class="title">
+    YEABSIRA
+</text>
+
+<circle cx="590" cy="48"
+        r="7"
+        class="green pulse glow"/>
+
+<text x="535" y="78" class="small">
+    ONLINE
+</text>
+
+<line x1="35" y1="112"
+      x2="615" y2="112"
+      stroke="url(#line)"
+      stroke-opacity=".5"/>
+
+<!-- PUBLIC REPOSITORIES -->
+
+<text x="55" y="155" class="label">
+    REPOSITORIES
+</text>
+
+<text x="55" y="195" class="value">
+    {public_repos}
+</text>
+
+<text x="55" y="220" class="small">
+    PUBLIC
+</text>
+
+<!-- FOLLOWERS -->
+
+<text x="245" y="155" class="label">
+    FOLLOWERS
+</text>
+
+<text x="245" y="195" class="value">
+    {followers}
+</text>
+
+<text x="245" y="220" class="small">
+    NETWORK
+</text>
+
+<!-- FOLLOWING -->
+
+<text x="435" y="155" class="label">
+    FOLLOWING
+</text>
+
+<text x="435" y="195" class="value">
+    {following}
+</text>
+
+<text x="435" y="220" class="small">
+    CONNECTIONS
+</text>
+
+<line x1="55" y1="250"
+      x2="595" y2="250"
+      stroke="#272741"/>
+
+<text x="55" y="290" class="label">
+    SYSTEM STATUS
+</text>
+
+<text x="55" y="325" class="cyan value">
+    ACTIVE
+</text>
+
+<text x="55" y="350" class="small">
+    AI ENGINEERING / SOFTWARE DEVELOPMENT
+</text>
+
+<text x="55" y="385" class="small">
+    DATA STREAM // LIVE
+</text>
+
+<circle cx="565" cy="382"
+        r="5"
+        class="cyan pulse glow"/>
+
+</svg>
+"""
 
 
-    <!-- NEON TOP LINE -->
+def language_card(languages):
+    width = 650
+    height = 430
 
-    <rect
-        x="40"
-        y="27"
-        width="820"
-        height="2"
-        fill="url(#purpleGradient)"
-        filter="url(#purpleGlow)"/>
+    colors = [
+        "#00e5ff",
+        "#ff2bd6",
+        "#39ff88",
+        "#a855f7",
+        "#ffb020",
+        "#ff4d6d",
+        "#38bdf8",
+        "#f8fafc",
+    ]
 
-
-    <!-- HEADER -->
-
-    {text(
-        45,
-        65,
-        "◈ YEABSIRA // GITHUB CORE",
-        18,
-        "#F5F3FF",
-        "700",
-    )}
-
-    {text(
-        855,
-        65,
-        "● ONLINE",
-        10,
-        "#C084FC",
-        "700",
-        "end",
-    )}
-
-    {text(
-        45,
-        88,
-        "AI ENGINEERING · SOFTWARE DEVELOPMENT · COMPUTER SCIENCE",
-        9,
-        "#6B7280",
-        "400",
-    )}
-
-
-    <!-- METRIC CARDS -->
-
-    {metric_card(
-        45,
-        "REPOSITORIES",
-        public_repositories,
-        "PUBLIC PROJECTS",
-    )}
-
-    {metric_card(
-        255,
-        "FOLLOWERS",
-        followers,
-        "NETWORK",
-    )}
-
-    {metric_card(
-        465,
-        "STARS",
-        stars,
-        "PROJECT IMPACT",
-    )}
-
-    {metric_card(
-        675,
-        "FORKS",
-        forks,
-        "COLLABORATION",
-    )}
-
-
-    <!-- ACTIVITY -->
-
-    {text(
-        45,
-        258,
-        "SYSTEM ACTIVITY",
-        10,
-        "#A78BFA",
-        "700",
-    )}
-
-    {text(
-        855,
-        258,
-        "LIVE DATA",
-        8,
-        "#6B7280",
-        "700",
-        "end",
-    )}
-
-    <g filter="url(#purpleGlow)">
-        {activity_visual()}
-    </g>
-
-
-    <!-- DIVIDER -->
-
-    <rect
-        x="45"
-        y="325"
-        width="810"
-        height="1"
-        fill="#8B5CF6"
-        fill-opacity="0.25"/>
-
-
-    <!-- FOOTER -->
-
-    {text(
-        45,
-        355,
-        "FOCUS: LLMs / RAG / AI AGENTS / BACKEND",
-        9,
-        "#A78BFA",
-        "700",
-    )}
-
-    {text(
-        855,
-        355,
-        "SYSTEM STATUS: OPERATIONAL",
-        9,
-        "#A78BFA",
-        "700",
-        "end",
-    )}
-
-    {text(
-        45,
-        390,
-        "BUILDING INTELLIGENT SYSTEMS — ONE COMMIT AT A TIME",
-        8,
-        "#4B5563",
-        "400",
-    )}
-
-    {text(
-        855,
-        390,
-        "v2.0",
-        8,
-        "#4B5563",
-        "700",
-        "end",
-    )}
-
-    </svg>
-    """
-
-    return svg
-
-
-# ============================================================
-# LANGUAGE SVG
-# ============================================================
-
-def generate_languages_svg(
-    languages,
-):
-
-    total = sum(
-        languages.values()
-    )
-
-    language_data = []
-
-    if total > 0:
-
-        sorted_languages = sorted(
-            languages.items(),
-            key=lambda item: item[1],
-            reverse=True,
-        )
-
-        for language, amount in sorted_languages[:8]:
-
-            percentage = (
-                amount / total
-            ) * 100
-
-            language_data.append(
-                (
-                    language,
-                    percentage,
-                )
-            )
+    language_values = percentage_values(languages)
 
     rows = []
 
-    y = 125
+    for index, (language, percentage) in enumerate(language_values):
+        y = 130 + index * 34
 
-    for language, percentage in language_data:
-
-        bar_width = max(
-            5,
-            int(
-                300
-                * percentage
-                / 100
-            ),
-        )
+        color = colors[index % len(colors)]
 
         rows.append(
             f"""
-            {text(
-                55,
-                y,
-                language.upper(),
-                10,
-                "#EDE9FE",
-                "700",
-            )}
+            <text x="55" y="{y}" class="language">
+                {escape(language)}
+            </text>
 
-            <rect
-                x="200"
-                y="{y - 12}"
-                width="300"
-                height="8"
-                rx="4"
-                fill="#21152F"/>
+            <rect x="190"
+                  y="{y - 14}"
+                  width="320"
+                  height="8"
+                  rx="4"
+                  fill="#202033"/>
 
-            <rect
-                x="200"
-                y="{y - 12}"
-                width="{bar_width}"
-                height="8"
-                rx="4"
-                fill="url(#purpleGradient)"
-                filter="url(#purpleGlow)"/>
+            <rect x="190"
+                  y="{y - 14}"
+                  width="{320 * percentage / 100:.2f}"
+                  height="8"
+                  rx="4"
+                  fill="{color}"
+                  class="glow"/>
 
-            {text(
-                525,
-                y,
-                f"{percentage:.1f}%",
-                9,
-                "#C084FC",
-                "700",
-            )}
+            <text x="535"
+                  y="{y}"
+                  class="percentage">
+                {percentage:.1f}%
+            </text>
             """
         )
 
-        y += 40
-
-    if not rows:
-
+    if not language_values:
         rows.append(
-            text(
-                55,
-                125,
-                "NO LANGUAGE DATA AVAILABLE",
-                10,
-                "#6B7280",
-                "700",
-            )
+            """
+            <text x="55" y="180" class="language">
+                NO LANGUAGE DATA
+            </text>
+            """
         )
 
-    svg = f"""<svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="620"
-    height="430"
-    viewBox="0 0 620 430">
+    return f"""
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="{width}"
+     height="{height}"
+     viewBox="0 0 {width} {height}">
 
-    {background_defs()}
+<style>
+    .title {{
+        font-family: monospace;
+        font-size: 25px;
+        font-weight: bold;
+        fill: #ffffff;
+    }}
 
+    .label {{
+        font-family: monospace;
+        font-size: 14px;
+        fill: #8b9bb4;
+        letter-spacing: 2px;
+    }}
 
-    <!-- BACKGROUND -->
+    .language {{
+        font-family: monospace;
+        font-size: 14px;
+        font-weight: bold;
+        fill: #ffffff;
+    }}
 
-    <rect
-        width="620"
-        height="430"
-        rx="18"
-        fill="url(#background)"
-        stroke="#8B5CF6"
-        stroke-opacity="0.55"
-        stroke-width="1.5"/>
+    .percentage {{
+        font-family: monospace;
+        font-size: 13px;
+        fill: #8b9bb4;
+    }}
 
-    <rect
-        x="1"
-        y="1"
-        width="618"
-        height="428"
-        rx="17"
-        fill="url(#grid)"/>
+    .glow {{
+        filter: url(#glow);
+    }}
 
+    .pulse {{
+        animation: pulse 2s infinite;
+    }}
 
-    <!-- HEADER -->
+    .scan {{
+        animation: scan 4s linear infinite;
+    }}
 
-    {text(
-        35,
-        55,
-        "◈ LANGUAGE MATRIX",
-        18,
-        "#F5F3FF",
-        "700",
-    )}
+    @keyframes pulse {{
+        0%, 100% {{ opacity: .45; }}
+        50% {{ opacity: 1; }}
+    }}
 
-    {text(
-        585,
-        55,
-        "CODEBASE",
-        8,
-        "#6B7280",
-        "700",
-        "end",
-    )}
+    @keyframes scan {{
+        from {{ transform: translateY(-20px); }}
+        to {{ transform: translateY(450px); }}
+    }}
+</style>
 
+<defs>
 
-    <!-- NEON LINE -->
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#090914"/>
+        <stop offset="55%" stop-color="#111124"/>
+        <stop offset="100%" stop-color="#07070d"/>
+    </linearGradient>
 
-    <rect
-        x="35"
-        y="75"
-        width="550"
-        height="2"
-        fill="url(#purpleGradient)"
-        filter="url(#purpleGlow)"/>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#ff2bd6"/>
+        <stop offset="50%" stop-color="#00e5ff"/>
+        <stop offset="100%" stop-color="#39ff88"/>
+    </linearGradient>
 
+    <filter id="glow">
+        <feGaussianBlur stdDeviation="4" result="blur"/>
+        <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+    </filter>
 
-    <!-- LANGUAGE ROWS -->
+    <pattern id="grid"
+             width="30"
+             height="30"
+             patternUnits="userSpaceOnUse">
+        <path d="M 30 0 L 0 0 0 30"
+              fill="none"
+              stroke="#ffffff"
+              stroke-opacity=".035"/>
+    </pattern>
 
-    {"".join(rows)}
+</defs>
 
+<rect width="{width}"
+      height="{height}"
+      rx="22"
+      fill="url(#background)"
+      stroke="#24243d"
+      stroke-width="2"/>
 
-    <!-- FOOTER -->
+<rect width="{width}"
+      height="{height}"
+      rx="22"
+      fill="url(#grid)"/>
 
-    <rect
-        x="35"
-        y="375"
-        width="550"
-        height="1"
-        fill="#8B5CF6"
-        fill-opacity="0.25"/>
+<rect x="0"
+      y="0"
+      width="{width}"
+      height="3"
+      fill="url(#line)"
+      class="glow"/>
 
-    {text(
-        35,
-        400,
-        "LANGUAGE DISTRIBUTION",
-        8,
-        "#6B7280",
-        "700",
-    )}
+<rect x="0"
+      y="-30"
+      width="{width}"
+      height="20"
+      fill="#00e5ff"
+      opacity=".08"
+      class="scan"/>
 
-    {text(
-        585,
-        400,
-        "ANALYSIS COMPLETE",
-        8,
-        "#C084FC",
-        "700",
-        "end",
-    )}
+<text x="35" y="55" class="label">
+    LANGUAGE // MATRIX
+</text>
 
-    </svg>
-    """
+<text x="35" y="92" class="title">
+    MOST USED LANGUAGES
+</text>
 
-    return svg
+<circle cx="590"
+        cy="48"
+        r="7"
+        fill="#39ff88"
+        class="pulse glow"/>
 
+<line x1="35"
+      y1="112"
+      x2="615"
+      y2="112"
+      stroke="url(#line)"
+      stroke-opacity=".5"/>
 
-# ============================================================
-# MAIN
-# ============================================================
+{''.join(rows)}
+
+</svg>
+"""
+
 
 def main():
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    print(
-        "=========================================="
-    )
-
-    print(
-        " FUTURISTIC GITHUB STATS GENERATOR"
-    )
-
-    print(
-        "=========================================="
-    )
-
-    print(
-        f"User: {USERNAME}"
-    )
-
-    print(
-        "Fetching GitHub profile..."
-    )
+    print("Fetching GitHub profile...")
 
     user = get_user()
 
-    print(
-        "Fetching repositories..."
-    )
+    print("Fetching repositories...")
 
     repositories = get_repositories()
 
-    print(
-        f"Repositories found: {len(repositories)}"
-    )
+    print(f"Found {len(repositories)} repositories.")
 
-    print(
-        "Analyzing languages..."
-    )
+    print("Calculating language distribution...")
 
-    languages = get_languages(
-        repositories
-    )
+    languages = calculate_languages(repositories)
 
-    OUTPUT_DIR.mkdir(
-        parents=True,
-        exist_ok=True,
-    )
+    print("Languages:")
 
-    print(
-        "Generating futuristic stats.svg..."
-    )
+    for language, amount in languages.most_common():
+        print(f"  {language}: {amount}")
 
-    stats_svg = generate_stats_svg(
-        user,
-        repositories,
-    )
+    stats_svg = stat_card(user)
+    languages_svg = language_card(languages)
 
-    STATS_FILE.write_text(
+    (OUTPUT_DIR / "stats.svg").write_text(
         stats_svg,
         encoding="utf-8",
     )
 
-    print(
-        "Generating futuristic top-langs.svg..."
-    )
-
-    languages_svg = generate_languages_svg(
-        languages,
-    )
-
-    LANGUAGES_FILE.write_text(
+    (OUTPUT_DIR / "top-langs.svg").write_text(
         languages_svg,
         encoding="utf-8",
     )
 
-    print(
-        "=========================================="
-    )
-
-    print(
-        " FUTURISTIC SVG GENERATION COMPLETE"
-    )
-
-    print(
-        "=========================================="
-    )
-
-    print(
-        f"Created: {STATS_FILE}"
-    )
-
-    print(
-        f"Created: {LANGUAGES_FILE}"
-    )
+    print("Generated:")
+    print("  profile/stats.svg")
+    print("  profile/top-langs.svg")
 
 
 if __name__ == "__main__":
