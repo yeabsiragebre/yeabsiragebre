@@ -161,7 +161,7 @@
                   stroke="#36E0C0" stroke-opacity=".35"/>
           <text x="54" y="157" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="800" letter-spacing="0.5px" fill="#36E0C0" fill-opacity="1" text-anchor="middle">01</text>
           <text x="78" y="155" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="15px" font-weight="700" letter-spacing="0.8px" fill="#F3F5F7" fill-opacity="1" text-anchor="start">PYTHON</text>
-          <text x="78" y="176" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="11px" font-weight="700" letter-spacing="0px" fill="#46515A" fill-opacity="1" text-anchor="start">60.4 KB</text>
+          <text x="78" y="176" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="11px" font-weight="700" letter-spacing="0px" fill="#46515A" fill-opacity="1" text-anchor="start">61.2 KB</text>
 
           <!-- precision track -->
           <rect x="245" y="141" width="575" height="12"
@@ -186,7 +186,7 @@
                 x2="676.25" y2="160"
                 stroke="#263139" stroke-width="1"/>
 
-          <text x="850" y="152" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="13px" font-weight="700" letter-spacing="0px" fill="#36E0C0" fill-opacity="1" text-anchor="end">97.6%</text>
+          <text x="850" y="152" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="13px" font-weight="700" letter-spacing="0px" fill="#36E0C0" fill-opacity="1" text-anchor="end">97.7%</text>
 
           <line x1="48" y1="181" x2="850" y2="181"
                 stroke="#141C21" stroke-width="1"/>
@@ -310,7 +310,7 @@
 
     <text x="58" y="596" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="10px" font-weight="700" letter-spacing="0.9px" fill="#F3F5F7" fill-opacity="1" text-anchor="start">LANGUAGE DISTRIBUTION</text>
     <text x="250" y="596" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" letter-spacing="1.0px" fill="#46515A" fill-opacity="1" text-anchor="start">BYTE WEIGHTED</text>
-    <text x="430" y="596" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" letter-spacing="0.8px" fill="#46515A" fill-opacity="1" text-anchor="start">61.9 KB TOTAL</text>
+    <text x="430" y="596" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" letter-spacing="0.8px" fill="#46515A" fill-opacity="1" text-anchor="start">62.7 KB TOTAL</text>
     <text x="858" y="596" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="10px" font-weight="700" letter-spacing="1.1px" fill="#36E0C0" fill-opacity="1" text-anchor="end">ONLINE</text>
 
   </g>
