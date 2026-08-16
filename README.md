@@ -26,7 +26,7 @@
 These cards are generated automatically by GitHub Actions.
 The workflow updates:
 profile/stats.svg
-profile/top-langs.svg
+profile/top-langs.svg  
 -->
 
 <p align="center"> <img src="./profile/stats.svg" alt="Yeabsira GitHub Statistics" width="100%"> </p>
