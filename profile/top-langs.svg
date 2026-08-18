@@ -161,7 +161,7 @@
                   stroke="#36E0C0" stroke-opacity=".35"/>
           <text x="54" y="157" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="800" letter-spacing="0.5px" fill="#36E0C0" fill-opacity="1" text-anchor="middle">01</text>
           <text x="78" y="155" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="15px" font-weight="700" letter-spacing="0.8px" fill="#F3F5F7" fill-opacity="1" text-anchor="start">PYTHON</text>
-          <text x="78" y="176" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="11px" font-weight="700" letter-spacing="0px" fill="#46515A" fill-opacity="1" text-anchor="start">76.7 KB</text>
+          <text x="78" y="176" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="11px" font-weight="700" letter-spacing="0px" fill="#46515A" fill-opacity="1" text-anchor="start">76.8 KB</text>
 
           <!-- precision track -->
           <rect x="245" y="141" width="575" height="12"
