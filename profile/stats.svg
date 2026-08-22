@@ -197,8 +197,8 @@
                   fill="#63B3FF" filter="url(#glow)"
                   style="animation-delay:0.25s"/>
           <text x="484" y="149" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="14px" font-weight="700" letter-spacing="1.6px" fill="#7D8992" fill-opacity="1" text-anchor="start">FOLLOWERS</text>
-          <text x="484" y="191" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="42px" font-weight="800" letter-spacing="0px" fill="#F3F5F7" fill-opacity="1" text-anchor="start">215</text>
-          <text x="484" y="216" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="13px" font-weight="700" letter-spacing="0.8px" fill="#46515A" fill-opacity="1" text-anchor="start">221 FOLLOWING</text>
+          <text x="484" y="191" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="42px" font-weight="800" letter-spacing="0px" fill="#F3F5F7" fill-opacity="1" text-anchor="start">226</text>
+          <text x="484" y="216" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="13px" font-weight="700" letter-spacing="0.8px" fill="#46515A" fill-opacity="1" text-anchor="start">222 FOLLOWING</text>
           <rect x="726" y="215" width="106" height="3" rx="1.5"
                 fill="#63B3FF" opacity=".10"/>
           <rect class="hudSweep" x="726" y="215" width="106" height="3"
