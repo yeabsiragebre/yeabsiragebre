@@ -18,7 +18,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           user: yeabsiragebre
-          template: classic
+          template: terminal
           base: header, activity, community, repositories, metadata
           config_timezone: Africa/Addis_Ababa
           config_display: large
