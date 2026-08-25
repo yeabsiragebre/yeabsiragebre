@@ -172,20 +172,7 @@ generator config: background=000000, text/icon color=D4AF37
 
 ## `CURRENTLY BUILDING`
 
-<br>
-
-<a href="https://github.com/yeabsiragebre/Cram">
-
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=yeabsiragebre&repo=Cram&hide_border=true&bg_color=000000&title_color=D4AF37&text_color=D4AF37&icon_color=D4AF37"/>
-
-</a>
-
-<br><br>
-
-<img src="https://img.shields.io/badge/AI%20STUDY%20PLATFORM-D4AF37?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/RAG-D4AF37?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/LLMs-D4AF37?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/EXAM%20GENERATION-D4AF37?style=for-the-badge&labelColor=000000"/>
+<img src="./currently-building-badges(1).svg" width="100%"/>
 
 </div>
 
