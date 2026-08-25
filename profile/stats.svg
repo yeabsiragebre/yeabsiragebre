@@ -171,8 +171,8 @@
                   fill="#D4AF37" filter="url(#glow)"
                   style="animation-delay:0.0s"/>
           <text x="64" y="149" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="14px" font-weight="700" letter-spacing="1.6px" fill="#8A8172" fill-opacity="1" text-anchor="start">REPOSITORIES</text>
-          <text x="64" y="191" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="42px" font-weight="800" letter-spacing="0px" fill="#F5F1E6" fill-opacity="1" text-anchor="start">0</text>
-          <text x="64" y="216" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="13px" font-weight="700" letter-spacing="0.8px" fill="#4A453B" fill-opacity="1" text-anchor="start">17 PRIVATE</text>
+          <text x="64" y="191" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="42px" font-weight="800" letter-spacing="0px" fill="#F5F1E6" fill-opacity="1" text-anchor="start">16</text>
+          <text x="64" y="216" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="13px" font-weight="700" letter-spacing="0.8px" fill="#4A453B" fill-opacity="1" text-anchor="start">1 PRIVATE</text>
           <rect x="306" y="215" width="106" height="3" rx="1.5"
                 fill="#D4AF37" opacity=".10"/>
           <rect class="hudSweep" x="306" y="215" width="106" height="3"
@@ -209,7 +209,7 @@
                   fill="#D4AF37" filter="url(#glow)"
                   style="animation-delay:0.5s"/>
           <text x="64" y="277" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="14px" font-weight="700" letter-spacing="1.6px" fill="#8A8172" fill-opacity="1" text-anchor="start">STARS</text>
-          <text x="64" y="319" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="42px" font-weight="800" letter-spacing="0px" fill="#F5F1E6" fill-opacity="1" text-anchor="start">17</text>
+          <text x="64" y="319" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="42px" font-weight="800" letter-spacing="0px" fill="#F5F1E6" fill-opacity="1" text-anchor="start">146</text>
           <text x="64" y="344" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="13px" font-weight="700" letter-spacing="0.8px" fill="#4A453B" fill-opacity="1" text-anchor="start">STARS ACROSS REPOS</text>
           <rect x="306" y="343" width="106" height="3" rx="1.5"
                 fill="#D4AF37" opacity=".10"/>
@@ -228,7 +228,7 @@
                   fill="#F1C453" filter="url(#glow)"
                   style="animation-delay:0.75s"/>
           <text x="484" y="277" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="14px" font-weight="700" letter-spacing="1.6px" fill="#8A8172" fill-opacity="1" text-anchor="start">FORKS</text>
-          <text x="484" y="319" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="42px" font-weight="800" letter-spacing="0px" fill="#F5F1E6" fill-opacity="1" text-anchor="start">1</text>
+          <text x="484" y="319" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="42px" font-weight="800" letter-spacing="0px" fill="#F5F1E6" fill-opacity="1" text-anchor="start">0</text>
           <text x="484" y="344" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="13px" font-weight="700" letter-spacing="0.8px" fill="#4A453B" fill-opacity="1" text-anchor="start">0 OPEN ISSUES</text>
           <rect x="726" y="343" width="106" height="3" rx="1.5"
                 fill="#F1C453" opacity=".10"/>
@@ -248,13 +248,13 @@
     <text x="838" y="414" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12px" font-weight="700" letter-spacing="1.2px" fill="#D4AF37" fill-opacity="1" text-anchor="end">SYNCED</text>
 
     <text x="62" y="450" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="11px" font-weight="700" letter-spacing="1.1px" fill="#4A453B" fill-opacity="1" text-anchor="start">PUBLIC</text>
-    <text x="62" y="481" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="25px" font-weight="800" letter-spacing="0px" fill="#F5F1E6" fill-opacity="1" text-anchor="start">0</text>
+    <text x="62" y="481" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="25px" font-weight="800" letter-spacing="0px" fill="#F5F1E6" fill-opacity="1" text-anchor="start">16</text>
 
     <text x="191" y="450" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="11px" font-weight="700" letter-spacing="1.1px" fill="#4A453B" fill-opacity="1" text-anchor="start">PRIVATE</text>
-    <text x="191" y="481" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="25px" font-weight="800" letter-spacing="0px" fill="#F5F1E6" fill-opacity="1" text-anchor="start">17</text>
+    <text x="191" y="481" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="25px" font-weight="800" letter-spacing="0px" fill="#F5F1E6" fill-opacity="1" text-anchor="start">1</text>
 
     <text x="320" y="450" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="11px" font-weight="700" letter-spacing="1.1px" fill="#4A453B" fill-opacity="1" text-anchor="start">WATCHERS</text>
-    <text x="320" y="481" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="25px" font-weight="800" letter-spacing="0px" fill="#F5F1E6" fill-opacity="1" text-anchor="start">17</text>
+    <text x="320" y="481" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="25px" font-weight="800" letter-spacing="0px" fill="#F5F1E6" fill-opacity="1" text-anchor="start">146</text>
 
     <text x="449" y="450" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="11px" font-weight="700" letter-spacing="1.1px" fill="#4A453B" fill-opacity="1" text-anchor="start">OPEN ISSUES</text>
     <text x="449" y="481" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="25px" font-weight="800" letter-spacing="0px" fill="#F5F1E6" fill-opacity="1" text-anchor="start">0</text>
@@ -269,7 +269,7 @@
           stroke="#201B10" stroke-width="1"/>
 
     <text x="62" y="532" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="10px" font-weight="700" letter-spacing="1.0px" fill="#4A453B" fill-opacity="1" text-anchor="start">AVG STARS/REPO</text>
-    <text x="200" y="532" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="11px" font-weight="700" letter-spacing="0px" fill="#F5F1E6" fill-opacity="1" text-anchor="start">1.0</text>
+    <text x="200" y="532" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="11px" font-weight="700" letter-spacing="0px" fill="#F5F1E6" fill-opacity="1" text-anchor="start">8.6</text>
     <text x="310" y="532" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="10px" font-weight="700" letter-spacing="1.0px" fill="#4A453B" fill-opacity="1" text-anchor="start">AUTHENTICATED</text>
     <text x="425" y="532" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="11px" font-weight="700" letter-spacing="0px" fill="#F5F1E6" fill-opacity="1" text-anchor="start">GH_TOKEN</text>
     <text x="575" y="532" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="10px" font-weight="700" letter-spacing="1.0px" fill="#4A453B" fill-opacity="1" text-anchor="start">STATUS</text>
