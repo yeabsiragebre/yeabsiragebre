@@ -24,6 +24,9 @@ jobs:
       - name: Create profile directory
         run: mkdir -p profile
 
+      - name: Sync with main
+        run: git pull --rebase origin main
+
       - name: Generate streak
         uses: DenverCoder1/github-readme-streak-stats@main
         with:
@@ -43,6 +46,5 @@ jobs:
             exit 0
           fi
 
-          git pull --rebase origin main
           git commit -m "Update GitHub streak"
           git push origin main
