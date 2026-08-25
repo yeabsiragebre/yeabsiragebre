@@ -1,12 +1,7 @@
 <div align="center">
+<img src="./banner.svg" width="100%"/>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=header&color=0:000000,100:3D3423"/>
-
-<img src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/wave.gif" width="45"/>
-
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=34&duration=3500&pause=1400&color=D9C7A5&background=000000&center=true&vCenter=true&width=780&height=70&lines=Hey%2C+I'm+Yeabsira+%F0%9F%91%8B" />
-
-### `AI ENGINEER` · `LLM & RAG SYSTEMS` · `FULL-STACK BUILDER`
 
 <br>
 
