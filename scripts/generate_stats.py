@@ -51,8 +51,8 @@ DIM = "#46515A"
 GRID = "#64727C"
 
 # Primary accent + restrained secondary accent.
-CYAN = "#36E0C0"
-CYAN_2 = "#63B3FF"
+ORANGE = "#FFA500"
+ORANGE_2 = "#FFB347"
 LIME = "#A8E063"
 VIOLET = "#8B7CFF"
 MAGENTA = "#D978C9"
@@ -60,7 +60,7 @@ ORANGE = "#D9A45F"
 RED = "#E06C75"
 
 LANG_COLORS = [
-    CYAN, CYAN_2, VIOLET, LIME, MAGENTA, ORANGE, "#75C7D8", "#B19CFF"
+    ORANGE, ORANGE_2, VIOLET, LIME, MAGENTA, ORANGE, "#75C7D8", "#B19CFF"
 ]
 # ============================================================
 # API
@@ -225,20 +225,20 @@ def defs(seed=0):
   </linearGradient>
 
   <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="{CYAN}" stop-opacity="0"/>
-    <stop offset="18%" stop-color="{CYAN}" stop-opacity=".85"/>
-    <stop offset="52%" stop-color="{CYAN_2}" stop-opacity=".9"/>
+    <stop offset="0%" stop-color="{ORANGE}" stop-opacity="0"/>
+    <stop offset="18%" stop-color="{ORANGE}" stop-opacity=".85"/>
+    <stop offset="52%" stop-color="{ORANGE_2}" stop-opacity=".9"/>
     <stop offset="82%" stop-color="{VIOLET}" stop-opacity=".65"/>
     <stop offset="100%" stop-color="{VIOLET}" stop-opacity="0"/>
   </linearGradient>
 
   <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="{CYAN}"/>
-    <stop offset="100%" stop-color="{CYAN_2}"/>
+    <stop offset="0%" stop-color="{ORANGE}"/>
+    <stop offset="100%" stop-color="{ORANGE_2}"/>
   </linearGradient>
 
   <linearGradient id="violetBar" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="{CYAN_2}"/>
+    <stop offset="0%" stop-color="{ORANGE_2}"/>
     <stop offset="100%" stop-color="{VIOLET}"/>
   </linearGradient>
 
@@ -315,7 +315,7 @@ def defs(seed=0):
 """
 
 
-def corner_brackets(w, h, color=CYAN):
+def corner_brackets(w, h, color=ORANGE):
     s = 14
     return "".join([
         line(18, 18, 18+s, 18, color, 1, .8),
@@ -337,7 +337,7 @@ def background(w, h, seed):
       <rect width="{w}" height="{h}" fill="url(#scan)"/>
 
       <circle class="float" cx="110" cy="70" r="100"
-              fill="{CYAN}" opacity=".025" filter="url(#softGlow)"/>
+              fill="{ORANGE}" opacity=".025" filter="url(#softGlow)"/>
       <circle class="float" cx="800" cy="510" r="130"
               fill="{VIOLET}" opacity=".02" filter="url(#softGlow)"/>
 
@@ -346,7 +346,7 @@ def background(w, h, seed):
 
       <g transform="rotate({phase} 450 310)" opacity=".018">
         <circle cx="450" cy="310" r="250" fill="none"
-                stroke="{CYAN}" stroke-width="1"/>
+                stroke="{ORANGE}" stroke-width="1"/>
         <circle cx="450" cy="310" r="340" fill="none"
                 stroke="{VIOLET}" stroke-width="1"/>
       </g>
@@ -371,7 +371,7 @@ def stat_tile(x, y, w, h, label, value, sub, accent, index):
     """
 
 
-def sparkline(values, x, y, w, h, color=CYAN):
+def sparkline(values, x, y, w, h, color=ORANGE):
     if not values:
         return ""
     vmax = max(values) or 1
@@ -395,7 +395,7 @@ def contribution_matrix(daily, x=42, y=305, cols=53, rows=7, cell=9, gap=3):
     start = end - timedelta(days=363)
     max_count = max(daily.values(), default=1)
 
-    palette = ["#0B1013", "#12302D", "#185148", "#24776A", "#2BAF96", CYAN]
+    palette = ["#0B1013", "#12302D", "#185148", "#24776A", "#2BAF96", ORANGE]
     out = []
 
     for day_index in range(364):
@@ -440,9 +440,9 @@ def generate_stats_svg(user, repositories, daily=None, total_contributions=0):
 
     cards = [
         (42, 118, 396, 112, "REPOSITORIES", public_repositories,
-         f"{private_repositories} PRIVATE", CYAN, 0),
+         f"{private_repositories} PRIVATE", ORANGE, 0),
         (462, 118, 396, 112, "FOLLOWERS", followers,
-         f"{following} FOLLOWING", CYAN_2, 1),
+         f"{following} FOLLOWING", ORANGE_2, 1),
         (42, 246, 396, 112, "STARS", stars,
          "TOTAL PROJECT STARS", VIOLET, 2),
         (462, 246, 396, 112, "FORKS", forks,
@@ -489,7 +489,7 @@ def generate_stats_svg(user, repositories, daily=None, total_contributions=0):
     <rect width="{WIDTH}" height="{HEIGHT}" fill="url(#microgrid)"/>
     <rect class="scanmove" x="0" y="-100" width="{WIDTH}" height="{HEIGHT}" fill="url(#scan)" opacity=".45"/>
 
-    <circle class="float" cx="70" cy="80" r="130" fill="{CYAN}"
+    <circle class="float" cx="70" cy="80" r="130" fill="{ORANGE}"
             opacity=".025" filter="url(#softGlow)"/>
     <circle class="float" cx="840" cy="520" r="150" fill="{VIOLET}"
             opacity=".018" filter="url(#softGlow)"/>
@@ -501,7 +501,7 @@ def generate_stats_svg(user, repositories, daily=None, total_contributions=0):
     <rect x="42" y="27" width="816" height="2"
           fill="url(#accentLine)" filter="url(#glow)"/>
 
-    <circle class="pulse" cx="52" cy="60" r="6" fill="{CYAN}" filter="url(#glow)"/>{text(68, 66, "SYSTEM ONLINE", 25, WHITE, 700, spacing=1.3)}
+    <circle class="pulse" cx="52" cy="60" r="6" fill="{ORANGE}" filter="url(#glow)"/>{text(68, 66, "SYSTEM ONLINE", 25, WHITE, 700, spacing=1.3)}
     {text(42, 96, "LIVE GITHUB DATA // PROFILE TELEMETRY", 12, MUTED, 700, spacing=1.6)}
 
 
@@ -513,7 +513,7 @@ def generate_stats_svg(user, repositories, daily=None, total_contributions=0):
           fill="#070A0D" stroke="#172026"/>
 
     {text(62, 414, "LIVE REPOSITORY TELEMETRY", 14, WHITE, 800, spacing=1.5)}
-    {text(838, 414, "SYNCED", 12, CYAN, 700, "end", spacing=1.2)}
+    {text(838, 414, "SYNCED", 12, ORANGE, 700, "end", spacing=1.2)}
 
     {text(62, 450, "PUBLIC", 11, DIM, 700, spacing=1.1)}
     {text(62, 481, public_repositories, 25, WHITE, 800)}
@@ -528,7 +528,7 @@ def generate_stats_svg(user, repositories, daily=None, total_contributions=0):
     {text(491, 481, open_issues, 25, WHITE, 800)}
 
     {text(650, 450, "TOTAL REPOS", 11, DIM, 700, spacing=1.1)}
-    {text(650, 481, total_repos, 25, CYAN, 800)}
+    {text(650, 481, total_repos, 25, ORANGE, 800)}
 
     <line x1="62" y1="507" x2="838" y2="507"
           stroke="#182127" stroke-width="1"/>
@@ -538,10 +538,10 @@ def generate_stats_svg(user, repositories, daily=None, total_contributions=0):
     {text(310, 532, "AUTHENTICATED", 10, DIM, 700, spacing=1.0)}
     {text(425, 532, "GH_TOKEN", 11, WHITE, 700)}
     {text(575, 532, "STATUS", 10, DIM, 700, spacing=1.0)}
-    {text(630, 532, "LIVE", 11, CYAN, 800)}
+    {text(630, 532, "LIVE", 11, ORANGE, 800)}
     <!-- Footer replaces the removed notes -->
     {text(42, 586, "GITHUB PROFILE INTELLIGENCE // LIVE DATA LAYER", 13, WHITE, 800, spacing=1.1)}
-    {text(858, 586, "ONLINE", 13, CYAN, 800, "end", spacing=1.2)}
+    {text(858, 586, "ONLINE", 13, ORANGE, 800, "end", spacing=1.2)}
   </g>
 </svg>
 """
@@ -629,7 +629,7 @@ def generate_languages_svg(languages):
             language_data.append((language, percentage, amount))
 
     language_colors = [
-        CYAN, CYAN_2, VIOLET, LIME,
+        ORANGE, ORANGE_2, VIOLET, LIME,
         "#75C7D8", "#9BA8FF", "#B19CFF", "#D978C9"
     ]
 
@@ -713,24 +713,24 @@ def generate_languages_svg(languages):
 
     <g class="hudRotate" opacity=".11">
       <circle cx="450" cy="620" r="340" fill="none"
-              stroke="{CYAN}" stroke-width="1"/>
+              stroke="{ORANGE}" stroke-width="1"/>
       <circle cx="450" cy="620" r="300" fill="none"
               stroke="{VIOLET}" stroke-width="1"/>
       <circle cx="450" cy="620" r="260" fill="none"
-              stroke="{CYAN_2}" stroke-width="1" stroke-dasharray="2 10"/>
+              stroke="{ORANGE_2}" stroke-width="1" stroke-dasharray="2 10"/>
     </g>
 
     <!-- Static atmospheric glow only; the old sweeping language-card glow is removed. -->
     <circle cx="820" cy="80" r="130" fill="{VIOLET}"
             opacity=".018" filter="url(#softGlow)"/>
-    <circle cx="70" cy="550" r="120" fill="{CYAN}"
+    <circle cx="70" cy="550" r="120" fill="{ORANGE}"
             opacity=".02" filter="url(#softGlow)"/>
 
     <!-- Precision HUD rails -->
     <line x1="42" y1="126" x2="858" y2="126"
           stroke="#1A2329" stroke-width="1"/>
     <line x1="42" y1="129" x2="310" y2="129"
-          stroke="{CYAN}" stroke-width="1" stroke-opacity=".45"/>
+          stroke="{ORANGE}" stroke-width="1" stroke-opacity=".45"/>
 
     <rect x="1" y="1" width="898" height="618" rx="20"
           fill="none" stroke="#273139" stroke-opacity=".9"/>
@@ -744,8 +744,8 @@ def generate_languages_svg(languages):
     {text(42, 96, "CODEBASE // BYTE DISTRIBUTION // LIVE REPOSITORY ANALYSIS", 12, MUTED, 700, spacing=1.6)}
 
     <circle class="pulse" cx="782" cy="53" r="4"
-            fill="{CYAN}" filter="url(#glow)"/>
-    {text(852, 56, "SYSTEM ONLINE", 8, CYAN, 700, "end", spacing=1.1)}
+            fill="{ORANGE}" filter="url(#glow)"/>
+    {text(852, 56, "SYSTEM ONLINE", 8, ORANGE, 700, "end", spacing=1.1)}
     {text(852, 75, "LANGUAGE ANALYSIS", 7, DIM, 700, "end", spacing=1)}
 
     {text(48, 116, f"{len(language_data)} PRIMARY LANGUAGES", 12,
@@ -764,7 +764,7 @@ def generate_languages_svg(languages):
     {text(58, 596, "LANGUAGE DISTRIBUTION", 10, WHITE, 700, spacing=.9)}
     {text(250, 596, "BYTE WEIGHTED", 9, DIM, 700, spacing=1.0)}
     {text(430, 596, f"{format_bytes(total_bytes)} TOTAL", 9, DIM, 700, spacing=.8)}
-    {text(858, 596, "ONLINE", 10, CYAN, 700, "end", spacing=1.1)}
+    {text(858, 596, "ONLINE", 10, ORANGE, 700, "end", spacing=1.1)}
 
   </g>
 </svg>
@@ -811,9 +811,9 @@ def generate_combined_svg(user, repositories, daily, total_contributions, langua
     viewBox="0 0 {WIDTH} {HEIGHT}">
     <defs>
       <linearGradient id="unifiedFlow" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0%" stop-color="{CYAN}" stop-opacity="0"/>
-        <stop offset="20%" stop-color="{CYAN}" stop-opacity=".45"/>
-        <stop offset="50%" stop-color="{CYAN_2}" stop-opacity=".7"/>
+        <stop offset="0%" stop-color="{ORANGE}" stop-opacity="0"/>
+        <stop offset="20%" stop-color="{ORANGE}" stop-opacity=".45"/>
+        <stop offset="50%" stop-color="{ORANGE_2}" stop-opacity=".7"/>
         <stop offset="80%" stop-color="{VIOLET}" stop-opacity=".45"/>
         <stop offset="100%" stop-color="{VIOLET}" stop-opacity="0"/>
       </linearGradient>
@@ -839,7 +839,7 @@ def generate_combined_svg(user, repositories, daily, total_contributions, langua
 
     <g class="hudRotate" opacity=".11">
       <circle cx="450" cy="620" r="340" fill="none"
-              stroke="{CYAN}" stroke-width="1"/>
+              stroke="{ORANGE}" stroke-width="1"/>
       <circle cx="450" cy="620" r="300" fill="none"
               stroke="{VIOLET}" stroke-width="1"/>
     </g>
@@ -860,7 +860,7 @@ def generate_combined_svg(user, repositories, daily, total_contributions, langua
             rx="1" fill="url(#unifiedFlow)" filter="url(#glow)"/>
     </g>
     <circle class="blink" cx="450" cy="{CARD_HEIGHT + GAP//2}" r="2.5"
-            fill="{CYAN}" filter="url(#tinyGlow)"/>
+            fill="{ORANGE}" filter="url(#tinyGlow)"/>
 
     <g transform="translate(0,{CARD_HEIGHT + GAP})">
       {language_content}
@@ -921,7 +921,7 @@ def main():
     print("  GENERATION COMPLETE")
     print(f"  -> {STATS_FILE}")
     print(f"  -> {LANGUAGES_FILE} (standalone compatibility copy)")
-    print("  DESIGN: BLACK / GRAPHITE / CYAN / RESTRAINED VIOLET")
+    print("  DESIGN: BLACK / GRAPHITE / ORANGE / RESTRAINED VIOLET")
     print("  DATA:   LIVE GITHUB REST + GRAPHQL")
     print("  AUTH:   GH_TOKEN")
     print("=" * 68)
