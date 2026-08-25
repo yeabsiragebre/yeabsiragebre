@@ -172,7 +172,7 @@ generator config: background=000000, text/icon color=D4AF37
 
 ## `CURRENTLY BUILDING`
 
-<img src="./currently-building-badges(1).svg" width="100%"/>
+<img src="./currently-building-badges (1).svg" width="100%"/>
 
 </div>
 
