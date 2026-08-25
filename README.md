@@ -6,11 +6,52 @@
 
 <br>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&duration=2800&pause=900&color=8B5CF6&center=true&vCenter=true&width=720&lines=AI+Engineering;LLMs+%7C+RAG+%7C+AI+Agents;Building+%7C+Learning+%7C+Shipping" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&duration=2800&pause=900&color=36E0C0&center=true&vCenter=true&width=720&lines=AI+Engineering;LLMs+%7C+RAG+%7C+AI+Agents;Building+%7C+Learning+%7C+Shipping" />
 
 <br><br>
 
-<img src="https://komarev.com/ghpvc/?username=yeabsiragebre&style=for-the-badge&color=8B5CF6&label=PROFILE+VIEWS"/>
+<img src="https://komarev.com/ghpvc/?username=yeabsiragebre&style=for-the-badge&color=36E0C0&label=PROFILE+VIEWS"/>
+
+</div>
+
+<br>
+
+<div align="center">
+
+## `ABOUT`
+
+<br>
+
+Yeabsira is a Computer Science student at Addis Ababa University building at the intersection of AI engineering and human understanding. She writes Python, designs LLM pipelines, and builds RAG systems — but her mind lives in the space between Camus' absurdism and Kafka's labyrinthine logic, between Dostoevsky's psychological depth and Nietzsche's will to power. When she's not debugging models or studying data structures, she's playing chess, sketching in pencil, or losing herself in a Dostoevsky novel with a cup of coffee and a Bach cello suite playing in the background.
+
+<br>
+
+</div>
+
+<br>
+
+<div align="center">
+
+## `HOBBIES & INTERESTS`
+
+<br>
+
+```text
+┌──────────────────────────────────────────────────────────┐
+│  $ cat ~/interests/hobbies                              │
+│                                                          │
+│  ▸ chess                ▸ philosophy & literature       │
+│  ▸ pencil art           ▸ classical / instrumental      │
+│  ▸ anime                ▸ reading                       │
+│                                                          │
+│  $ cat ~/interests/authors                              │
+│  ▸ Camus   ▸ Kafka   ▸ Dostoevsky   ▸ Nietzsche        │
+│                                                          │
+│  $ echo "always building, always learning"              │
+└──────────────────────────────────────────────────────────┘
+```
+
+<br>
 
 </div>
 
@@ -26,7 +67,7 @@
 These cards are generated automatically by GitHub Actions.
 The workflow updates:
 profile/stats.svg
-profile/top-langs.svg    
+profile/top-langs.svg
 -->
 
 <p align="center"> <img src="./profile/stats.svg" alt="Yeabsira GitHub Statistics" width="100%"> </p>
@@ -46,6 +87,10 @@ profile/top-langs.svg
   <source media="(prefers-color-scheme: light)" srcset="./github-contribution-grid-snake.svg">
   <img src="./github-contribution-grid-snake.svg" width="100%" alt="Contribution Snake"/>
 </picture>
+
+<br><br>
+
+<img src="https://github-profile-trophy.vercel.app/?username=yeabsiragebre&theme=dark&no-frame=true&margin-w=10&row=2" alt="Trophies"/>
 
 </div>
 
@@ -69,17 +114,25 @@ profile/top-langs.svg
 
 <br>
 
+### `LANGUAGES`
+
 <img src="https://skillicons.dev/icons?i=python,java,cpp,javascript,typescript&perline=5"/>
 
 <br><br>
+
+### `FRAMEWORKS & LIBRARIES`
 
 <img src="https://skillicons.dev/icons?i=fastapi,nodejs,react,nextjs&perline=4"/>
 
 <br><br>
 
+### `AI & DATA`
+
 <img src="https://skillicons.dev/icons?i=pytorch,tensorflow,postgres,mongodb,redis&perline=5"/>
 
 <br><br>
+
+### `TOOLS & PLATFORMS`
 
 <img src="https://skillicons.dev/icons?i=git,github,linux,docker,vscode&perline=5"/>
 
@@ -93,18 +146,17 @@ profile/top-langs.svg
 
 <br>
 
-<img src="https://img.shields.io/badge/LLMs-8B5CF6?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/RAG-8B5CF6?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/EMBEDDINGS-8B5CF6?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/AI%20AGENTS-8B5CF6?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/TOOL%20CALLING-8B5CF6?style=for-the-badge"/>
+```text
+┌──────────────────────────────────────────────────────────┐
+│  AI ENGINEERING STACK                                   │
+│                                                          │
+│  ▸ LLMs              ▸ RAG              ▸ Embeddings    │
+│  ▸ AI Agents         ▸ Tool Calling     ▸ Vector Search│
+│  ▸ LLM Applications  ▸ AI Systems       ▸ API Integration│
+└──────────────────────────────────────────────────────────┘
+```
 
-<br><br>
-
-<img src="https://img.shields.io/badge/LLM%20APPLICATIONS-111827?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/VECTOR%20SEARCH-111827?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/AI%20SYSTEMS-111827?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/API%20INTEGRATION-111827?style=for-the-badge"/>
+<br>
 
 </div>
 
@@ -124,10 +176,10 @@ profile/top-langs.svg
 
 <br><br>
 
-<img src="https://img.shields.io/badge/AI%20STUDY%20PLATFORM-8B5CF6?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/RAG-111827?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/LLMs-111827?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/EXAM%20GENERATION-111827?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/AI%20STUDY%20PLATFORM-36E0C0?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/RAG-0D1117?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/LLMs-0D1117?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/EXAM%20GENERATION-0D1117?style=for-the-badge"/>
 
 </div>
 
@@ -135,19 +187,22 @@ profile/top-langs.svg
 
 <div align="center">
 
-## `PROJECTS`
+## `CONTACT`
 
 <br>
 
-<a href="https://github.com/yeabsiragebre?tab=repositories">
-<img src="https://img.shields.io/badge/ALL%20REPOSITORIES-181717?style=for-the-badge&logo=github"/>
-</a>
+```text
+┌──────────────────────────────────────────────────────────┐
+│  CONTACT                                               │
+│                                                          │
+│  ▸ LinkedIn   →  <!-- TODO: add LinkedIn handle -->    │
+│  ▸ Email      →  <!-- TODO: add email address -->     │
+│  ▸ Portfolio  →  <!-- TODO: add portfolio URL -->      │
+│                                                          │
+└──────────────────────────────────────────────────────────┘
+```
 
- 
-
-<a href="https://github.com/yeabsiragebre?tab=stars">
-<img src="https://img.shields.io/badge/STARRED-8B5CF6?style=for-the-badge&logo=github"/>
-</a>
+<br>
 
 </div>
 
@@ -155,44 +210,6 @@ profile/top-langs.svg
 
 <div align="center">
 
-## `FOCUS`
-
-<br>
-
-<img src="https://img.shields.io/badge/ALGORITHMS-8B5CF6?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/DATA%20STRUCTURES-8B5CF6?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/AI%20ENGINEERING-8B5CF6?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/BACKEND-8B5CF6?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/SYSTEM%20DESIGN-8B5CF6?style=for-the-badge"/>
-
-</div>
-
-<br>
-
-<div align="center">
-
-## `DEVELOPER ENVIRONMENT`
-
-<br>
-
-<img src="https://skillicons.dev/icons?i=python,git,github,vscode,linux,docker"/>
-
-</div>
-
-<br>
-
-<div align="center">
-
-<img src="https://img.shields.io/github/followers/yeabsiragebre?style=for-the-badge&logo=github&label=FOLLOWERS"/>
-<img src="https://img.shields.io/github/stars/yeabsiragebre?style=for-the-badge&logo=github&label=STARS"/>
-<img src="https://img.shields.io/github/commit-activity/y/yeabsiragebre?style=for-the-badge&logo=github&label=ACTIVITY"/>
-
-</div>
-
-<br>
-
-<div align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&color=0:0D1117,100:8B5CF6"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&color=0:050607,100:36E0C0"/>
 
 </div>
