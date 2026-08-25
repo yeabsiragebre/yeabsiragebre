@@ -305,8 +305,11 @@ def defs():
 
 
 def corner_brackets(w, h, color=GOLD):
+    # Wrapped in a group with the existing hudPulse keyframe so the frame
+    # breathes gently — reuses the animation already defined in defs(),
+    # nothing new added, nothing removed.
     s = 14
-    return "".join(
+    segments = "".join(
         [
             line(18, 18, 18 + s, 18, color, 1, 0.8),
             line(18, 18, 18, 18 + s, color, 1, 0.8),
@@ -318,6 +321,7 @@ def corner_brackets(w, h, color=GOLD):
             line(w - 18, h - 18 - s, w - 18, h - 18, color, 1, 0.8),
         ]
     )
+    return f'<g class="hudPulse">{segments}</g>'
 
 
 # ============================================================
@@ -325,9 +329,17 @@ def corner_brackets(w, h, color=GOLD):
 # ============================================================
 
 
-def generate_stats_svg(user, repositories):
+def _truncate(value, max_len=10):
+    value = str(value)
+    if len(value) <= max_len:
+        return value
+    return value[: max_len - 1] + "\u2026"
+
+
+def generate_stats_svg(user, repositories, languages=None):
     WIDTH = 900
     HEIGHT = 620
+    languages = languages or {}
 
     public_repositories = user.get("public_repos", 0)
     followers = user.get("followers", 0)
@@ -338,6 +350,9 @@ def generate_stats_svg(user, repositories):
     open_issues = sum(repo.get("open_issues_count", 0) for repo in repositories)
     watched = sum(repo.get("watchers_count", 0) for repo in repositories)
     total_repos = public_repositories + private_repositories
+
+    top_language = max(languages, key=languages.get) if languages else "N/A"
+    avg_stars_per_repo = (stars / total_repos) if total_repos else 0.0
 
     cards = [
         (
@@ -362,7 +377,7 @@ def generate_stats_svg(user, repositories):
             GOLD_2,
             1,
         ),
-        (42, 246, 396, 112, "STARS", stars, "TOTAL PROJECT STARS", GOLD, 2),
+        (42, 246, 396, 112, "STARS", stars, "STARS ACROSS REPOS", GOLD, 2),
         (462, 246, 396, 112, "FORKS", forks, f"{open_issues} OPEN ISSUES", GOLD_2, 3),
     ]
 
@@ -387,6 +402,9 @@ def generate_stats_svg(user, repositories):
                   fill="{accent}" style="animation-delay:{index * 0.35}s"/>
         </g>
         """
+
+    # Six evenly spaced mini-columns in the telemetry strip.
+    mini_x = [62, 191, 320, 449, 578, 707]
 
     svg = f"""
 <svg xmlns="http://www.w3.org/2000/svg"
@@ -430,26 +448,29 @@ def generate_stats_svg(user, repositories):
     {text(62, 414, "LIVE REPOSITORY TELEMETRY", 14, WHITE, 800, spacing=1.5)}
     {text(838, 414, "SYNCED", 12, GOLD, 700, "end", spacing=1.2)}
 
-    {text(62, 450, "PUBLIC", 11, DIM, 700, spacing=1.1)}
-    {text(62, 481, public_repositories, 25, WHITE, 800)}
+    {text(mini_x[0], 450, "PUBLIC", 11, DIM, 700, spacing=1.1)}
+    {text(mini_x[0], 481, public_repositories, 25, WHITE, 800)}
 
-    {text(205, 450, "PRIVATE", 11, DIM, 700, spacing=1.1)}
-    {text(205, 481, private_repositories, 25, WHITE, 800)}
+    {text(mini_x[1], 450, "PRIVATE", 11, DIM, 700, spacing=1.1)}
+    {text(mini_x[1], 481, private_repositories, 25, WHITE, 800)}
 
-    {text(348, 450, "WATCHERS", 11, DIM, 700, spacing=1.1)}
-    {text(348, 481, watched, 25, WHITE, 800)}
+    {text(mini_x[2], 450, "WATCHERS", 11, DIM, 700, spacing=1.1)}
+    {text(mini_x[2], 481, watched, 25, WHITE, 800)}
 
-    {text(491, 450, "OPEN ISSUES", 11, DIM, 700, spacing=1.1)}
-    {text(491, 481, open_issues, 25, WHITE, 800)}
+    {text(mini_x[3], 450, "OPEN ISSUES", 11, DIM, 700, spacing=1.1)}
+    {text(mini_x[3], 481, open_issues, 25, WHITE, 800)}
 
-    {text(650, 450, "TOTAL REPOS", 11, DIM, 700, spacing=1.1)}
-    {text(650, 481, total_repos, 25, GOLD, 800)}
+    {text(mini_x[4], 450, "TOTAL REPOS", 11, DIM, 700, spacing=1.1)}
+    {text(mini_x[4], 481, total_repos, 25, GOLD, 800)}
+
+    {text(mini_x[5], 450, "TOP LANG", 11, DIM, 700, spacing=1.1)}
+    {text(mini_x[5], 481, _truncate(top_language).upper(), 18, GOLD, 800)}
 
     <line x1="62" y1="507" x2="838" y2="507"
           stroke="#201B10" stroke-width="1"/>
 
-    {text(62, 532, "SOURCE", 10, DIM, 700, spacing=1.1)}
-    {text(115, 532, "GITHUB REST API", 11, WHITE, 700)}
+    {text(62, 532, "AVG STARS/REPO", 10, DIM, 700, spacing=1.0)}
+    {text(200, 532, f"{avg_stars_per_repo:.1f}", 11, WHITE, 700)}
     {text(310, 532, "AUTHENTICATED", 10, DIM, 700, spacing=1.0)}
     {text(425, 532, "GH_TOKEN", 11, WHITE, 700)}
     {text(575, 532, "STATUS", 10, DIM, 700, spacing=1.0)}
@@ -620,7 +641,7 @@ def format_bytes(value):
 
 
 def generate_combined_svg(user, repositories, languages):
-    stats_svg = generate_stats_svg(user, repositories)
+    stats_svg = generate_stats_svg(user, repositories, languages)
     language_svg = generate_languages_svg(languages)
 
     stats_match = re.search(r"<svg[^>]*>(.*)</svg>\s*$", stats_svg, flags=re.DOTALL)
