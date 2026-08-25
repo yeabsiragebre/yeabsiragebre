@@ -527,7 +527,7 @@ def generate_stats_svg(user, repositories, daily=None, total_contributions=0):
     {text(491, 450, "OPEN ISSUES", 11, DIM, 700, spacing=1.1)}
     {text(491, 481, open_issues, 25, WHITE, 800)}
 
-    {text(650, 450, "PROJECTS", 11, DIM, 700, spacing=1.1)}
+    {text(650, 450, "TOTAL REPOS", 11, DIM, 700, spacing=1.1)}
     {text(650, 481, total_repos, 25, CYAN, 800)}
 
     <line x1="62" y1="507" x2="838" y2="507"

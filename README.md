@@ -40,12 +40,18 @@ Yeabsira is a Computer Science student at Addis Ababa University building at the
 ┌──────────────────────────────────────────────────────┐
 │  $ cat ~/interests/hobbies                           │
 │                                                      │
-│  ▸ chess             ▸ philosophy & literature      │
-│  ▸ pencil art        ▸ classical / instrumental     │
-│  ▸ anime             ▸ reading                      │
+│  ▸ chess                                           │
+│  ▸ philosophy & literature                           │
+│  ▸ pencil art                                      │
+│  ▸ classical / instrumental                         │
+│  ▸ anime                                           │
+│  ▸ reading                                         │
 │                                                      │
 │  $ cat ~/interests/authors                           │
-│  ▸ Camus  ▸ Kafka  ▸ Dostoevsky  ▸ Nietzsche       │
+│  ▸ Camus                                           │
+│  ▸ Kafka                                           │
+│  ▸ Dostoevsky                                      │
+│  ▸ Nietzsche                                       │
 │                                                      │
 │  $ echo "always building, always learning"           │
 └──────────────────────────────────────────────────────┘
@@ -148,11 +154,18 @@ profile/top-langs.svg
 
 ```text
 ┌──────────────────────────────────────────────────────┐
-│  AI ENGINEERING STACK                                  │
-│                                                          │
-│  ▸ LLMs        ▸ RAG           ▸ Embeddings         │
-│  ▸ AI Agents   ▸ Tool Calling  ▸ Vector Search      │
-│  ▸ LLM Apps    ▸ AI Systems    ▸ API Integration    │
+│  AI ENGINEERING STACK                                │
+│                                                      │
+│  ▸ LLMs                                             │
+│  ▸ RAG                                              │
+│  ▸ Embeddings                                       │
+│  ▸ AI Agents                                        │
+│  ▸ Tool Calling                                     │
+│  ▸ Vector Search                                    │
+│  ▸ LLM Applications                                 │
+│  ▸ AI Systems                                       │
+│  ▸ API Integration                                  │
+│                                                      │
 └──────────────────────────────────────────────────────┘
 ```
 
@@ -193,12 +206,12 @@ profile/top-langs.svg
 
 ```text
 ┌──────────────────────────────────────────────────────┐
-│  CONTACT                                               │
-│                                                          │
+│  CONTACT                                             │
+│                                                      │
 │  ▸ LinkedIn  →  <!-- TODO: add LinkedIn handle -->  │
-│  ▸ Email     →  <!-- TODO: add email address -->     │
-│  ▸ Portfolio →  <!-- TODO: add portfolio URL -->      │
-│                                                          │
+│  ▸ Email     →  <!-- TODO: add email address -->    │
+│  ▸ Portfolio →  <!-- TODO: add portfolio URL -->     │
+│                                                      │
 └──────────────────────────────────────────────────────┘
 ```
 
