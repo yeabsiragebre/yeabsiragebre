@@ -1,16 +1,16 @@
 <div align="center">
 <img src="./banner.svg" width="100%"/>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=header&color=0:000000,100:3D3423"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=header&color=0:000000,100:3D2E0A"/>
 
 <br>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&duration=2600&pause=1000&color=D9C7A5&background=000000&center=true&vCenter=true&width=780&height=60&lines=Turning+ideas+into+intelligent+systems;LLMs+%7C+RAG+%7C+AI+Agents;Currently+building%3A+Cram+AI+%F0%9F%9A%80;Ship+first%2C+read+docs+later" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&duration=2600&pause=1000&color=D4AF37&background=000000&center=true&vCenter=true&width=780&height=60&lines=Turning+ideas+into+intelligent+systems;LLMs+%7C+RAG+%7C+AI+Agents;Currently+building%3A+Cram+AI+%F0%9F%9A%80;Ship+first%2C+read+docs+later" />
 
 <br><br>
 
-<img src="https://komarev.com/ghpvc/?username=yeabsiragebre&style=for-the-badge&color=D9C7A5&label=PROFILE+VIEWS&labelColor=000000"/>
-<a href="https://github.com/yeabsiragebre?tab=followers"><img src="https://img.shields.io/github/followers/yeabsiragebre?style=for-the-badge&color=D9C7A5&labelColor=000000&label=FOLLOWERS"/></a>
+<img src="https://komarev.com/ghpvc/?username=yeabsiragebre&style=for-the-badge&color=D4AF37&label=PROFILE+VIEWS&labelColor=000000"/>
+<a href="https://github.com/yeabsiragebre?tab=followers"><img src="https://img.shields.io/github/followers/yeabsiragebre?style=for-the-badge&color=D4AF37&labelColor=000000&label=FOLLOWERS"/></a>
 
 </div>
 
@@ -26,11 +26,15 @@
 
 I'm a Computer Science student at Addis Ababa University focused on Python and AI Engineering. I enjoy building practical projects, experimenting with AI, and learning by actually making things.
 
-<div align="center">
+<br>
 
-### `WHAT I'M INTO`
-
-</div>
+<table align="center">
+<tr>
+<th>💻 WHAT I'M INTO</th>
+<th>🎨 INTERESTS</th>
+</tr>
+<tr>
+<td valign="top">
 
 - `🐍` Python
 - `🤖` AI Engineering & LLM Applications
@@ -38,15 +42,8 @@ I'm a Computer Science student at Addis Ababa University focused on Python and A
 - `🧠` Data Structures & Algorithms
 - `🛠️` Building AI-powered projects
 
-<br>
-
-<div align="center">
-
-## `INTERESTS`
-
-<br>
-
-</div>
+</td>
+<td valign="top">
 
 - `♟️` Chess
 - `📚` Philosophy & Literature
@@ -54,7 +51,17 @@ I'm a Computer Science student at Addis Ababa University focused on Python and A
 - `🎹` Classical & Instrumental Music
 - `🎌` Anime
 
+</td>
+</tr>
+</table>
+
+<br>
+
+<div align="center">
+
 I enjoy works from Camus, Kafka, Dostoevsky, and Nietzsche, and I'm always looking for something interesting to learn or build.
+
+</div>
 
 <br>
 
@@ -67,8 +74,8 @@ I enjoy works from Camus, Kafka, Dostoevsky, and Nietzsche, and I'm always looki
 <!--
 These cards are generated automatically by GitHub Actions.
 The workflow updates: profile/stats.svg, profile/top-langs.svg
-To fully match the black/beige theme, set these in the workflow's
-generator config: background=000000, text/icon color=D9C7A5
+To fully match the black/gold theme, set these in the workflow's
+generator config: background=000000, text/icon color=D4AF37
 -->
 
 <p align="center"> <img src="./profile/stats.svg" alt="Yeabsira GitHub Statistics" width="100%"> </p>
@@ -79,7 +86,7 @@ generator config: background=000000, text/icon color=D9C7A5
 
 <br><br>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=yeabsiragebre&theme=github-compact&hide_border=true&bg_color=000000&color=D9C7A5&line=D9C7A5&point=D9C7A5&title_color=D9C7A5" width="100%" alt="Contribution Activity"/>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=yeabsiragebre&theme=github-compact&hide_border=true&bg_color=000000&color=D4AF37&line=D4AF37&point=D4AF37&title_color=D4AF37" width="100%" alt="Contribution Activity"/>
 
 <br><br>
 
@@ -147,21 +154,21 @@ generator config: background=000000, text/icon color=D9C7A5
 
 <br>
 
-<img src="https://img.shields.io/badge/LLMs-D9C7A5?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/RAG-D9C7A5?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/EMBEDDINGS-D9C7A5?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/LLMs-D4AF37?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/RAG-D4AF37?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/EMBEDDINGS-D4AF37?style=for-the-badge&labelColor=000000"/>
 
 <br><br>
 
-<img src="https://img.shields.io/badge/AI%20AGENTS-D9C7A5?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/TOOL%20CALLING-D9C7A5?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/VECTOR%20SEARCH-D9C7A5?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/AI%20AGENTS-D4AF37?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/TOOL%20CALLING-D4AF37?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/VECTOR%20SEARCH-D4AF37?style=for-the-badge&labelColor=000000"/>
 
 <br><br>
 
-<img src="https://img.shields.io/badge/LLM%20APPLICATIONS-D9C7A5?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/AI%20SYSTEMS-D9C7A5?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/API%20INTEGRATION-D9C7A5?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/LLM%20APPLICATIONS-D4AF37?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/AI%20SYSTEMS-D4AF37?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/API%20INTEGRATION-D4AF37?style=for-the-badge&labelColor=000000"/>
 
 </div>
 
@@ -175,16 +182,16 @@ generator config: background=000000, text/icon color=D9C7A5
 
 <a href="https://github.com/yeabsiragebre/Cram">
 
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=yeabsiragebre&repo=Cram&hide_border=true&bg_color=000000&title_color=D9C7A5&text_color=D9C7A5&icon_color=D9C7A5"/>
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=yeabsiragebre&repo=Cram&hide_border=true&bg_color=000000&title_color=D4AF37&text_color=D4AF37&icon_color=D4AF37"/>
 
 </a>
 
 <br><br>
 
-<img src="https://img.shields.io/badge/AI%20STUDY%20PLATFORM-D9C7A5?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/RAG-D9C7A5?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/LLMs-D9C7A5?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/EXAM%20GENERATION-D9C7A5?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/AI%20STUDY%20PLATFORM-D4AF37?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/RAG-D4AF37?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/LLMs-D4AF37?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/EXAM%20GENERATION-D4AF37?style=for-the-badge&labelColor=000000"/>
 
 </div>
 
@@ -196,10 +203,10 @@ generator config: background=000000, text/icon color=D9C7A5
 
 <br>
 
-<a href="https://github.com/yeabsiragebre"><img src="https://img.shields.io/badge/GitHub-D9C7A5?style=for-the-badge&logo=github&logoColor=000000&labelColor=000000"/></a>
-<img src="https://img.shields.io/badge/LinkedIn-D9C7A5?style=for-the-badge&logo=linkedin&logoColor=000000&labelColor=000000"/> <!-- TODO: wrap in <a href="your-linkedin-url"> -->
-<img src="https://img.shields.io/badge/Email-D9C7A5?style=for-the-badge&logo=gmail&logoColor=000000&labelColor=000000"/> <!-- TODO: wrap in <a href="mailto:you@example.com"> -->
-<img src="https://img.shields.io/badge/Portfolio-D9C7A5?style=for-the-badge&logo=googlechrome&logoColor=000000&labelColor=000000"/> <!-- TODO: wrap in <a href="your-portfolio-url"> -->
+<a href="https://github.com/yeabsiragebre"><img src="https://img.shields.io/badge/GitHub-D4AF37?style=for-the-badge&logo=github&logoColor=000000&labelColor=000000"/></a>
+<img src="https://img.shields.io/badge/LinkedIn-D4AF37?style=for-the-badge&logo=linkedin&logoColor=000000&labelColor=000000"/> <!-- TODO: wrap in <a href="your-linkedin-url"> -->
+<img src="https://img.shields.io/badge/Email-D4AF37?style=for-the-badge&logo=gmail&logoColor=000000&labelColor=000000"/> <!-- TODO: wrap in <a href="mailto:you@example.com"> -->
+<img src="https://img.shields.io/badge/Portfolio-D4AF37?style=for-the-badge&logo=googlechrome&logoColor=000000&labelColor=000000"/> <!-- TODO: wrap in <a href="your-portfolio-url"> -->
 
 </div>
 
@@ -207,6 +214,6 @@ generator config: background=000000, text/icon color=D9C7A5
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&color=0:000000,100:3D3423"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&color=0:000000,100:3D2E0A"/>
 
 </div>
