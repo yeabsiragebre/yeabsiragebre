@@ -57,6 +57,12 @@ I'm a Computer Science student at Addis Ababa University focused on Python and A
 
 <br>
 
+<div align="center">
+
+I enjoy works from Camus, Kafka, Dostoevsky, and Nietzsche, and I'm always looking for something interesting to learn or build.
+
+</div>
+
 <br>
 
 <div align="center">
@@ -148,21 +154,21 @@ generator config: background=000000, text/icon color=D4AF37
 
 <br>
 
-<img src="https://img.shields.io/badge/LLMs-D4AF37?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/RAG-D4AF37?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/EMBEDDINGS-D4AF37?style=for-the-badge&labelColor=000000"/>
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2OCIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDY4IDMyIj48cmVjdCB4PSIwLjUiIHk9IjAuNSIgd2lkdGg9IjY3IiBoZWlnaHQ9IjMxIiByeD0iNCIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjEiLz48dGV4dCB4PSIzNC4wIiB5PSIyMC41IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iJ0pldEJyYWlucyBNb25vJywgbW9ub3NwYWNlIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjEzIiBsZXR0ZXItc3BhY2luZz0iMSIgZmlsbD0iI0Q0QUYzNyI+TExNczwvdGV4dD48L3N2Zz4="/>
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1OSIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDU5IDMyIj48cmVjdCB4PSIwLjUiIHk9IjAuNSIgd2lkdGg9IjU4IiBoZWlnaHQ9IjMxIiByeD0iNCIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjEiLz48dGV4dCB4PSIyOS41IiB5PSIyMC41IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iJ0pldEJyYWlucyBNb25vJywgbW9ub3NwYWNlIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjEzIiBsZXR0ZXItc3BhY2luZz0iMSIgZmlsbD0iI0Q0QUYzNyI+UkFHPC90ZXh0Pjwvc3ZnPg=="/>
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjUiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxMjUgMzIiPjxyZWN0IHg9IjAuNSIgeT0iMC41IiB3aWR0aD0iMTI0IiBoZWlnaHQ9IjMxIiByeD0iNCIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjEiLz48dGV4dCB4PSI2Mi41IiB5PSIyMC41IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iJ0pldEJyYWlucyBNb25vJywgbW9ub3NwYWNlIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjEzIiBsZXR0ZXItc3BhY2luZz0iMSIgZmlsbD0iI0Q0QUYzNyI+RU1CRURESU5HUzwvdGV4dD48L3N2Zz4="/>
 
 <br><br>
 
-<img src="https://img.shields.io/badge/AI%20AGENTS-D4AF37?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/TOOL%20CALLING-D4AF37?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/VECTOR%20SEARCH-D4AF37?style=for-the-badge&labelColor=000000"/>
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMTUiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxMTUgMzIiPjxyZWN0IHg9IjAuNSIgeT0iMC41IiB3aWR0aD0iMTE0IiBoZWlnaHQ9IjMxIiByeD0iNCIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjEiLz48dGV4dCB4PSI1Ny41IiB5PSIyMC41IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iJ0pldEJyYWlucyBNb25vJywgbW9ub3NwYWNlIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjEzIiBsZXR0ZXItc3BhY2luZz0iMSIgZmlsbD0iI0Q0QUYzNyI+QUkgQUdFTlRTPC90ZXh0Pjwvc3ZnPg=="/>
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDMiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxNDMgMzIiPjxyZWN0IHg9IjAuNSIgeT0iMC41IiB3aWR0aD0iMTQyIiBoZWlnaHQ9IjMxIiByeD0iNCIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjEiLz48dGV4dCB4PSI3MS41IiB5PSIyMC41IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iJ0pldEJyYWlucyBNb25vJywgbW9ub3NwYWNlIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjEzIiBsZXR0ZXItc3BhY2luZz0iMSIgZmlsbD0iI0Q0QUYzNyI+VE9PTCBDQUxMSU5HPC90ZXh0Pjwvc3ZnPg=="/>
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTMiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxNTMgMzIiPjxyZWN0IHg9IjAuNSIgeT0iMC41IiB3aWR0aD0iMTUyIiBoZWlnaHQ9IjMxIiByeD0iNCIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjEiLz48dGV4dCB4PSI3Ni41IiB5PSIyMC41IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iJ0pldEJyYWlucyBNb25vJywgbW9ub3NwYWNlIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjEzIiBsZXR0ZXItc3BhY2luZz0iMSIgZmlsbD0iI0Q0QUYzNyI+VkVDVE9SIFNFQVJDSDwvdGV4dD48L3N2Zz4="/>
 
 <br><br>
 
-<img src="https://img.shields.io/badge/LLM%20APPLICATIONS-D4AF37?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/AI%20SYSTEMS-D4AF37?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/API%20INTEGRATION-D4AF37?style=for-the-badge&labelColor=000000"/>
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxODEiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxODEgMzIiPjxyZWN0IHg9IjAuNSIgeT0iMC41IiB3aWR0aD0iMTgwIiBoZWlnaHQ9IjMxIiByeD0iNCIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjEiLz48dGV4dCB4PSI5MC41IiB5PSIyMC41IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iJ0pldEJyYWlucyBNb25vJywgbW9ub3NwYWNlIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjEzIiBsZXR0ZXItc3BhY2luZz0iMSIgZmlsbD0iI0Q0QUYzNyI+TExNIEFQUExJQ0FUSU9OUzwvdGV4dD48L3N2Zz4="/>
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjUiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxMjUgMzIiPjxyZWN0IHg9IjAuNSIgeT0iMC41IiB3aWR0aD0iMTI0IiBoZWlnaHQ9IjMxIiByeD0iNCIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjEiLz48dGV4dCB4PSI2Mi41IiB5PSIyMC41IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iJ0pldEJyYWlucyBNb25vJywgbW9ub3NwYWNlIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjEzIiBsZXR0ZXItc3BhY2luZz0iMSIgZmlsbD0iI0Q0QUYzNyI+QUkgU1lTVEVNUzwvdGV4dD48L3N2Zz4="/>
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxNzIgMzIiPjxyZWN0IHg9IjAuNSIgeT0iMC41IiB3aWR0aD0iMTcxIiBoZWlnaHQ9IjMxIiByeD0iNCIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjEiLz48dGV4dCB4PSI4Ni4wIiB5PSIyMC41IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iJ0pldEJyYWlucyBNb25vJywgbW9ub3NwYWNlIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjEzIiBsZXR0ZXItc3BhY2luZz0iMSIgZmlsbD0iI0Q0QUYzNyI+QVBJIElOVEVHUkFUSU9OPC90ZXh0Pjwvc3ZnPg=="/>
 
 </div>
 
@@ -182,10 +188,10 @@ generator config: background=000000, text/icon color=D4AF37
 
 <br><br>
 
-<img src="https://img.shields.io/badge/AI%20STUDY%20PLATFORM-D4AF37?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/RAG-D4AF37?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/LLMs-D4AF37?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/EXAM%20GENERATION-D4AF37?style=for-the-badge&labelColor=000000"/>
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTAiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxOTAgMzIiPjxyZWN0IHg9IjAuNSIgeT0iMC41IiB3aWR0aD0iMTg5IiBoZWlnaHQ9IjMxIiByeD0iNCIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjEiLz48dGV4dCB4PSI5NS4wIiB5PSIyMC41IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iJ0pldEJyYWlucyBNb25vJywgbW9ub3NwYWNlIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjEzIiBsZXR0ZXItc3BhY2luZz0iMSIgZmlsbD0iI0Q0QUYzNyI+QUkgU1RVRFkgUExBVEZPUk08L3RleHQ+PC9zdmc+"/>
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1OSIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDU5IDMyIj48cmVjdCB4PSIwLjUiIHk9IjAuNSIgd2lkdGg9IjU4IiBoZWlnaHQ9IjMxIiByeD0iNCIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjEiLz48dGV4dCB4PSIyOS41IiB5PSIyMC41IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iJ0pldEJyYWlucyBNb25vJywgbW9ub3NwYWNlIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjEzIiBsZXR0ZXItc3BhY2luZz0iMSIgZmlsbD0iI0Q0QUYzNyI+UkFHPC90ZXh0Pjwvc3ZnPg=="/>
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2OCIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDY4IDMyIj48cmVjdCB4PSIwLjUiIHk9IjAuNSIgd2lkdGg9IjY3IiBoZWlnaHQ9IjMxIiByeD0iNCIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjEiLz48dGV4dCB4PSIzNC4wIiB5PSIyMC41IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iJ0pldEJyYWlucyBNb25vJywgbW9ub3NwYWNlIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjEzIiBsZXR0ZXItc3BhY2luZz0iMSIgZmlsbD0iI0Q0QUYzNyI+TExNczwvdGV4dD48L3N2Zz4="/>
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxNzIgMzIiPjxyZWN0IHg9IjAuNSIgeT0iMC41IiB3aWR0aD0iMTcxIiBoZWlnaHQ9IjMxIiByeD0iNCIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjEiLz48dGV4dCB4PSI4Ni4wIiB5PSIyMC41IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iJ0pldEJyYWlucyBNb25vJywgbW9ub3NwYWNlIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjEzIiBsZXR0ZXItc3BhY2luZz0iMSIgZmlsbD0iI0Q0QUYzNyI+RVhBTSBHRU5FUkFUSU9OPC90ZXh0Pjwvc3ZnPg=="/>
 
 </div>
 
@@ -197,10 +203,10 @@ generator config: background=000000, text/icon color=D4AF37
 
 <br>
 
-<a href="https://github.com/yeabsiragebre"><img src="https://img.shields.io/badge/GitHub-D4AF37?style=for-the-badge&logo=github&logoColor=000000&labelColor=000000"/></a>
-<img src="https://img.shields.io/badge/LinkedIn-D4AF37?style=for-the-badge&logo=linkedin&logoColor=000000&labelColor=000000"/> <!-- TODO: wrap in <a href="your-linkedin-url"> -->
-<img src="https://img.shields.io/badge/Email-D4AF37?style=for-the-badge&logo=gmail&logoColor=000000&labelColor=000000"/> <!-- TODO: wrap in <a href="mailto:you@example.com"> -->
-<img src="https://img.shields.io/badge/Portfolio-D4AF37?style=for-the-badge&logo=googlechrome&logoColor=000000&labelColor=000000"/> <!-- TODO: wrap in <a href="your-portfolio-url"> -->
+<a href="https://github.com/yeabsiragebre"><img src="https://img.shields.io/badge/-000000?style=for-the-badge&logo=github&logoColor=D4AF37"/></a>
+<a href="#"><img src="https://img.shields.io/badge/-000000?style=for-the-badge&logo=linkedin&logoColor=D4AF37"/></a> <!-- TODO: swap href="#" for your LinkedIn URL -->
+<a href="mailto:you@example.com"><img src="https://img.shields.io/badge/-000000?style=for-the-badge&logo=gmail&logoColor=D4AF37"/></a> <!-- TODO: swap in your real email -->
+<a href="#"><img src="https://img.shields.io/badge/-000000?style=for-the-badge&logo=googlechrome&logoColor=D4AF37"/></a> <!-- TODO: swap href="#" for your portfolio URL -->
 
 </div>
 
