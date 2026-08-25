@@ -8,12 +8,18 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: profile-updates
+  cancel-in-progress: false
+
 jobs:
   streak:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Create profile directory
         run: mkdir -p profile
@@ -29,6 +35,14 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add profile/
-          git commit -m "Update GitHub streak" || exit 0
-          git push
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git pull --rebase origin main
+          git commit -m "Update GitHub streak"
+          git push origin main
