@@ -1,16 +1,19 @@
 <div align="center">
 
+<img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=header&color=0:000000,100:3D3423"/>
+
 # `YEABSIRA`
 
 ### `AI ENGINEERING` · `COMPUTER SCIENCE` · `SOFTWARE DEVELOPMENT`
 
 <br>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&duration=2800&pause=900&color=FFFFFF&background=000000&center=true&vCenter=true&width=780&height=60&lines=AI+Engineering;LLMs+%7C+RAG+%7C+AI+Agents;Building+%7C+Learning+%7C+Shipping" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&duration=2800&pause=900&color=D9C7A5&background=000000&center=true&vCenter=true&width=780&height=60&lines=AI+Engineering;LLMs+%7C+RAG+%7C+AI+Agents;Building+%7C+Learning+%7C+Shipping" />
 
 <br><br>
 
-<img src="https://komarev.com/ghpvc/?username=yeabsiragebre&style=for-the-badge&color=000000&label=PROFILE+VIEWS&labelColor=000000"/>
+<img src="https://komarev.com/ghpvc/?username=yeabsiragebre&style=for-the-badge&color=D9C7A5&label=PROFILE+VIEWS&labelColor=000000"/>
+<a href="https://github.com/yeabsiragebre?tab=followers"><img src="https://img.shields.io/github/followers/yeabsiragebre?style=for-the-badge&color=D9C7A5&labelColor=000000&label=FOLLOWERS"/></a>
 
 </div>
 
@@ -24,9 +27,22 @@
 
 </div>
 
-I'm Yeabsira — a Computer Science student at Addis Ababa University working at the intersection of Python and AI engineering. I write LLM pipelines, build RAG systems, and design AI agents, and I learn best by actually shipping things rather than just reading about them.
+```
+> whoami
+Yeabsira — Computer Science student, Addis Ababa University
 
-Outside of code, I split my time between a chessboard, a sketchbook, and whatever Camus, Kafka, Dostoevsky, or Nietzsche I'm currently working through — usually with a Bach cello suite or something classical playing in the background.
+> focus
+LLM pipelines · RAG systems · AI agents
+
+> method
+Learn by shipping, not just reading about it
+```
+
+<div align="center">
+
+When I'm not building, I'm usually deep in a chess game, a sketch, or a 19th-century Russian novel — with a Bach cello suite playing somewhere in the background.
+
+</div>
 
 <br>
 
@@ -36,13 +52,13 @@ Outside of code, I split my time between a chessboard, a sketchbook, and whateve
 
 <br>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=16&duration=2200&pause=700&color=FFFFFF&background=000000&center=true&vCenter=true&width=780&height=45&lines=%E2%99%9F+Chess;%F0%9F%93%9A+Philosophy+%26+Literature;%E2%9C%8F%EF%B8%8F+Pencil+Art;%F0%9F%8E%B9+Classical+%2F+Instrumental+Music;%E2%9B%A9%EF%B8%8F+Anime" />
-
-<br><br>
-
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=14&duration=2400&pause=900&color=808080&background=000000&center=true&vCenter=true&width=780&height=40&lines=currently+reading%3A+Camus;currently+reading%3A+Kafka;currently+reading%3A+Dostoevsky;currently+reading%3A+Nietzsche" />
-
 </div>
+
+- `♟️` **Chess** — strategy off the board too
+- `📚` **Philosophy & Literature** — currently working through Camus, Kafka, Dostoevsky, and Nietzsche
+- `✏️` **Pencil Art**
+- `🎻` **Classical / Instrumental Music** — Bach cello suites on repeat while coding
+- `⛩️` **Anime**
 
 <br>
 
@@ -54,9 +70,9 @@ Outside of code, I split my time between a chessboard, a sketchbook, and whateve
 
 <!--
 These cards are generated automatically by GitHub Actions.
-The workflow updates:
-profile/stats.svg
-profile/top-langs.svg
+The workflow updates: profile/stats.svg, profile/top-langs.svg
+To fully match the black/beige theme, set these in the workflow's
+generator config: background=000000, text/icon color=D9C7A5
 -->
 
 <p align="center"> <img src="./profile/stats.svg" alt="Yeabsira GitHub Statistics" width="100%"> </p>
@@ -67,7 +83,7 @@ profile/top-langs.svg
 
 <br><br>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=yeabsiragebre&theme=github-compact&hide_border=true&bg_color=000000&color=FFFFFF&line=FFFFFF&point=FFFFFF&title_color=FFFFFF" width="100%" alt="Contribution Activity"/>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=yeabsiragebre&theme=github-compact&hide_border=true&bg_color=000000&color=D9C7A5&line=D9C7A5&point=D9C7A5&title_color=D9C7A5" width="100%" alt="Contribution Activity"/>
 
 <br><br>
 
@@ -135,21 +151,21 @@ profile/top-langs.svg
 
 <br>
 
-<img src="https://img.shields.io/badge/LLMs-000000?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/RAG-000000?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/EMBEDDINGS-000000?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/LLMs-D9C7A5?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/RAG-D9C7A5?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/EMBEDDINGS-D9C7A5?style=for-the-badge&labelColor=000000"/>
 
 <br><br>
 
-<img src="https://img.shields.io/badge/AI%20AGENTS-000000?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/TOOL%20CALLING-000000?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/VECTOR%20SEARCH-000000?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/AI%20AGENTS-D9C7A5?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/TOOL%20CALLING-D9C7A5?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/VECTOR%20SEARCH-D9C7A5?style=for-the-badge&labelColor=000000"/>
 
 <br><br>
 
-<img src="https://img.shields.io/badge/LLM%20APPLICATIONS-000000?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/AI%20SYSTEMS-000000?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/API%20INTEGRATION-000000?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/LLM%20APPLICATIONS-D9C7A5?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/AI%20SYSTEMS-D9C7A5?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/API%20INTEGRATION-D9C7A5?style=for-the-badge&labelColor=000000"/>
 
 </div>
 
@@ -163,16 +179,16 @@ profile/top-langs.svg
 
 <a href="https://github.com/yeabsiragebre/Cram">
 
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=yeabsiragebre&repo=Cram&theme=dark&hide_border=true"/>
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=yeabsiragebre&repo=Cram&hide_border=true&bg_color=000000&title_color=D9C7A5&text_color=D9C7A5&icon_color=D9C7A5"/>
 
 </a>
 
 <br><br>
 
-<img src="https://img.shields.io/badge/AI%20STUDY%20PLATFORM-000000?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/RAG-000000?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/LLMs-000000?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/EXAM%20GENERATION-000000?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/AI%20STUDY%20PLATFORM-D9C7A5?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/RAG-D9C7A5?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/LLMs-D9C7A5?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/EXAM%20GENERATION-D9C7A5?style=for-the-badge&labelColor=000000"/>
 
 </div>
 
@@ -184,9 +200,10 @@ profile/top-langs.svg
 
 <br>
 
-<img src="https://img.shields.io/badge/LinkedIn-000000?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=000000" href=""/> <!-- TODO: wrap in <a href="your-linkedin-url"> -->
-<img src="https://img.shields.io/badge/Email-000000?style=for-the-badge&logo=gmail&logoColor=white&labelColor=000000"/> <!-- TODO: wrap in <a href="mailto:you@example.com"> -->
-<img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=000000"/> <!-- TODO: wrap in <a href="your-portfolio-url"> -->
+<a href="https://github.com/yeabsiragebre"><img src="https://img.shields.io/badge/GitHub-D9C7A5?style=for-the-badge&logo=github&logoColor=000000&labelColor=000000"/></a>
+<img src="https://img.shields.io/badge/LinkedIn-D9C7A5?style=for-the-badge&logo=linkedin&logoColor=000000&labelColor=000000"/> <!-- TODO: wrap in <a href="your-linkedin-url"> -->
+<img src="https://img.shields.io/badge/Email-D9C7A5?style=for-the-badge&logo=gmail&logoColor=000000&labelColor=000000"/> <!-- TODO: wrap in <a href="mailto:you@example.com"> -->
+<img src="https://img.shields.io/badge/Portfolio-D9C7A5?style=for-the-badge&logo=googlechrome&logoColor=000000&labelColor=000000"/> <!-- TODO: wrap in <a href="your-portfolio-url"> -->
 
 </div>
 
@@ -194,6 +211,6 @@ profile/top-langs.svg
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&color=0:000000,100:1a1a1a"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&color=0:000000,100:3D3423"/>
 
 </div>
