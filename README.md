@@ -146,24 +146,7 @@ generator config: background=000000, text/icon color=D4AF37
 
 ## `AI ENGINEERING STACK`
 
-<br>
-
-<img src="https://img.shields.io/badge/LLMs-D4AF37?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/RAG-D4AF37?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/EMBEDDINGS-D4AF37?style=for-the-badge&labelColor=000000"/>
-
-<br><br>
-
-<img src="https://img.shields.io/badge/AI%20AGENTS-D4AF37?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/TOOL%20CALLING-D4AF37?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/VECTOR%20SEARCH-D4AF37?style=for-the-badge&labelColor=000000"/>
-
-<br><br>
-
-<img src="https://img.shields.io/badge/LLM%20APPLICATIONS-D4AF37?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/AI%20SYSTEMS-D4AF37?style=for-the-badge&labelColor=000000"/>
-<img src="https://img.shields.io/badge/API%20INTEGRATION-D4AF37?style=for-the-badge&labelColor=000000"/>
-
+<img src="./ai-engineering-stack.svg" width="100%"/>
 </div>
 
 <br>
@@ -172,7 +155,7 @@ generator config: background=000000, text/icon color=D4AF37
 
 ## `CURRENTLY BUILDING`
 
-<img src="./currently-building-badges (1).svg" width="100%"/>
+<img src="./currently-building-badges (2).svg" width="100%"/>
 
 </div>
 
