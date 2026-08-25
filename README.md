@@ -1,15 +1,21 @@
 <div align="center">
 
-<img src="./assets/banner.svg" width="100%" alt="Yeabsira — AI Engineer"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=header&color=0:000000,100:3D3423"/>
 
-<br><br>
+<img src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/wave.gif" width="45"/>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=15&duration=2600&pause=1000&color=93825F&background=00000000&center=true&vCenter=true&width=600&height=30&lines=Turning+ideas+into+intelligent+systems;Currently+shipping%3A+Cram+AI+%F0%9F%9A%80;Ship+first%2C+read+docs+later" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=34&duration=3500&pause=1400&color=D9C7A5&background=000000&center=true&vCenter=true&width=780&height=70&lines=Hey%2C+I'm+Yeabsira+%F0%9F%91%8B" />
+
+### `AI ENGINEER` · `LLM & RAG SYSTEMS` · `FULL-STACK BUILDER`
 
 <br>
 
-<img src="https://komarev.com/ghpvc/?username=yeabsiragebre&style=flat-square&color=141210&label=VIEWS&labelColor=0A0A0A"/>
-<a href="https://github.com/yeabsiragebre?tab=followers"><img src="https://img.shields.io/github/followers/yeabsiragebre?style=flat-square&color=141210&labelColor=0A0A0A&label=FOLLOWERS"/></a>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&duration=2600&pause=1000&color=D9C7A5&background=000000&center=true&vCenter=true&width=780&height=60&lines=Turning+ideas+into+intelligent+systems;LLMs+%7C+RAG+%7C+AI+Agents;Currently+building%3A+Cram+AI+%F0%9F%9A%80;Ship+first%2C+read+docs+later" />
+
+<br><br>
+
+<img src="https://komarev.com/ghpvc/?username=yeabsiragebre&style=for-the-badge&color=D9C7A5&label=PROFILE+VIEWS&labelColor=000000"/>
+<a href="https://github.com/yeabsiragebre?tab=followers"><img src="https://img.shields.io/github/followers/yeabsiragebre?style=for-the-badge&color=D9C7A5&labelColor=000000&label=FOLLOWERS"/></a>
 
 </div>
 
@@ -19,38 +25,41 @@
 
 ## `ABOUT`
 
+<br>
+
 </div>
+
+**Hey, I'm Yeabsira 👋**
 
 I'm a Computer Science student at Addis Ababa University focused on Python and AI Engineering. I enjoy building practical projects, experimenting with AI, and learning by actually making things.
 
+<div align="center">
+
+### `WHAT I'M INTO`
+
+</div>
+
+- `🐍` Python
+- `🤖` AI Engineering & LLM Applications
+- `🧩` RAG, AI Agents & APIs
+- `🧠` Data Structures & Algorithms
+- `🛠️` Building AI-powered projects
+
 <br>
 
-<table align="center" width="100%">
-<tr>
-<th>💻 What I'm Into</th>
-<th>🎨 Outside of Coding</th>
-</tr>
-<tr>
-<td>
+<div align="center">
 
-- Python
-- AI Engineering & LLM Applications
-- RAG, AI Agents & APIs
-- Data Structures & Algorithms
-- Building AI-powered projects
+## `INTERESTS`
 
-</td>
-<td>
+<br>
 
-- Chess
-- Philosophy & Literature
-- Pencil Art
-- Classical & Instrumental Music
-- Anime
+</div>
 
-</td>
-</tr>
-</table>
+- `♟️` Chess
+- `📚` Philosophy & Literature
+- `✏️` Pencil Art
+- `🎹` Classical & Instrumental Music
+- `🎌` Anime
 
 I enjoy works from Camus, Kafka, Dostoevsky, and Nietzsche, and I'm always looking for something interesting to learn or build.
 
@@ -60,22 +69,24 @@ I enjoy works from Camus, Kafka, Dostoevsky, and Nietzsche, and I'm always looki
 
 ## `GITHUB`
 
-<!--
-Stats/streak cards are generated automatically by GitHub Actions
-(profile/stats.svg, profile/streak.svg). To match this theme, set
-in the workflow config: background=0A0A0A, text/icon color=D9C7A5
--->
-
-<table align="center" width="100%">
-<tr>
-<td width="55%"><img src="./profile/stats.svg" width="100%" alt="GitHub Stats"/></td>
-<td width="45%"><img src="./profile/streak.svg" width="100%" alt="GitHub Streak"/></td>
-</tr>
-</table>
-
 <br>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=yeabsiragebre&theme=github-compact&hide_border=true&bg_color=0A0A0A&color=D9C7A5&line=D9C7A5&point=D9C7A5&title_color=D9C7A5" width="100%" alt="Contribution Activity"/>
+<!--
+These cards are generated automatically by GitHub Actions.
+The workflow updates: profile/stats.svg, profile/top-langs.svg
+To fully match the black/beige theme, set these in the workflow's
+generator config: background=000000, text/icon color=D9C7A5
+-->
+
+<p align="center"> <img src="./profile/stats.svg" alt="Yeabsira GitHub Statistics" width="100%"> </p>
+
+<br><br>
+
+<img src="./profile/streak.svg" width="70%" alt="GitHub Streak"/>
+
+<br><br>
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=yeabsiragebre&theme=github-compact&hide_border=true&bg_color=000000&color=D9C7A5&line=D9C7A5&point=D9C7A5&title_color=D9C7A5" width="100%" alt="Contribution Activity"/>
 
 <br><br>
 
@@ -97,6 +108,8 @@ in the workflow config: background=0A0A0A, text/icon color=D9C7A5
 
 ## `METRICS`
 
+<br>
+
 <img src="./metrics.svg" width="100%" alt="GitHub Metrics"/>
 
 </div>
@@ -107,12 +120,55 @@ in the workflow config: background=0A0A0A, text/icon color=D9C7A5
 
 ## `TECHNOLOGY`
 
-<table align="center" width="100%">
-<tr><td width="30%" align="right"><b>Languages</b></td><td><img src="https://skillicons.dev/icons?i=python,java,cpp,javascript,typescript&theme=dark&perline=5"/></td></tr>
-<tr><td width="30%" align="right"><b>Frameworks</b></td><td><img src="https://skillicons.dev/icons?i=fastapi,nodejs,react,nextjs&theme=dark&perline=4"/></td></tr>
-<tr><td width="30%" align="right"><b>AI & Data</b></td><td><img src="https://skillicons.dev/icons?i=pytorch,tensorflow,postgres,mongodb,redis&theme=dark&perline=5"/></td></tr>
-<tr><td width="30%" align="right"><b>Tools</b></td><td><img src="https://skillicons.dev/icons?i=git,github,linux,docker,vscode&theme=dark&perline=5"/></td></tr>
-</table>
+<br>
+
+### `LANGUAGES`
+
+<img src="https://skillicons.dev/icons?i=python,java,cpp,javascript,typescript&theme=dark&perline=5"/>
+
+<br><br>
+
+### `FRAMEWORKS & LIBRARIES`
+
+<img src="https://skillicons.dev/icons?i=fastapi,nodejs,react,nextjs&theme=dark&perline=4"/>
+
+<br><br>
+
+### `AI & DATA`
+
+<img src="https://skillicons.dev/icons?i=pytorch,tensorflow,postgres,mongodb,redis&theme=dark&perline=5"/>
+
+<br><br>
+
+### `TOOLS & PLATFORMS`
+
+<img src="https://skillicons.dev/icons?i=git,github,linux,docker,vscode&theme=dark&perline=5"/>
+
+</div>
+
+<br>
+
+<div align="center">
+
+## `AI ENGINEERING STACK`
+
+<br>
+
+<img src="https://img.shields.io/badge/LLMs-D9C7A5?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/RAG-D9C7A5?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/EMBEDDINGS-D9C7A5?style=for-the-badge&labelColor=000000"/>
+
+<br><br>
+
+<img src="https://img.shields.io/badge/AI%20AGENTS-D9C7A5?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/TOOL%20CALLING-D9C7A5?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/VECTOR%20SEARCH-D9C7A5?style=for-the-badge&labelColor=000000"/>
+
+<br><br>
+
+<img src="https://img.shields.io/badge/LLM%20APPLICATIONS-D9C7A5?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/AI%20SYSTEMS-D9C7A5?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/API%20INTEGRATION-D9C7A5?style=for-the-badge&labelColor=000000"/>
 
 </div>
 
@@ -122,11 +178,20 @@ in the workflow config: background=0A0A0A, text/icon color=D9C7A5
 
 ## `CURRENTLY BUILDING`
 
+<br>
+
 <a href="https://github.com/yeabsiragebre/Cram">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=yeabsiragebre&repo=Cram&hide_border=true&bg_color=0A0A0A&title_color=D9C7A5&text_color=D9C7A5&icon_color=D9C7A5"/>
+
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=yeabsiragebre&repo=Cram&hide_border=true&bg_color=000000&title_color=D9C7A5&text_color=D9C7A5&icon_color=D9C7A5"/>
+
 </a>
 
-**Cram AI** — an AI-powered study platform using RAG and LLMs to turn course material into exams and study aids.
+<br><br>
+
+<img src="https://img.shields.io/badge/AI%20STUDY%20PLATFORM-D9C7A5?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/RAG-D9C7A5?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/LLMs-D9C7A5?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/EXAM%20GENERATION-D9C7A5?style=for-the-badge&labelColor=000000"/>
 
 </div>
 
@@ -136,11 +201,12 @@ in the workflow config: background=0A0A0A, text/icon color=D9C7A5
 
 ## `CONTACT`
 
-<a href="https://github.com/yeabsiragebre"><img src="https://img.shields.io/badge/-181717?style=flat-square&logo=github&logoColor=D9C7A5"/></a>
-<!-- TODO: swap href="#" for your real links, one badge per line for clarity -->
-<a href="#"><img src="https://img.shields.io/badge/-0A66C2?style=flat-square&logo=linkedin&logoColor=D9C7A5"/></a>
-<a href="mailto:you@example.com"><img src="https://img.shields.io/badge/-8C7B5C?style=flat-square&logo=gmail&logoColor=D9C7A5"/></a>
-<a href="#"><img src="https://img.shields.io/badge/-0A0A0A?style=flat-square&logo=googlechrome&logoColor=D9C7A5"/></a>
+<br>
+
+<a href="https://github.com/yeabsiragebre"><img src="https://img.shields.io/badge/GitHub-D9C7A5?style=for-the-badge&logo=github&logoColor=000000&labelColor=000000"/></a>
+<img src="https://img.shields.io/badge/LinkedIn-D9C7A5?style=for-the-badge&logo=linkedin&logoColor=000000&labelColor=000000"/> <!-- TODO: wrap in <a href="your-linkedin-url"> -->
+<img src="https://img.shields.io/badge/Email-D9C7A5?style=for-the-badge&logo=gmail&logoColor=000000&labelColor=000000"/> <!-- TODO: wrap in <a href="mailto:you@example.com"> -->
+<img src="https://img.shields.io/badge/Portfolio-D9C7A5?style=for-the-badge&logo=googlechrome&logoColor=000000&labelColor=000000"/> <!-- TODO: wrap in <a href="your-portfolio-url"> -->
 
 </div>
 
@@ -148,6 +214,6 @@ in the workflow config: background=0A0A0A, text/icon color=D9C7A5
 
 <div align="center">
 
-<sub>`// end of profile`</sub>
+<img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&color=0:000000,100:3D3423"/>
 
 </div>
