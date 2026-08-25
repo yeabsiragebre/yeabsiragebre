@@ -2,13 +2,15 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=header&color=0:000000,100:3D3423"/>
 
-# `YEABSIRA`
+<img src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/wave.gif" width="45"/>
 
-### `AI ENGINEERING` · `COMPUTER SCIENCE` · `SOFTWARE DEVELOPMENT`
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=34&duration=3500&pause=1400&color=D9C7A5&background=000000&center=true&vCenter=true&width=780&height=70&lines=Hey%2C+I'm+Yeabsira+%F0%9F%91%8B" />
+
+### `AI ENGINEER` · `LLM & RAG SYSTEMS` · `FULL-STACK BUILDER`
 
 <br>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&duration=2800&pause=900&color=D9C7A5&background=000000&center=true&vCenter=true&width=780&height=60&lines=AI+Engineering;LLMs+%7C+RAG+%7C+AI+Agents;Building+%7C+Learning+%7C+Shipping" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&duration=2600&pause=1000&color=D9C7A5&background=000000&center=true&vCenter=true&width=780&height=60&lines=Turning+ideas+into+intelligent+systems;LLMs+%7C+RAG+%7C+AI+Agents;Currently+building%3A+Cram+AI+%F0%9F%9A%80;Ship+first%2C+read+docs+later" />
 
 <br><br>
 
