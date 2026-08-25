@@ -6,11 +6,11 @@
 
 <br>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&duration=2800&pause=900&color=36E0C0&center=true&vCenter=true&width=720&lines=AI+Engineering;LLMs+%7C+RAG+%7C+AI+Agents;Building+%7C+Learning+%7C+Shipping" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&duration=2800&pause=900&color=FFA500&center=true&vCenter=true&width=720&lines=AI+Engineering;LLMs+%7C+RAG+%7C+AI+Agents;Building+%7C+Learning+%7C+Shipping" />
 
 <br><br>
 
-<img src="https://komarev.com/ghpvc/?username=yeabsiragebre&style=for-the-badge&color=36E0C0&label=PROFILE+VIEWS"/>
+<img src="https://komarev.com/ghpvc/?username=yeabsiragebre&style=for-the-badge&color=FFA500&label=PROFILE+VIEWS"/>
 
 </div>
 
@@ -37,24 +37,23 @@ Yeabsira is a Computer Science student at Addis Ababa University building at the
 <br>
 
 ```text
-┌──────────────────────────────────────────────────────┐
-│  $ cat ~/interests/hobbies                           │
-│                                                      │
-│  ▸ chess                                           │
-│  ▸ philosophy & literature                           │
-│  ▸ pencil art                                      │
-│  ▸ classical / instrumental                         │
-│  ▸ anime                                           │
-│  ▸ reading                                         │
-│                                                      │
-│  $ cat ~/interests/authors                           │
-│  ▸ Camus                                           │
-│  ▸ Kafka                                           │
-│  ▸ Dostoevsky                                      │
-│  ▸ Nietzsche                                       │
-│                                                      │
-│  $ echo "always building, always learning"           │
-└──────────────────────────────────────────────────────┘
+$ cat ~/interests/hobbies
+
+  chess
+  philosophy & literature
+  pencil art
+  classical / instrumental
+  anime
+  reading
+
+$ cat ~/interests/authors
+
+  Camus
+  Kafka
+  Dostoevsky
+  Nietzsche
+
+$ echo "always building, always learning"
 ```
 
 <br>
@@ -153,20 +152,17 @@ profile/top-langs.svg
 <br>
 
 ```text
-┌──────────────────────────────────────────────────────┐
-│  AI ENGINEERING STACK                                │
-│                                                      │
-│  ▸ LLMs                                             │
-│  ▸ RAG                                              │
-│  ▸ Embeddings                                       │
-│  ▸ AI Agents                                        │
-│  ▸ Tool Calling                                     │
-│  ▸ Vector Search                                    │
-│  ▸ LLM Applications                                 │
-│  ▸ AI Systems                                       │
-│  ▸ API Integration                                  │
-│                                                      │
-└──────────────────────────────────────────────────────┘
+AI ENGINEERING STACK
+
+  LLMs
+  RAG
+  Embeddings
+  AI Agents
+  Tool Calling
+  Vector Search
+  LLM Applications
+  AI Systems
+  API Integration
 ```
 
 <br>
@@ -189,10 +185,10 @@ profile/top-langs.svg
 
 <br><br>
 
-<img src="https://img.shields.io/badge/AI%20STUDY%20PLATFORM-36E0C0?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/RAG-0D1117?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/LLMs-0D1117?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/EXAM%20GENERATION-0D1117?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/AI%20STUDY%20PLATFORM-FFA500?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/RAG-111111?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/LLMs-111111?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/EXAM%20GENERATION-111111?style=for-the-badge"/>
 
 </div>
 
@@ -205,14 +201,11 @@ profile/top-langs.svg
 <br>
 
 ```text
-┌──────────────────────────────────────────────────────┐
-│  CONTACT                                             │
-│                                                      │
-│  ▸ LinkedIn  →  <!-- TODO: add LinkedIn handle -->  │
-│  ▸ Email     →  <!-- TODO: add email address -->    │
-│  ▸ Portfolio →  <!-- TODO: add portfolio URL -->     │
-│                                                      │
-└──────────────────────────────────────────────────────┘
+CONTACT
+
+  LinkedIn  →  <!-- TODO: add LinkedIn handle -->
+  Email     →  <!-- TODO: add email address -->
+  Portfolio →  <!-- TODO: add portfolio URL -->
 ```
 
 <br>
@@ -223,6 +216,6 @@ profile/top-langs.svg
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&color=0:050607,100:36E0C0"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&color=0:000000,100:FFA500"/>
 
 </div>
