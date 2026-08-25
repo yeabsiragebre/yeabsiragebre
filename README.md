@@ -57,12 +57,6 @@ I'm a Computer Science student at Addis Ababa University focused on Python and A
 
 <br>
 
-<div align="center">
-
-I enjoy works from Camus, Kafka, Dostoevsky, and Nietzsche, and I'm always looking for something interesting to learn or build.
-
-</div>
-
 <br>
 
 <div align="center">
