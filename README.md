@@ -24,8 +24,6 @@
 
 </div>
 
-**Hey, I'm Yeabsira 👋**
-
 I'm a Computer Science student at Addis Ababa University focused on Python and AI Engineering. I enjoy building practical projects, experimenting with AI, and learning by actually making things.
 
 <div align="center">
