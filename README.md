@@ -27,22 +27,21 @@
 
 </div>
 
-```
-> whoami
-Yeabsira — Computer Science student, Addis Ababa University
+**Hey, I'm Yeabsira 👋**
 
-> focus
-LLM pipelines · RAG systems · AI agents
-
-> method
-Learn by shipping, not just reading about it
-```
+I'm a Computer Science student at Addis Ababa University focused on Python and AI Engineering. I enjoy building practical projects, experimenting with AI, and learning by actually making things.
 
 <div align="center">
 
-When I'm not building, I'm usually deep in a chess game, a sketch, or a 19th-century Russian novel — with a Bach cello suite playing somewhere in the background.
+### `WHAT I'M INTO`
 
 </div>
+
+- `🐍` Python
+- `🤖` AI Engineering & LLM Applications
+- `🧩` RAG, AI Agents & APIs
+- `🧠` Data Structures & Algorithms
+- `🛠️` Building AI-powered projects
 
 <br>
 
@@ -54,11 +53,13 @@ When I'm not building, I'm usually deep in a chess game, a sketch, or a 19th-cen
 
 </div>
 
-- `♟️` **Chess** — strategy off the board too
-- `📚` **Philosophy & Literature** — currently working through Camus, Kafka, Dostoevsky, and Nietzsche
-- `✏️` **Pencil Art**
-- `🎻` **Classical / Instrumental Music** — Bach cello suites on repeat while coding
-- `⛩️` **Anime**
+- `♟️` Chess
+- `📚` Philosophy & Literature
+- `✏️` Pencil Art
+- `🎹` Classical & Instrumental Music
+- `🎌` Anime
+
+I enjoy works from Camus, Kafka, Dostoevsky, and Nietzsche, and I'm always looking for something interesting to learn or build.
 
 <br>
 
