@@ -6,11 +6,11 @@
 
 <br>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&duration=2800&pause=900&color=FFA500&center=true&vCenter=true&width=720&lines=AI+Engineering;LLMs+%7C+RAG+%7C+AI+Agents;Building+%7C+Learning+%7C+Shipping" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&duration=2800&pause=900&color=FFFFFF&background=000000&center=true&vCenter=true&width=780&height=60&lines=AI+Engineering;LLMs+%7C+RAG+%7C+AI+Agents;Building+%7C+Learning+%7C+Shipping" />
 
 <br><br>
 
-<img src="https://komarev.com/ghpvc/?username=yeabsiragebre&style=for-the-badge&color=FFA500&label=PROFILE+VIEWS"/>
+<img src="https://komarev.com/ghpvc/?username=yeabsiragebre&style=for-the-badge&color=000000&label=PROFILE+VIEWS&labelColor=000000"/>
 
 </div>
 
@@ -22,41 +22,25 @@
 
 <br>
 
-Yeabsira is a Computer Science student at Addis Ababa University building at the intersection of AI engineering and human understanding. She writes Python, designs LLM pipelines, and builds RAG systems — but her mind lives in the space between Camus' absurdism and Kafka's labyrinthine logic, between Dostoevsky's psychological depth and Nietzsche's will to power. When she's not debugging models or studying data structures, she's playing chess, sketching in pencil, or losing herself in a Dostoevsky novel with a cup of coffee and a Bach cello suite playing in the background.
-
-<br>
-
 </div>
+
+I'm Yeabsira — a Computer Science student at Addis Ababa University working at the intersection of Python and AI engineering. I write LLM pipelines, build RAG systems, and design AI agents, and I learn best by actually shipping things rather than just reading about them.
+
+Outside of code, I split my time between a chessboard, a sketchbook, and whatever Camus, Kafka, Dostoevsky, or Nietzsche I'm currently working through — usually with a Bach cello suite or something classical playing in the background.
 
 <br>
 
 <div align="center">
 
-## `HOBBIES & INTERESTS`
+## `INTERESTS`
 
 <br>
 
-```text
-$ cat ~/interests/hobbies
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=16&duration=2200&pause=700&color=FFFFFF&background=000000&center=true&vCenter=true&width=780&height=45&lines=%E2%99%9F+Chess;%F0%9F%93%9A+Philosophy+%26+Literature;%E2%9C%8F%EF%B8%8F+Pencil+Art;%F0%9F%8E%B9+Classical+%2F+Instrumental+Music;%E2%9B%A9%EF%B8%8F+Anime" />
 
-  chess
-  philosophy & literature
-  pencil art
-  classical / instrumental
-  anime
-  reading
+<br><br>
 
-$ cat ~/interests/authors
-
-  Camus
-  Kafka
-  Dostoevsky
-  Nietzsche
-
-$ echo "always building, always learning"
-```
-
-<br>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=14&duration=2400&pause=900&color=808080&background=000000&center=true&vCenter=true&width=780&height=40&lines=currently+reading%3A+Camus;currently+reading%3A+Kafka;currently+reading%3A+Dostoevsky;currently+reading%3A+Nietzsche" />
 
 </div>
 
@@ -83,7 +67,7 @@ profile/top-langs.svg
 
 <br><br>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=yeabsiragebre&theme=tokyo-night&hide_border=true" width="100%" alt="Contribution Activity"/>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=yeabsiragebre&theme=github-compact&hide_border=true&bg_color=000000&color=FFFFFF&line=FFFFFF&point=FFFFFF&title_color=FFFFFF" width="100%" alt="Contribution Activity"/>
 
 <br><br>
 
@@ -121,25 +105,25 @@ profile/top-langs.svg
 
 ### `LANGUAGES`
 
-<img src="https://skillicons.dev/icons?i=python,java,cpp,javascript,typescript&perline=5"/>
+<img src="https://skillicons.dev/icons?i=python,java,cpp,javascript,typescript&theme=dark&perline=5"/>
 
 <br><br>
 
 ### `FRAMEWORKS & LIBRARIES`
 
-<img src="https://skillicons.dev/icons?i=fastapi,nodejs,react,nextjs&perline=4"/>
+<img src="https://skillicons.dev/icons?i=fastapi,nodejs,react,nextjs&theme=dark&perline=4"/>
 
 <br><br>
 
 ### `AI & DATA`
 
-<img src="https://skillicons.dev/icons?i=pytorch,tensorflow,postgres,mongodb,redis&perline=5"/>
+<img src="https://skillicons.dev/icons?i=pytorch,tensorflow,postgres,mongodb,redis&theme=dark&perline=5"/>
 
 <br><br>
 
 ### `TOOLS & PLATFORMS`
 
-<img src="https://skillicons.dev/icons?i=git,github,linux,docker,vscode&perline=5"/>
+<img src="https://skillicons.dev/icons?i=git,github,linux,docker,vscode&theme=dark&perline=5"/>
 
 </div>
 
@@ -147,25 +131,25 @@ profile/top-langs.svg
 
 <div align="center">
 
-## `AI ENGINEERING`
+## `AI ENGINEERING STACK`
 
 <br>
 
-```text
-AI ENGINEERING STACK
+<img src="https://img.shields.io/badge/LLMs-000000?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/RAG-000000?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/EMBEDDINGS-000000?style=for-the-badge&labelColor=000000"/>
 
-  LLMs
-  RAG
-  Embeddings
-  AI Agents
-  Tool Calling
-  Vector Search
-  LLM Applications
-  AI Systems
-  API Integration
-```
+<br><br>
 
-<br>
+<img src="https://img.shields.io/badge/AI%20AGENTS-000000?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/TOOL%20CALLING-000000?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/VECTOR%20SEARCH-000000?style=for-the-badge&labelColor=000000"/>
+
+<br><br>
+
+<img src="https://img.shields.io/badge/LLM%20APPLICATIONS-000000?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/AI%20SYSTEMS-000000?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/API%20INTEGRATION-000000?style=for-the-badge&labelColor=000000"/>
 
 </div>
 
@@ -179,16 +163,16 @@ AI ENGINEERING STACK
 
 <a href="https://github.com/yeabsiragebre/Cram">
 
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=yeabsiragebre&repo=Cram&theme=tokyonight&hide_border=true" width="70%" alt="Cram"/>
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=yeabsiragebre&repo=Cram&theme=dark&hide_border=true"/>
 
 </a>
 
 <br><br>
 
-<img src="https://img.shields.io/badge/AI%20STUDY%20PLATFORM-FFA500?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/RAG-111111?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/LLMs-111111?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/EXAM%20GENERATION-111111?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/AI%20STUDY%20PLATFORM-000000?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/RAG-000000?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/LLMs-000000?style=for-the-badge&labelColor=000000"/>
+<img src="https://img.shields.io/badge/EXAM%20GENERATION-000000?style=for-the-badge&labelColor=000000"/>
 
 </div>
 
@@ -200,15 +184,9 @@ AI ENGINEERING STACK
 
 <br>
 
-```text
-CONTACT
-
-  LinkedIn  →  <!-- TODO: add LinkedIn handle -->
-  Email     →  <!-- TODO: add email address -->
-  Portfolio →  <!-- TODO: add portfolio URL -->
-```
-
-<br>
+<img src="https://img.shields.io/badge/LinkedIn-000000?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=000000" href=""/> <!-- TODO: wrap in <a href="your-linkedin-url"> -->
+<img src="https://img.shields.io/badge/Email-000000?style=for-the-badge&logo=gmail&logoColor=white&labelColor=000000"/> <!-- TODO: wrap in <a href="mailto:you@example.com"> -->
+<img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=000000"/> <!-- TODO: wrap in <a href="your-portfolio-url"> -->
 
 </div>
 
@@ -216,6 +194,6 @@ CONTACT
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&color=0:000000,100:FFA500"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&color=0:000000,100:1a1a1a"/>
 
 </div>
