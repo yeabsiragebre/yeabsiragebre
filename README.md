@@ -169,7 +169,7 @@ generator config: background=000000, text/icon color=D4AF37
 
 <a href="https://github.com/yeabsiragebre"><img src="https://img.shields.io/badge/-000000?style=for-the-badge&logo=github&logoColor=D4AF37"/></a>
 <a href="#"><img src="https://img.shields.io/badge/-000000?style=for-the-badge&logo=linkedin&logoColor=D4AF37"/></a> <!-- TODO: swap href="#" for your LinkedIn URL -->
-<a href="mailto:you@example.com"><img src="https://img.shields.io/badge/-000000?style=for-the-badge&logo=gmail&logoColor=D4AF37"/></a> <!-- TODO: swap in your real email -->
+<a href="mailto:you@yeabsiragebre1@gmail.com"><img src="https://img.shields.io/badge/-000000?style=for-the-badge&logo=gmail&logoColor=D4AF37"/></a> <!-- TODO: swap in your real email -->
 <a href="#"><img src="https://img.shields.io/badge/-000000?style=for-the-badge&logo=googlechrome&logoColor=D4AF37"/></a> <!-- TODO: swap href="#" for your portfolio URL -->
 
 </div>
