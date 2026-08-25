@@ -167,10 +167,10 @@ generator config: background=000000, text/icon color=D4AF37
 
 <br>
 
-<a href="https://github.com/yeabsiragebre"><img src="https://img.shields.io/badge/GitHub-D4AF37?style=for-the-badge&logo=github&logoColor=000000&labelColor=000000"/></a>
-<img src="https://img.shields.io/badge/LinkedIn-D4AF37?style=for-the-badge&logo=linkedin&logoColor=000000&labelColor=000000"/> <!-- TODO: wrap in <a href="your-linkedin-url"> -->
-<img src="https://img.shields.io/badge/Email-D4AF37?style=for-the-badge&logo=gmail&logoColor=000000&labelColor=000000"/> <!-- TODO: wrap in <a href="mailto:you@example.com"> -->
-<img src="https://img.shields.io/badge/Portfolio-D4AF37?style=for-the-badge&logo=googlechrome&logoColor=000000&labelColor=000000"/> <!-- TODO: wrap in <a href="your-portfolio-url"> -->
+<a href="https://github.com/yeabsiragebre"><img src="https://img.shields.io/badge/-000000?style=for-the-badge&logo=github&logoColor=D4AF37"/></a>
+<a href="#"><img src="https://img.shields.io/badge/-000000?style=for-the-badge&logo=linkedin&logoColor=D4AF37"/></a> <!-- TODO: swap href="#" for your LinkedIn URL -->
+<a href="mailto:you@example.com"><img src="https://img.shields.io/badge/-000000?style=for-the-badge&logo=gmail&logoColor=D4AF37"/></a> <!-- TODO: swap in your real email -->
+<a href="#"><img src="https://img.shields.io/badge/-000000?style=for-the-badge&logo=googlechrome&logoColor=D4AF37"/></a> <!-- TODO: swap href="#" for your portfolio URL -->
 
 </div>
 
