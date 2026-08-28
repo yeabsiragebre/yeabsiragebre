@@ -228,7 +228,7 @@
                   fill="#F1C453" filter="url(#glow)"
                   style="animation-delay:0.75s"/>
           <text x="484" y="277" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="14px" font-weight="700" letter-spacing="1.6px" fill="#8A8172" fill-opacity="1" text-anchor="start">FORKS</text>
-          <text x="484" y="319" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="42px" font-weight="800" letter-spacing="0px" fill="#F5F1E6" fill-opacity="1" text-anchor="start">0</text>
+          <text x="484" y="319" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="42px" font-weight="800" letter-spacing="0px" fill="#F5F1E6" fill-opacity="1" text-anchor="start">1</text>
           <text x="484" y="344" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="13px" font-weight="700" letter-spacing="0.8px" fill="#4A453B" fill-opacity="1" text-anchor="start">0 OPEN ISSUES</text>
           <rect x="726" y="343" width="106" height="3" rx="1.5"
                 fill="#F1C453" opacity=".10"/>
