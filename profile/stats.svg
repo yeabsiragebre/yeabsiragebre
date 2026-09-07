@@ -444,16 +444,16 @@
                   stroke="#D4AF37" stroke-opacity=".35"/>
           <text x="54" y="157" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="8px" font-weight="800" letter-spacing="0.5px" fill="#D4AF37" fill-opacity="1" text-anchor="middle">01</text>
           <text x="78" y="155" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="15px" font-weight="700" letter-spacing="0.8px" fill="#F5F1E6" fill-opacity="1" text-anchor="start">PYTHON</text>
-          <text x="78" y="176" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="11px" font-weight="700" letter-spacing="0px" fill="#4A453B" fill-opacity="1" text-anchor="start">172.4 KB</text>
+          <text x="78" y="176" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="11px" font-weight="700" letter-spacing="0px" fill="#4A453B" fill-opacity="1" text-anchor="start">177.2 KB</text>
 
           <rect x="245" y="141" width="575" height="12"
                 rx="6" fill="#0B0A08" stroke="#1B1710" stroke-width="1"/>
-          <rect x="245" y="141" width="415" height="12"
+          <rect x="245" y="141" width="418" height="12"
                 rx="6" fill="#D4AF37" filter="url(#glow)"/>
-          <rect x="245" y="141" width="415" height="3"
+          <rect x="245" y="141" width="418" height="3"
                 rx="1.5" fill="#FFFFFF" opacity=".10"/>
 
-          <circle cx="660" cy="147" r="3.2" fill="#D4AF37"
+          <circle cx="663" cy="147" r="3.2" fill="#D4AF37"
                   filter="url(#tinyGlow)" class="pulse"
                   style="animation-delay:0.0s"/>
           <line x1="388.75" y1="156"
@@ -466,7 +466,7 @@
                 x2="676.25" y2="160"
                 stroke="#2B2415" stroke-width="1"/>
 
-          <text x="850" y="152" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="13px" font-weight="700" letter-spacing="0px" fill="#D4AF37" fill-opacity="1" text-anchor="end">72.3%</text>
+          <text x="850" y="152" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="13px" font-weight="700" letter-spacing="0px" fill="#D4AF37" fill-opacity="1" text-anchor="end">72.9%</text>
 
           <line x1="48" y1="181" x2="850" y2="181"
                 stroke="#161208" stroke-width="1"/>
@@ -481,12 +481,12 @@
 
           <rect x="245" y="191" width="575" height="12"
                 rx="6" fill="#0B0A08" stroke="#1B1710" stroke-width="1"/>
-          <rect x="245" y="191" width="101" height="12"
+          <rect x="245" y="191" width="99" height="12"
                 rx="6" fill="#F1C453" filter="url(#glow)"/>
-          <rect x="245" y="191" width="101" height="3"
+          <rect x="245" y="191" width="99" height="3"
                 rx="1.5" fill="#FFFFFF" opacity=".10"/>
 
-          <circle cx="346" cy="197" r="3.2" fill="#F1C453"
+          <circle cx="344" cy="197" r="3.2" fill="#F1C453"
                   filter="url(#tinyGlow)" class="pulse"
                   style="animation-delay:0.22s"/>
           <line x1="388.75" y1="206"
@@ -499,7 +499,7 @@
                 x2="676.25" y2="210"
                 stroke="#2B2415" stroke-width="1"/>
 
-          <text x="850" y="202" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="13px" font-weight="700" letter-spacing="0px" fill="#F1C453" fill-opacity="1" text-anchor="end">17.7%</text>
+          <text x="850" y="202" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="13px" font-weight="700" letter-spacing="0px" fill="#F1C453" fill-opacity="1" text-anchor="end">17.3%</text>
 
           <line x1="48" y1="231" x2="850" y2="231"
                 stroke="#161208" stroke-width="1"/>
@@ -514,12 +514,12 @@
 
           <rect x="245" y="241" width="575" height="12"
                 rx="6" fill="#0B0A08" stroke="#1B1710" stroke-width="1"/>
-          <rect x="245" y="241" width="41" height="12"
+          <rect x="245" y="241" width="40" height="12"
                 rx="6" fill="#C9A227" filter="url(#glow)"/>
-          <rect x="245" y="241" width="41" height="3"
+          <rect x="245" y="241" width="40" height="3"
                 rx="1.5" fill="#FFFFFF" opacity=".10"/>
 
-          <circle cx="286" cy="247" r="3.2" fill="#C9A227"
+          <circle cx="285" cy="247" r="3.2" fill="#C9A227"
                   filter="url(#tinyGlow)" class="pulse"
                   style="animation-delay:0.44s"/>
           <line x1="388.75" y1="256"
@@ -532,7 +532,7 @@
                 x2="676.25" y2="260"
                 stroke="#2B2415" stroke-width="1"/>
 
-          <text x="850" y="252" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="13px" font-weight="700" letter-spacing="0px" fill="#C9A227" fill-opacity="1" text-anchor="end">7.2%</text>
+          <text x="850" y="252" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="13px" font-weight="700" letter-spacing="0px" fill="#C9A227" fill-opacity="1" text-anchor="end">7.1%</text>
 
           <line x1="48" y1="281" x2="850" y2="281"
                 stroke="#161208" stroke-width="1"/>
@@ -547,12 +547,12 @@
 
           <rect x="245" y="291" width="575" height="12"
                 rx="6" fill="#0B0A08" stroke="#1B1710" stroke-width="1"/>
-          <rect x="245" y="291" width="16" height="12"
+          <rect x="245" y="291" width="15" height="12"
                 rx="6" fill="#B8860B" filter="url(#glow)"/>
-          <rect x="245" y="291" width="16" height="3"
+          <rect x="245" y="291" width="15" height="3"
                 rx="1.5" fill="#FFFFFF" opacity=".10"/>
 
-          <circle cx="261" cy="297" r="3.2" fill="#B8860B"
+          <circle cx="260" cy="297" r="3.2" fill="#B8860B"
                   filter="url(#tinyGlow)" class="pulse"
                   style="animation-delay:0.66s"/>
           <line x1="388.75" y1="306"
@@ -578,7 +578,7 @@
 
     <text x="58" y="596" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="10px" font-weight="700" letter-spacing="0.9px" fill="#F5F1E6" fill-opacity="1" text-anchor="start">LANGUAGE DISTRIBUTION</text>
     <text x="250" y="596" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" letter-spacing="1.0px" fill="#4A453B" fill-opacity="1" text-anchor="start">BYTE WEIGHTED</text>
-    <text x="430" y="596" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" letter-spacing="0.8px" fill="#4A453B" fill-opacity="1" text-anchor="start">238.4 KB TOTAL</text>
+    <text x="430" y="596" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="9px" font-weight="700" letter-spacing="0.8px" fill="#4A453B" fill-opacity="1" text-anchor="start">243.2 KB TOTAL</text>
     <text x="858" y="596" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="10px" font-weight="700" letter-spacing="1.1px" fill="#D4AF37" fill-opacity="1" text-anchor="end">ONLINE</text>
 
   </g>
