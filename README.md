@@ -44,9 +44,9 @@ I'm a Computer Science student at Addis Ababa University focused on Python and A
 
 </td>
 <td valign="top">
-
-- `♟️` Chess
+  
 - `📚` Philosophy & Literature
+- `♟️` Chess
 - `✏️` Pencil Art
 - `🎹` Classical & Instrumental Music
 - `🎌` Anime
