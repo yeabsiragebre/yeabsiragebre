@@ -5,7 +5,7 @@
 
 <br>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&duration=2600&pause=1000&color=D4AF37&background=000000&center=true&vCenter=true&width=780&height=60&lines=Turning+ideas+into+intelligent+systems;LLMs+%7C+RAG+%7C+AI+Agents;Currently+building%3A+Cram+AI+%F0%9F%9A%80;Ship+first%2C+read+docs+later" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&duration=2600&pause=1000&color=D4AF37&background=000000&center=true&vCenter=true&width=780&height=60&lines=Turning+softwares+into+intelligent+systems;LLMs+%7C+RAG+%7C+AI+Agents;Currently+building%3A+Cram+AI+%F0%9F%9A%80;Ship+first%2C+read+docs+later" />
 
 <br><br>
 
