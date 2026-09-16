@@ -24,7 +24,7 @@
 
 </div>
 
-I'm a Computer Science student at Addis Ababa University focused on Python and AI Engineering. I enjoy building practical projects, experimenting with AI, and learning by actually making things.
+I’m a Computer Science student at Addis Ababa University on a Presidential Scholarship. I work with Python and AI Engineering. Most of what I learn comes from building projects, experimenting with different AI tools, and working on things that I find interesting.
 
 <br>
 
