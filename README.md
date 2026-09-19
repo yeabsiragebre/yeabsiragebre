@@ -49,7 +49,6 @@ I’m a Computer Science student at Addis Ababa University on a Presidential Sch
 - `♟️` Chess
 - `✏️` Pencil Art
 - `🎹` Classical & Instrumental Music
-- `🎌` Anime
 
 </td>
 </tr>
