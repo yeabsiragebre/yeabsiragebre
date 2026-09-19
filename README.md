@@ -24,7 +24,7 @@
 
 </div>
 
-I’m a Computer Science student at Addis Ababa University on a Presidential Scholarship. I work with Python and AI Engineering. Most of what I learn comes from building projects, experimenting with different AI tools, and working on things that I find interesting.
+I’m currently a Computer Science student at Addis Ababa University on a Presidential Scholarship. I work with Python and AI Engineering. Most of what I learn comes from building projects, experimenting with different AI tools, and working on things that I find interesting.
 
 <br>
 
