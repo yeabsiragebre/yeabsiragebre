@@ -24,11 +24,8 @@ jobs:
       - name: Create profile directory
         run: mkdir -p profile
 
-      - name: Sync with main
-        run: git pull --rebase origin main
-
       - name: Generate streak
-        uses: DenverCoder1/github-readme-streak-stats@main
+        uses: DenverCoder1/github-readme-streak-stats@v1
         with:
           options: user=yeabsiragebre&theme=tokyonight&background=0D1117&hide_border=true
           path: profile/streak.svg
@@ -39,7 +36,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add profile/
+          git add profile/streak.svg
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
