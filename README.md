@@ -90,15 +90,15 @@ generator config: background=000000, text/icon color=D4AF37
 <picture>
   <source
     media="(prefers-color-scheme: dark)"
-    srcset="https://github.com/yeabsiragebre/Github_Pacman.yml/raw/output/pacman-contribution-graph-dark.svg"
+    srcset="https://raw.githubusercontent.com/yeabsiragebre/yeabsiragebre/output/pacman-contribution-graph-dark.svg"
   />
   <source
     media="(prefers-color-scheme: light)"
-    srcset="https://github.com/yeabsiragebre/Github_Pacman.yml/raw/output/pacman-contribution-graph.svg"
+    srcset="https://raw.githubusercontent.com/yeabsiragebre/yeabsiragebre/output/pacman-contribution-graph.svg"
   />
   <img
     alt="Pacman contribution graph"
-    src="https://github.com/yeabsiragebre/Github_Pacman.yml/raw/output/pacman-contribution-graph.svg"
+    src="https://raw.githubusercontent.com/yeabsiragebre/yeabsiragebre/output/pacman-contribution-graph.svg"
   />
 </picture>
 
