@@ -27,7 +27,7 @@ jobs:
       - name: Generate Pacman Contribution Graph
         uses: abozanona/pacman-contribution-graph@v5.0.0
         with:
-          github_user_name: jkdevcode
+          github_user_name: yeabsiragebre
         env:
           NODE_OPTIONS: "--max_old_space_size=6144"
 
