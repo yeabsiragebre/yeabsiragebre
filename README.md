@@ -83,11 +83,29 @@ generator config: background=000000, text/icon color=D4AF37
 
 <br><br>
 
+## 👾 Contribution Graph
+
+<div align="center">
+
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./github-contribution-grid-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./github-contribution-grid-snake.svg">
-  <img src="./github-contribution-grid-snake.svg" width="100%" alt="Contribution Snake"/>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="https://github.com/yeabsiragebre/github-pacman/raw/output/pacman-contribution-graph-dark.svg"
+  />
+  <source
+    media="(prefers-color-scheme: light)"
+    srcset="https://github.com/yeabsiragebre/github-pacman/raw/output/pacman-contribution-graph.svg"
+  />
+  <img
+    alt="Pacman contribution graph"
+    src="https://github.com/yeabsiragebre/github-pacman/raw/output/pacman-contribution-graph.svg"
+  />
 </picture>
+
+</div>
+
+---
+
 
 <br><br>
 
